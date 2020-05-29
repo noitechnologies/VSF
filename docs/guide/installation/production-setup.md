@@ -11,7 +11,7 @@ To run Vue Storefront in production mode without Docker/Kubernetes, you'll need 
 Assumptions for the rest of this tutorial:
 
 - You have root access to a Debian Linux machine.
-- We'll be using the default local ports `3000` for [`vue-storefront`](https://github.com/DivanteLtd/vue-storefront) and `8080` for [`vue-storefront-api`](https://github.com/DivanteLtd/vue-storefront-api); the ports **should not be exposed**, as they will be hidden behind **NGINX proxy**.
+- We'll be using the default local ports `3000` for [`vue-storefront`](https://github.com/DivanteLtd/vue-storefront) and `8090` for [`vue-storefront-api`](https://github.com/DivanteLtd/vue-storefront-api); the ports **should not be exposed**, as they will be hidden behind **NGINX proxy**.
 - We're using **prod.vuestorefront.io** as a domain name. Please replace it with your host URL address.
 - We assume that you have an SSL certificate for **prod.vuestorefront.io** (or your domain, of course). SSL encryption is required for PWA and Service Workers.
 
@@ -200,19 +200,19 @@ It just works the same way with sub directories too.
 
 ```
 location /api/ {
-  proxy_pass http://localhost:8080/api/;
+  proxy_pass http://localhost:8090/api/;
 }
 ```
 
-The next proxy section is used for serving the API. It's a proxy to [`vue-storefront-api`](https://github.com/DivanteLtd/vue-storefront-api) app running on `8080` port (default config). API will be available under ___https://prod.vuestorefront.io/api___
+The next proxy section is used for serving the API. It's a proxy to [`vue-storefront-api`](https://github.com/DivanteLtd/vue-storefront-api) app running on `8090` port (default config). API will be available under ___https://prod.vuestorefront.io/api___
 
 ```
 location /img/ {
-  proxy_pass http://localhost:8080/img/;
+  proxy_pass http://localhost:8090/img/;
 }
 ```
 
-The last proxy is used for serving product images. It's a proxy to the [`vue-storefront-api`](https://github.com/DivanteLtd/vue-storefront-api) app running on `8080` port (default config). Images will be available under ___https://prod.vuestorefront.io/img___
+The last proxy is used for serving product images. It's a proxy to the [`vue-storefront-api`](https://github.com/DivanteLtd/vue-storefront-api) app running on `8090` port (default config). Images will be available under ___https://prod.vuestorefront.io/img___
 
 #### Apache2 configuration
 
@@ -221,11 +221,11 @@ In case you are already using the apache2 web server in your environment as well
 ```
 ProxyRequests off
 
-ProxyPass /api/ http://localhost:8080/api/
-ProxyPassReverse /api http://localhost:8080/api/
+ProxyPass /api/ http://localhost:8090/api/
+ProxyPassReverse /api http://localhost:8090/api/
 
-ProxyPass /img/ http://localhost:8080/img/
-ProxyPassReverse /img http://localhost:8080/img/
+ProxyPass /img/ http://localhost:8090/img/
+ProxyPassReverse /img http://localhost:8090/img/
 
 ProxyPass /assets/ http://localhost:3000/assets/
 ProxyPassReverse /assets http://localhost:3000/assets/
@@ -238,7 +238,7 @@ You also need to enable [mod_proxy](https://httpd.apache.org/docs/current/mod/mo
 
 ### Vue Storefront and Vue Storefront API
 
-After you have the NGINX set up, you should get a `502 error` when accessing the https://prod.vuestorefront.io. This is totally fine! We just missed the most important step, which is running backend services that will power up our installation. Now NGINX is trying to connect to `localhost:3000` for `vue-storefront` and `localhost:8080` for `vue-storefront-api` without any success.
+After you have the NGINX set up, you should get a `502 error` when accessing the https://prod.vuestorefront.io. This is totally fine! We just missed the most important step, which is running backend services that will power up our installation. Now NGINX is trying to connect to `localhost:3000` for `vue-storefront` and `localhost:8090` for `vue-storefront-api` without any success.
 
 We created a Linux user called `vuestorefront` and go to `/home/www/vuestorefront` which is our home directory.
 
@@ -312,7 +312,7 @@ Please find the key sections of the `vue-storefront/config/local.json` file desc
 },
 ```
 
-We're setting up the product's endpoint to https://prod.vuestorefront.io/api/catalog (please use your domain accordingly of course). As you may notice, the `/api` url is proxied by the NGINX to `localhost:8080` - our `vue-storefront-api` instance.
+We're setting up the product's endpoint to https://prod.vuestorefront.io/api/catalog (please use your domain accordingly of course). As you may notice, the `/api` url is proxied by the NGINX to `localhost:8090` - our `vue-storefront-api` instance.
 
 ```json
 "cart": {

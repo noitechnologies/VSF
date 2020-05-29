@@ -11,7 +11,7 @@ To enable real-time prices sync, please change the following lines in the `confi
       "alwaysSyncPlatformPricesOver": true,
       "clearPricesBeforePlatformSync": true,
       "waitForPlatformSync": false,
-      "endpoint": "http://localhost:8080/api/product"
+      "endpoint": "http://localhost:8090/api/product"
     },
 ```
 
