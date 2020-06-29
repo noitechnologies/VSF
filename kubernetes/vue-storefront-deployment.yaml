@@ -18,7 +18,7 @@ spec:
         - configMapRef:
             name: vue-storefront-config
         ports:
-        - containerPort: 3000
+        - containerPort: 3010
         volumeMounts:
         - mountPath: /var/www/.babelrc
           name: code

@@ -587,13 +587,13 @@ You can still customize some UI elements per `storeView` using conditional `v-if
 You can also override some root-level components (like `pages/Category.vue`) by modifying the `theme/router/index.js` routing schema by adding the specific store-view based urls directly in the routing table.
 :::
 
-If you really need to use different themes per each individual `storeView`, then the best way would be to deploy and execute separate Vue Storefront node instances per each store view (e.g. `de` running on port 3000, `it` on 3001 etc); Then make sure your proxy service routes the request to the proper instance. The instances can have different configs, including different `config.theme` parameter.
+If you really need to use different themes per each individual `storeView`, then the best way would be to deploy and execute separate Vue Storefront node instances per each store view (e.g. `de` running on port 3010, `it` on 3001 etc); Then make sure your proxy service routes the request to the proper instance. The instances can have different configs, including different `config.theme` parameter.
 
 Your `nginx` config for this scheme will be something like this:
 
 ``` 
-ProxyPass / http://localhost:3000/
-ProxyPassReverse / http://localhost:3000/
+ProxyPass / http://localhost:3010/
+ProxyPassReverse / http://localhost:3010/
 
 ProxyPass /de http://localhost:3001/de
 ProxyPassReverse /de http://localhost:3001/de

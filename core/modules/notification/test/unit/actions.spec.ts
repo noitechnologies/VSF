@@ -61,7 +61,7 @@ describe('Notification actions', () => {
         type: 'success',
         message: 'Success text.',
         action1: { label: 'OK' },
-        timeToLive: 3000
+        timeToLive: 3010
       }
       const wrapper = (actions: any) => actions.spawnNotification(contextMock, notification);
 
@@ -69,7 +69,7 @@ describe('Notification actions', () => {
 
       expect(contextMock.dispatch).not.toHaveBeenLastCalledWith('removeNotificationById');
 
-      jest.advanceTimersByTime(3000);
+      jest.advanceTimersByTime(3010);
 
       expect(contextMock.dispatch).toHaveBeenLastCalledWith('removeNotificationById', newNotification.id);
     });

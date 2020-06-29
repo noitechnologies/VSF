@@ -907,7 +907,7 @@ If you want to use _GraphQL_ adapter for your search, you need to change the val
 {
   "server": {
     "host": "localhost",
-    "port": 3000,
+    "port": 3010,
     "protocol": "http",
     "api": "graphql",
     "devServiceWorker": false,

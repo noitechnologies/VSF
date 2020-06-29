@@ -27,4 +27,4 @@ services:
     tmpfs:
       - /var/www/dist
     ports:
-      - '3000:3000'
+      - '3010:3010'

@@ -64,7 +64,7 @@ export default {
         component: this.asyncComponent(),
         loading: LoadingSpinner,
         error: LoadingError,
-        timeout: 3000
+        timeout: 3010
       })
     }
   }

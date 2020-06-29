@@ -68,7 +68,7 @@ When you want to play with Vue Storefront, there are three options:
 - You can set up frontend with your own `vue-storefront-api` and database dumped from the demo.
 - You can set up frontend with `vue-storefront-api` connected to your eCommerce backend.
 
-To do any of this, simply type `yarn installer` in the root of the project and answer the questions in the console. Once the installation is done, type `yarn dev` to run your project (by default, on port `3000`). No matter what option you choose, you can change the settings in the config file later.
+To do any of this, simply type `yarn installer` in the root of the project and answer the questions in the console. Once the installation is done, type `yarn dev` to run your project (by default, on port `3010`). No matter what option you choose, you can change the settings in the config file later.
 
 ## Vue Storefront config file
 

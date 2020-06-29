@@ -33,7 +33,7 @@ There is a static files hosting included and you can run it by executing:
 yarn static-server
 ```
 
-Now you can open your browser and navigate to `http://localhost:3000` which URL is just hosting the `/static` folder.
+Now you can open your browser and navigate to `http://localhost:3010` which URL is just hosting the `/static` folder.
 
 ## Deployment
 All your website and assets are placed under `/static` folder. Please deploy this folder to your hosting provider (root directory of the domain only!).

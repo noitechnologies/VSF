@@ -193,14 +193,14 @@ info fsevents@1.2.4: The platform "linux" is incompatible with this module.
 7. In order to verify, run `docker ps`, there should be another container added to the list.
 ```bash
 CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                                            NAMES
-88d758bc24d0        vuestorefront_app         "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        0.0.0.0:3000->3000/tcp                           vuestorefront_app_1
+88d758bc24d0        vuestorefront_app         "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        0.0.0.0:3010->3010/tcp                           vuestorefront_app_1
 de560221fdaf        vuestorefrontapi_kibana   "/bin/bash /usr/loca…"   8 hours ago         Up 23 minutes       0.0.0.0:5601->5601/tcp                           vuestorefrontapi_kibana_1
 5576cd9963a1        vuestorefrontapi_app      "docker-entrypoint.s…"   8 hours ago         Up 23 minutes       0.0.0.0:8090->8090/tcp                           vuestorefrontapi_app_1
 88f5db9486da        vuestorefrontapi_es1      "/bin/bash bin/es-do…"   8 hours ago         Up 24 minutes       0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp   elasticsearch
 d46c1e0a22af        redis:4-alpine            "docker-entrypoint.s…"   8 hours ago         Up 24 minutes       0.0.0.0:6379->6379/tcp                           vuestorefrontapi_redis_1
 
 ```
-8. Open your browser and visit [http://localhost:3000/](http://localhost:3000/) 
+8. Open your browser and visit [http://localhost:3010/](http://localhost:3010/) 
 
 After compiling, *Voila!*
 
@@ -341,7 +341,7 @@ services:
     tmpfs:
       - /var/www/dist
     ports:
-      - '3000:3000'
+      - '3010:3010'
 ```
 This looks like by and large the same with *Vue Storefront API* with a few changes. 
 
@@ -798,7 +798,7 @@ At [`vue-storefront/config/default.json`](https://github.com/DivanteLtd/vue-stor
 ```json
 "server": {
   "host": "localhost",
-  "port": 3000,
+  "port": 3010,
   "protocol": "http",
   "api": "api",
   "devServiceWorker": false,
@@ -1448,7 +1448,7 @@ You can follow it further at [Install using installer](#_2-using-installer)
 │ You've just successfully installed vue-storefront. │
 │ All required servers are running in background     │
 │                                                    │
-│ Storefront: http://localhost:3000                  │
+│ Storefront: http://localhost:3010                  │
 │ Backend: https://demo.vuestorefront.io             │
 │                                                    │
 │ Logs: /home/dex/code/cli/vue-storefront/var/log/   │

@@ -630,7 +630,7 @@ class Manager extends Abstract {
         'You\'ve just successfully installed vue-storefront.',
         'All required servers are running in background',
         '',
-        'Storefront: http://localhost:3000',
+        'Storefront: http://localhost:3010',
         'Backend: ' + (Abstract.wasLocalBackendInstalled ? 'http://localhost:8090' : STOREFRONT_REMOTE_BACKEND_URL),
         '',
         Abstract.logsWereCreated ? `Logs: ${LOG_DIR}/` : 'You don\'t have log files created.',

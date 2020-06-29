@@ -2,7 +2,7 @@
 
 If you’d like to start developing sites using Vue Storefront, you should start with the [Installation guide](linux-mac.md). For development purposes, you'll likely use the `yarn install` sequence, which will set up Vue Storefront locally using the automated installer and prepared Docker images for having Elasticsearch and Redis support.
 
-Development mode means you're using a node.js-based server as HTTP service and running the app on the `3000` TCP port. As it's great for local testing, it's not recommended to use the installer and direct-user access to node.js in production configurations.
+Development mode means you're using a node.js-based server as HTTP service and running the app on the `3010` TCP port. As it's great for local testing, it's not recommended to use the installer and direct-user access to node.js in production configurations.
 
 ## Production setup: Bare VPS
 
@@ -11,7 +11,7 @@ To run Vue Storefront in production mode without Docker/Kubernetes, you'll need 
 Assumptions for the rest of this tutorial:
 
 - You have root access to a Debian Linux machine.
-- We'll be using the default local ports `3000` for [`vue-storefront`](https://github.com/DivanteLtd/vue-storefront) and `8090` for [`vue-storefront-api`](https://github.com/DivanteLtd/vue-storefront-api); the ports **should not be exposed**, as they will be hidden behind **NGINX proxy**.
+- We'll be using the default local ports `3010` for [`vue-storefront`](https://github.com/DivanteLtd/vue-storefront) and `8090` for [`vue-storefront-api`](https://github.com/DivanteLtd/vue-storefront-api); the ports **should not be exposed**, as they will be hidden behind **NGINX proxy**.
 - We're using **prod.vuestorefront.io** as a domain name. Please replace it with your host URL address.
 - We assume that you have an SSL certificate for **prod.vuestorefront.io** (or your domain, of course). SSL encryption is required for PWA and Service Workers.
 
@@ -185,7 +185,7 @@ Vue Storefront SSR responses contain the full markup and JSON objects included f
 
 ```
 location / {
-  proxy_pass http://localhost:3000/;
+  proxy_pass http://localhost:3010/;
 }
 ```
 
@@ -193,7 +193,7 @@ We're using [`proxy_pass`](http://nginx.org/en/docs/http/ngx_http_proxy_module.h
 
 ```
 location /assets/ {
-  proxy_pass http://localhost:3000/assets/;
+  proxy_pass http://localhost:3010/assets/;
 }
 ```
 It just works the same way with sub directories too. 
@@ -227,18 +227,18 @@ ProxyPassReverse /api http://localhost:8090/api/
 ProxyPass /img/ http://localhost:8090/img/
 ProxyPassReverse /img http://localhost:8090/img/
 
-ProxyPass /assets/ http://localhost:3000/assets/
-ProxyPassReverse /assets http://localhost:3000/assets/
+ProxyPass /assets/ http://localhost:3010/assets/
+ProxyPassReverse /assets http://localhost:3010/assets/
 
-ProxyPass / http://localhost:3000/
-ProxyPassReverse / http://localhost:3000/
+ProxyPass / http://localhost:3010/
+ProxyPassReverse / http://localhost:3010/
 ```
 
 You also need to enable [mod_proxy](https://httpd.apache.org/docs/current/mod/mod_proxy.html) for this.
 
 ### Vue Storefront and Vue Storefront API
 
-After you have the NGINX set up, you should get a `502 error` when accessing the https://prod.vuestorefront.io. This is totally fine! We just missed the most important step, which is running backend services that will power up our installation. Now NGINX is trying to connect to `localhost:3000` for `vue-storefront` and `localhost:8090` for `vue-storefront-api` without any success.
+After you have the NGINX set up, you should get a `502 error` when accessing the https://prod.vuestorefront.io. This is totally fine! We just missed the most important step, which is running backend services that will power up our installation. Now NGINX is trying to connect to `localhost:3010` for `vue-storefront` and `localhost:8090` for `vue-storefront-api` without any success.
 
 We created a Linux user called `vuestorefront` and go to `/home/www/vuestorefront` which is our home directory.
 
