@@ -641,7 +641,7 @@
   },
   "images": {
     "useExactUrlsNoProxy": false,
-    "baseUrl": "http://localhost:8080/images/vsf/",
+    "baseUrl": "https://demo.vuestorefront.io/img/",
     "useSpecificImagePaths": false,
     "paths": {
       "product": "/catalog/product"
