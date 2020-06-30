@@ -730,7 +730,7 @@ Please replace the url if you use different one for the Magento 2 instance.
 
  8. Let's confirm the result and wrap this up! 
 ```bash
-curl localhost:8090/api/catalog/vue_storefront_catalog/offline_stores/_search
+curl localhost:8080/api/catalog/vue_storefront_catalog/offline_stores/_search
 ```
 
 The response should be something as follows unless there is something wrong : 

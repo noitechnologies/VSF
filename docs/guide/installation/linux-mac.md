@@ -51,7 +51,7 @@ If you answer `No` on the previous question, please be sure the Docker is runnin
 ? Would you like to use https://demo.vuestorefront.io as the backend? No
 ? Please provide Git path (if it's not globally installed) git
 ? Please provide path for installing backend locally ../vue-storefront-api
-? Choose path for images endpoint http://localhost:8090/img/
+? Choose path for images endpoint http://localhost:8080/img/
 ```
 
 As for images endpoint: you can choose between `https://demo.vuestorefront.io/img/` again or host your images on localhost.
@@ -66,7 +66,7 @@ After you answered all the questions, the installation process will start (it mi
 │ All required servers are running in background                 │
 │                                                                │
 │ Storefront: http://localhost:3010                              │
-│ Backend: http://localhost:8090                                 │
+│ Backend: http://localhost:8080                                 │
 │                                                                │
 │ Logs: /Users/natalia/Desktop/work/test/vue-storefront/var/log/ │
 │                                                                │
@@ -163,7 +163,7 @@ After all these steps you should be able to use the API application!
 You can check if everything works just fine by executing the following command:
 
 ```bash
-curl -i http://localhost:8090/api/catalog/vue_storefront_catalog/product/_search?q=bag&size=50&from=0
+curl -i http://localhost:8080/api/catalog/vue_storefront_catalog/product/_search?q=bag&size=50&from=0
 ```
 
 Now, it's the time to install the frontend itself.

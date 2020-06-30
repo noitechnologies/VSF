@@ -412,11 +412,11 @@ class Storefront extends Abstract {
 
         let backendPath
         let graphQlHost
-        let graphQlPort = 8090
+        let graphQlPort = 8080
 
         if (Abstract.wasLocalBackendInstalled) {
           graphQlHost = 'localhost'
-          backendPath = 'http://localhost:8090'
+          backendPath = 'http://localhost:8080'
         } else {
           backendPath = STOREFRONT_REMOTE_BACKEND_URL
           graphQlHost = backendPath.replace('https://', '').replace('http://', '')
@@ -631,7 +631,7 @@ class Manager extends Abstract {
         'All required servers are running in background',
         '',
         'Storefront: http://localhost:3010',
-        'Backend: ' + (Abstract.wasLocalBackendInstalled ? 'http://localhost:8090' : STOREFRONT_REMOTE_BACKEND_URL),
+        'Backend: ' + (Abstract.wasLocalBackendInstalled ? 'http://localhost:8080' : STOREFRONT_REMOTE_BACKEND_URL),
         '',
         Abstract.logsWereCreated ? `Logs: ${LOG_DIR}/` : 'You don\'t have log files created.',
         '',
@@ -699,7 +699,7 @@ let questions = [
     message: 'Choose path for images endpoint',
     choices: [
       `${STOREFRONT_REMOTE_BACKEND_URL}/img/`,
-      'http://localhost:8090/img/',
+      'http://localhost:8080/img/',
       'Custom url'
     ],
     when: function (answers) {

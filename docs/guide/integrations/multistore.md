@@ -70,7 +70,7 @@ After this sequence of command, you may add the available ES index to your `vue-
 {
     "server": {
       "host": "localhost",
-      "port": 8090
+      "port": 8080
     },
 	"esHost": "localhost:9200",
 	"esIndexes": [
@@ -96,7 +96,7 @@ The last thing is to change the `vue-storefront/config/local.json` to configure 
         "name": "German Store",
         "url": "/de",
         "elasticsearch": {
-          "host": "localhost:8090/api/catalog",
+          "host": "localhost:8080/api/catalog",
           "index": "vue_storefront_catalog_de"
         },
         "tax": {
@@ -121,7 +121,7 @@ The last thing is to change the `vue-storefront/config/local.json` to configure 
         "name": "Italian Store",
         "url": "/it",
         "elasticsearch": {
-          "host": "localhost:8090/api/catalog",
+          "host": "localhost:8080/api/catalog",
           "index": "vue_storefront_catalog_it"
         },
         "tax": {

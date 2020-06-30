@@ -80,7 +80,7 @@ This is the Redis configuration for the output cache. See additional information
 ```json
 "graphql":{
   "host": "localhost",
-  "port": 8090
+  "port": 8080
 },
 ```
 
@@ -91,7 +91,7 @@ This is an optional GraphQL endpoint. We're now supporting graphQL for the [cata
 ```json
 "elasticsearch": {
   "httpAuth": "",
-  "host": "localhost:8090/api/catalog",
+  "host": "localhost:8080/api/catalog",
   "index": "vue_storefront_catalog",
   "min_score": 0.02,
   "csrTimeout": 5000,
@@ -102,12 +102,12 @@ This is an optional GraphQL endpoint. We're now supporting graphQL for the [cata
 
 Vue Storefront uses the Elasticsearch Query Language to query for data. However, here you're putting the Vue Storefront API `/api/catalog`  endpoint, which is a kind of Elasticsearch Proxy (dealing with the taxes, security etc.).
 
-If your `vue-storefront-api` instance is running on the `localhost`, port `8090` then the correct elasticsearch endpoint is as presented here.
+If your `vue-storefront-api` instance is running on the `localhost`, port `8080` then the correct elasticsearch endpoint is as presented here.
 
 Starting from Vue Storefront v1.6, user may set `config.elasticsearch.queryMethod` either *POST* (default) or *GET*. When *GET* is set, the Elasticsearch Query object is passed to vue-storefront-api as a request parameter named *request*. By doing so, Service Worker will now be able to cache the results from Elasticsearch. Service Workers cannot cache any POST requests currently.
 
 :::tip Notice
-Service Worker is not caching the /api requests on development envs. (localhost) as the vue-storefront-api by default runs on a different port (8090).
+Service Worker is not caching the /api requests on development envs. (localhost) as the vue-storefront-api by default runs on a different port (8080).
 
 :::
 
@@ -209,7 +209,7 @@ This attribute is not inherited through the "extend" mechanism.
 
 ```json
     "elasticsearch": {
-      "host": "localhost:8090/api/catalog",
+      "host": "localhost:8080/api/catalog",
       "index": "vue_storefront_catalog_de"
     },
 ```
@@ -387,17 +387,17 @@ If this option is set to `true`, Vue Storefront will add price item with a disco
 If this option is set to `items`, Vue Storefront will calculate the cart count based on items instead of item quantities.
 
 ```json
-  "create_endpoint": "http://localhost:8090/api/cart/create?token={{token}}",
-  "updateitem_endpoint": "http://localhost:8090/api/cart/update?token={{token}}&cartId={{cartId}}",
-  "deleteitem_endpoint": "http://localhost:8090/api/cart/delete?token={{token}}&cartId={{cartId}}",
-  "pull_endpoint": "http://localhost:8090/api/cart/pull?token={{token}}&cartId={{cartId}}",
-  "totals_endpoint": "http://localhost:8090/api/cart/totals?token={{token}}&cartId={{cartId}}",
-  "paymentmethods_endpoint": "http://localhost:8090/api/cart/payment-methods?token={{token}}&cartId={{cartId}}",
-  "shippingmethods_endpoint": "http://localhost:8090/api/cart/shipping-methods?token={{token}}&cartId={{cartId}}",
-  "shippinginfo_endpoint": "http://localhost:8090/api/cart/shipping-information?token={{token}}&cartId={{cartId}}",
-  "collecttotals_endpoint": "http://localhost:8090/api/cart/collect-totals?token={{token}}&cartId={{cartId}}",
-  "deletecoupon_endpoint": "http://localhost:8090/api/cart/delete-coupon?token={{token}}&cartId={{cartId}}",
-  "applycoupon_endpoint": "http://localhost:8090/api/cart/apply-coupon?token={{token}}&cartId={{cartId}}&coupon={{coupon}}"
+  "create_endpoint": "http://localhost:8080/api/cart/create?token={{token}}",
+  "updateitem_endpoint": "http://localhost:8080/api/cart/update?token={{token}}&cartId={{cartId}}",
+  "deleteitem_endpoint": "http://localhost:8080/api/cart/delete?token={{token}}&cartId={{cartId}}",
+  "pull_endpoint": "http://localhost:8080/api/cart/pull?token={{token}}&cartId={{cartId}}",
+  "totals_endpoint": "http://localhost:8080/api/cart/totals?token={{token}}&cartId={{cartId}}",
+  "paymentmethods_endpoint": "http://localhost:8080/api/cart/payment-methods?token={{token}}&cartId={{cartId}}",
+  "shippingmethods_endpoint": "http://localhost:8080/api/cart/shipping-methods?token={{token}}&cartId={{cartId}}",
+  "shippinginfo_endpoint": "http://localhost:8080/api/cart/shipping-information?token={{token}}&cartId={{cartId}}",
+  "collecttotals_endpoint": "http://localhost:8080/api/cart/collect-totals?token={{token}}&cartId={{cartId}}",
+  "deletecoupon_endpoint": "http://localhost:8080/api/cart/delete-coupon?token={{token}}&cartId={{cartId}}",
+  "applycoupon_endpoint": "http://localhost:8080/api/cart/apply-coupon?token={{token}}&cartId={{cartId}}&coupon={{coupon}}"
 ```
 
 These endpoints should point to the `vue-storefront-api` instance and typically, you're changing just the domain-name/base-url without touching the specific endpoint URLs, as it's related to the `vue-storefront-api` specifics.
@@ -469,7 +469,7 @@ This is related to `alwaysSyncPlatformPricesOver`. When true, Vue Storefront wil
 
 
 ```json
-  "endpoint": "http://localhost:8090/api/product",
+  "endpoint": "http://localhost:8080/api/product",
 ```
 
 This is the `vue-storefront-api` endpoint for rendering product lists.
@@ -528,7 +528,7 @@ The dimensions of the images in the gallery.
 
 ```json
 "orders": {
-  "endpoint": "http://localhost:8090/api/order",
+  "endpoint": "http://localhost:8080/api/order",
 ```
 
 This property sets the URL of the order endpoint. Orders will be placed to this specific URL as soon as the internet connection is available.
@@ -587,14 +587,14 @@ We're using [localForage](https://github.com/localForage/localForage) library to
 ```json
 "users": {
   "autoRefreshTokens": true,
-  "endpoint": "http://localhost:8090/api/user",
-  "history_endpoint": "http://localhost:8090/api/user/order-history?token={{token}}",
-  "resetPassword_endpoint": "http://localhost:8090/api/user/reset-password",
-  "changePassword_endpoint": "http://localhost:8090/api/user/change-password?token={{token}}",
-  "login_endpoint": "http://localhost:8090/api/user/login",
-  "create_endpoint": "http://localhost:8090/api/user/create",
-  "me_endpoint": "http://localhost:8090/api/user/me?token={{token}}",
-  "refresh_endpoint": "http://localhost:8090/api/user/refresh"
+  "endpoint": "http://localhost:8080/api/user",
+  "history_endpoint": "http://localhost:8080/api/user/order-history?token={{token}}",
+  "resetPassword_endpoint": "http://localhost:8080/api/user/reset-password",
+  "changePassword_endpoint": "http://localhost:8080/api/user/change-password?token={{token}}",
+  "login_endpoint": "http://localhost:8080/api/user/login",
+  "create_endpoint": "http://localhost:8080/api/user/create",
+  "me_endpoint": "http://localhost:8080/api/user/me?token={{token}}",
+  "refresh_endpoint": "http://localhost:8080/api/user/refresh"
 },
 ```
 
@@ -608,7 +608,7 @@ When the `autoRefreshTokens` property is set to `true` (default) Vue Storefront 
 "stock": {
   "synchronize": true,
   "allowOutOfStockInCart": true,
-  "endpoint": "http://localhost:8090/api/stock"
+  "endpoint": "http://localhost:8080/api/stock"
 },
 ```
 
@@ -716,7 +716,7 @@ Internationalization settings are used by the translation engine (`defautlLocale
 
 ```json
 "mailchimp": {
-  "endpoint": "http://localhost:8090/api/ext/mailchimp-subscribe/subscribe"
+  "endpoint": "http://localhost:8080/api/ext/mailchimp-subscribe/subscribe"
 },
 ```
 
@@ -756,7 +756,7 @@ You can put your Hotjar Site ID in here as to be used by the hotjar extension.
 
 ```json
 "cms": {
-  "endpoint": "http://localhost:8090/api/ext/cms-data/cms{{type}}/{{cmsId}}"
+  "endpoint": "http://localhost:8080/api/ext/cms-data/cms{{type}}/{{cmsId}}"
 }
 ```
 

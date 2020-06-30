@@ -52,14 +52,14 @@ server {
 	}
 
     location /api/ {
-		proxy_pass http://localhost:8090/api/;
+		proxy_pass http://localhost:8080/api/;
 	}
 
     location /graphql {
-		proxy_pass http://localhost:8090/graphql;
+		proxy_pass http://localhost:8080/graphql;
 	}
   
     location /img/ {
-		proxy_pass http://localhost:8090/img/;
+		proxy_pass http://localhost:8080/img/;
 	}
 }

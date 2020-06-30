@@ -49,7 +49,7 @@ class Manager extends installer.Manager {
         'All required servers are running in the background',
         '',
         'Storefront: http://localhost:3010',
-        'Backend: ' + (Manager.isBackendInstalledLocally() ? 'http://localhost:8090' : installer.STOREFRONT_REMOTE_BACKEND_URL),
+        'Backend: ' + (Manager.isBackendInstalledLocally() ? 'http://localhost:8080' : installer.STOREFRONT_REMOTE_BACKEND_URL),
         '',
         'Good Luck!'
       ], true)
