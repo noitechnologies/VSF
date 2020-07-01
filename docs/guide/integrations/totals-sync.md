@@ -32,7 +32,7 @@ By default, the cart and totals sync is disabled. To make it work, you just need
 ```json
 "magento2": {
 		"url": "http://magento2.demo-1.xyz.com",
-		"imgUrl": "http://localhost:8080/media/catalog/product",
+		"imgUrl": "http://localhost:8090/media/catalog/product",
 		"magentoUserName": "",
 		"magentoUserPassword": "",
 		"httpUserName": "",
@@ -55,15 +55,15 @@ Please check the [`conf/default.json`](https://github.com/DivanteLtd/vue-storefr
    "cart": {
       "synchronize": false,
       "synchronize_totals": false,
-      "create_endpoint": "http://localhost:8080/api/cart/create?token={{token}}",
-      "updateitem_endpoint": "http://localhost:8080/api/cart/update?token={{token}}&cartId={{cartId}}",
-      "deleteitem_endpoint": "http://localhost:8080/api/cart/delete?token={{token}}&cartId={{cartId}}",
-      "pull_endpoint": "http://localhost:8080/api/cart/pull?token={{token}}&cartId={{cartId}}",
-      "totals_endpoint": "http://localhost:8080/api/cart/totals?token={{token}}&cartId={{cartId}}",
-      "paymentmethods_endpoint": "http://localhost:8080/api/cart/payment-methods?token={{token}}&cartId={{cartId}}",
-      "shippingmethods_endpoint": "http://localhost:8080/api/cart/shipping-methods?token={{token}}&cartId={{cartId}}",
-      "shippinginfo_endpoint": "http://localhost:8080/api/cart/shipping-information?token={{token}}&cartId={{cartId}}",
-      "collecttotals_endpoint": "http://localhost:8080/api/cart/collect-totals?token={{token}}&cartId={{cartId}}"
+      "create_endpoint": "http://localhost:8090/api/cart/create?token={{token}}",
+      "updateitem_endpoint": "http://localhost:8090/api/cart/update?token={{token}}&cartId={{cartId}}",
+      "deleteitem_endpoint": "http://localhost:8090/api/cart/delete?token={{token}}&cartId={{cartId}}",
+      "pull_endpoint": "http://localhost:8090/api/cart/pull?token={{token}}&cartId={{cartId}}",
+      "totals_endpoint": "http://localhost:8090/api/cart/totals?token={{token}}&cartId={{cartId}}",
+      "paymentmethods_endpoint": "http://localhost:8090/api/cart/payment-methods?token={{token}}&cartId={{cartId}}",
+      "shippingmethods_endpoint": "http://localhost:8090/api/cart/shipping-methods?token={{token}}&cartId={{cartId}}",
+      "shippinginfo_endpoint": "http://localhost:8090/api/cart/shipping-information?token={{token}}&cartId={{cartId}}",
+      "collecttotals_endpoint": "http://localhost:8090/api/cart/collect-totals?token={{token}}&cartId={{cartId}}"
     },
 ```
 

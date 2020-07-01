@@ -29,7 +29,7 @@
     ],
     "invalidateCacheKey": "aeSu7aip",
     "invalidateCacheForwarding": false,
-    "invalidateCacheForwardUrl": "http://localhost:8080/invalidate?key=aeSu7aip&tag=",
+    "invalidateCacheForwardUrl": "http://localhost:8090/invalidate?key=aeSu7aip&tag=",
     "dynamicConfigReload": true,
     "dynamicConfigContinueOnError": false,
     "dynamicConfigExclude": [
@@ -88,10 +88,10 @@
   },
   "graphql": {
     "host": "localhost",
-    "port": 8080
+    "port": 8090
   },
   "api": {
-    "url": "http://localhost:8080"
+    "url": "http://localhost:8090"
   },
   "elasticsearch": {
     "httpAuth": "",

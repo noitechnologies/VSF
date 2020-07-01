@@ -43,7 +43,7 @@ The `url` can contain two dynamic variable placeholders that will be expanded to
 - `{{token}}` - current user token
 - `{{cartId}}` - current cart id
 
-An example URL with variables: `http://localhost:8080/api/cart/totals?token={{token}}&cartId={{cartId}}`
+An example URL with variables: `http://localhost:8090/api/cart/totals?token={{token}}&cartId={{cartId}}`
 
 :::tip Note
 The task object and then the results are stored within the `syncTasks` indexedDb/Local storage data table under the key of `task.task_id`

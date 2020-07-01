@@ -237,6 +237,6 @@ module.exports = ({ config, db }) => {
 ```
 
 4. Restart the `vue-storefront-api`
-5. Your new API method is available on `localhost:8080/api/ext/<extension_name>/<extension_method>` for example: `localhost:8080/api/ext/custom-payment-method/status`
+5. Your new API method is available on `localhost:8090/api/ext/<extension_name>/<extension_method>` for example: `localhost:8090/api/ext/custom-payment-method/status`
 
 In this extension above, you may want to get the order data by the client-side order ID (passed to the payment service and probably returned with the notification). Then **you may use the Magento 2 API to update the payment status**, likely by executing the  `invoice` method.

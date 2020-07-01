@@ -114,7 +114,7 @@ Then,
 ```bash
 CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                                            NAMES
 53a47d5a6440        vuestorefrontapi_kibana   "/bin/bash /usr/loca…"   31 seconds ago      Up 29 seconds       0.0.0.0:5601->5601/tcp                           vuestorefrontapi_kibana_1
-7d8f6328601b        vuestorefrontapi_app      "docker-entrypoint.s…"   31 seconds ago      Up 27 seconds       0.0.0.0:8080->8080/tcp                           vuestorefrontapi_app_1
+7d8f6328601b        vuestorefrontapi_app      "docker-entrypoint.s…"   31 seconds ago      Up 27 seconds       0.0.0.0:8090->8090/tcp                           vuestorefrontapi_app_1
 165ae945dbe5        vuestorefrontapi_es1      "/bin/bash bin/es-do…"   8 days ago          Up 30 seconds       0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp   elasticsearch
 8dd144746cef        redis:4-alpine            "docker-entrypoint.s…"   11 days ago         Up 31 seconds       0.0.0.0:6379->6379/tcp                           vuestorefrontapi_redis_1
 ```
@@ -123,7 +123,7 @@ The ports number will be used later in the frontend configuration. In fact, they
 You will see 4 containers are running, which is :
 | Container              |          Port       |
 |------------------------|---------------------|
-| Vue Storefront API app | :8080               |
+| Vue Storefront API app | :8090               |
 | Elasticsearch          | :9200               |
 | Kibana                 | :5601               |
 | Redis                  | :6379               |
@@ -195,7 +195,7 @@ info fsevents@1.2.4: The platform "linux" is incompatible with this module.
 CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                                            NAMES
 88d758bc24d0        vuestorefront_app         "docker-entrypoint.s…"   2 minutes ago       Up 2 minutes        0.0.0.0:3010->3010/tcp                           vuestorefront_app_1
 de560221fdaf        vuestorefrontapi_kibana   "/bin/bash /usr/loca…"   8 hours ago         Up 23 minutes       0.0.0.0:5601->5601/tcp                           vuestorefrontapi_kibana_1
-5576cd9963a1        vuestorefrontapi_app      "docker-entrypoint.s…"   8 hours ago         Up 23 minutes       0.0.0.0:8080->8080/tcp                           vuestorefrontapi_app_1
+5576cd9963a1        vuestorefrontapi_app      "docker-entrypoint.s…"   8 hours ago         Up 23 minutes       0.0.0.0:8090->8090/tcp                           vuestorefrontapi_app_1
 88f5db9486da        vuestorefrontapi_es1      "/bin/bash bin/es-do…"   8 hours ago         Up 24 minutes       0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp   elasticsearch
 d46c1e0a22af        redis:4-alpine            "docker-entrypoint.s…"   8 hours ago         Up 24 minutes       0.0.0.0:6379->6379/tcp                           vuestorefrontapi_redis_1
 
@@ -299,7 +299,7 @@ services:
     tmpfs:
       - /var/www/dist
     ports:
-      - '8080:8080'
+      - '8090:8090'
 ```
 `app` contains information of *Vue Storefront API* application. 
 - `build` is path for build information. If the value is string, it's a plain path. When it's object, you may have a few options to add. `context` is relative path or git repo url where `Dockerfile` is located. `dockerfile` node may change the path/name of `Dockerfile`. [more info](https://docs.docker.com/compose/compose-file/#build)
@@ -364,7 +364,7 @@ At [`vue-storefront-api/config/default.json`](https://github.com/DivanteLtd/vue-
 ```json
   "server": {
     "host": "localhost",
-    "port": 8080,
+    "port": 8090,
     "searchEngine": "elasticsearch"
   },  
 ```
@@ -456,7 +456,7 @@ At [`vue-storefront-api/config/default.json`](https://github.com/DivanteLtd/vue-
       "name": "German Store",
       "url": "/de",
       "elasticsearch": {
-        "host": "localhost:8080/api/catalog",
+        "host": "localhost:8090/api/catalog",
         "index": "vue_storefront_catalog_de"
       },
       "tax": {
@@ -482,7 +482,7 @@ At [`vue-storefront-api/config/default.json`](https://github.com/DivanteLtd/vue-
       "name": "Italian Store",
       "url": "/it",
       "elasticsearch": {
-        "host": "localhost:8080/api/catalog",
+        "host": "localhost:8090/api/catalog",
         "index": "vue_storefront_catalog_it"
       },
       "tax": {
@@ -872,10 +872,10 @@ At [`vue-storefront/config/default.json`](https://github.com/DivanteLtd/vue-stor
 },
 "graphql":{
   "host": "localhost",
-  "port": 8080
+  "port": 8090
 },
 "api": {
-  "url": "http://localhost:8080"
+  "url": "http://localhost:8090"
 },
 ```
 
@@ -1102,17 +1102,17 @@ At [`vue-storefront/config/default.json`](https://github.com/DivanteLtd/vue-stor
   "askBeforeRemoveProduct": true,
   "displayItemDiscounts": true,
   "minicartCountType": "quantities",
-  "create_endpoint": "http://localhost:8080/api/cart/create?token={{token}}",
-  "updateitem_endpoint": "http://localhost:8080/api/cart/update?token={{token}}&cartId={{cartId}}",
-  "deleteitem_endpoint": "http://localhost:8080/api/cart/delete?token={{token}}&cartId={{cartId}}",
-  "pull_endpoint": "http://localhost:8080/api/cart/pull?token={{token}}&cartId={{cartId}}",
-  "totals_endpoint": "http://localhost:8080/api/cart/totals?token={{token}}&cartId={{cartId}}",
-  "paymentmethods_endpoint": "http://localhost:8080/api/cart/payment-methods?token={{token}}&cartId={{cartId}}",
-  "shippingmethods_endpoint": "http://localhost:8080/api/cart/shipping-methods?token={{token}}&cartId={{cartId}}",
-  "shippinginfo_endpoint": "http://localhost:8080/api/cart/shipping-information?token={{token}}&cartId={{cartId}}",
-  "collecttotals_endpoint": "http://localhost:8080/api/cart/collect-totals?token={{token}}&cartId={{cartId}}",
-  "deletecoupon_endpoint": "http://localhost:8080/api/cart/delete-coupon?token={{token}}&cartId={{cartId}}",
-  "applycoupon_endpoint": "http://localhost:8080/api/cart/apply-coupon?token={{token}}&cartId={{cartId}}&coupon={{coupon}}"
+  "create_endpoint": "http://localhost:8090/api/cart/create?token={{token}}",
+  "updateitem_endpoint": "http://localhost:8090/api/cart/update?token={{token}}&cartId={{cartId}}",
+  "deleteitem_endpoint": "http://localhost:8090/api/cart/delete?token={{token}}&cartId={{cartId}}",
+  "pull_endpoint": "http://localhost:8090/api/cart/pull?token={{token}}&cartId={{cartId}}",
+  "totals_endpoint": "http://localhost:8090/api/cart/totals?token={{token}}&cartId={{cartId}}",
+  "paymentmethods_endpoint": "http://localhost:8090/api/cart/payment-methods?token={{token}}&cartId={{cartId}}",
+  "shippingmethods_endpoint": "http://localhost:8090/api/cart/shipping-methods?token={{token}}&cartId={{cartId}}",
+  "shippinginfo_endpoint": "http://localhost:8090/api/cart/shipping-information?token={{token}}&cartId={{cartId}}",
+  "collecttotals_endpoint": "http://localhost:8090/api/cart/collect-totals?token={{token}}&cartId={{cartId}}",
+  "deletecoupon_endpoint": "http://localhost:8090/api/cart/delete-coupon?token={{token}}&cartId={{cartId}}",
+  "applycoupon_endpoint": "http://localhost:8090/api/cart/apply-coupon?token={{token}}&cartId={{cartId}}&coupon={{coupon}}"
 },
 "products": {
   "useShortCatalogUrls": false,
@@ -1128,7 +1128,7 @@ At [`vue-storefront/config/default.json`](https://github.com/DivanteLtd/vue-stor
   "clearPricesBeforePlatformSync": false,
   "waitForPlatformSync": false,
   "setupVariantByAttributeCode": true,
-  "endpoint": "http://localhost:8080/api/product",
+  "endpoint": "http://localhost:8090/api/product",
   "defaultFilters": ["color", "size", "price", "erin_recommends"],
   "systemFilterNames": ["sort"],
   "filterFieldMapping": {
@@ -1157,7 +1157,7 @@ At [`vue-storefront/config/default.json`](https://github.com/DivanteLtd/vue-stor
 },
 "orders": {
   "directBackendSync": true,
-  "endpoint": "http://localhost:8080/api/order",
+  "endpoint": "http://localhost:8090/api/order",
   "payment_methods_mapping": {
   },
   "offline_orders": {
@@ -1189,23 +1189,23 @@ At [`vue-storefront/config/default.json`](https://github.com/DivanteLtd/vue-stor
   }
 },
 "reviews": {
-  "create_endpoint": "http://localhost:8080/api/review/create"
+  "create_endpoint": "http://localhost:8090/api/review/create"
 },
 "users": {
   "autoRefreshTokens": true,
-  "endpoint": "http://localhost:8080/api/user",
-  "history_endpoint": "http://localhost:8080/api/user/order-history?token={{token}}",
-  "resetPassword_endpoint": "http://localhost:8080/api/user/reset-password",
-  "changePassword_endpoint": "http://localhost:8080/api/user/change-password?token={{token}}",
-  "login_endpoint": "http://localhost:8080/api/user/login",
-  "create_endpoint": "http://localhost:8080/api/user/create",
-  "me_endpoint": "http://localhost:8080/api/user/me?token={{token}}",
-  "refresh_endpoint": "http://localhost:8080/api/user/refresh"
+  "endpoint": "http://localhost:8090/api/user",
+  "history_endpoint": "http://localhost:8090/api/user/order-history?token={{token}}",
+  "resetPassword_endpoint": "http://localhost:8090/api/user/reset-password",
+  "changePassword_endpoint": "http://localhost:8090/api/user/change-password?token={{token}}",
+  "login_endpoint": "http://localhost:8090/api/user/login",
+  "create_endpoint": "http://localhost:8090/api/user/create",
+  "me_endpoint": "http://localhost:8090/api/user/me?token={{token}}",
+  "refresh_endpoint": "http://localhost:8090/api/user/refresh"
 },
 "stock": {
   "synchronize": true,
   "allowOutOfStockInCart": true,
-  "endpoint": "http://localhost:8080/api/stock"
+  "endpoint": "http://localhost:8090/api/stock"
 },
 "images": {
   "useExactUrlsNoProxy": false,
@@ -1265,12 +1265,12 @@ At [`vue-storefront/config/default.json`](https://github.com/DivanteLtd/vue-stor
   "bundleAllStoreviewLanguages": true
 },
 "mailchimp": {
-  "endpoint": "http://localhost:8080/api/ext/mailchimp-subscribe/subscribe"
+  "endpoint": "http://localhost:8090/api/ext/mailchimp-subscribe/subscribe"
 },
 "mailer": {
   "endpoint": {
-    "send": "http://localhost:8080/api/ext/mail-service/send-email",
-    "token": "http://localhost:8080/api/ext/mail-service/get-token"
+    "send": "http://localhost:8090/api/ext/mail-service/send-email",
+    "token": "http://localhost:8090/api/ext/mail-service/get-token"
   },
   "contactAddress": "contributors@vuestorefront.io",
   "sendConfirmation": true
@@ -1283,8 +1283,8 @@ At [`vue-storefront/config/default.json`](https://github.com/DivanteLtd/vue-stor
   "id": false
 },
 "cms": {
-  "endpoint": "http://localhost:8080/api/ext/cms-data/cms{{type}}/{{cmsId}}",
-  "endpointIdentifier": "http://localhost:8080/api/ext/cms-data/cms{{type}}Identifier/{{cmsIdentifier}}/storeId/{{storeId}}"
+  "endpoint": "http://localhost:8090/api/ext/cms-data/cms{{type}}/{{cmsId}}",
+  "endpointIdentifier": "http://localhost:8090/api/ext/cms-data/cms{{type}}Identifier/{{cmsIdentifier}}/storeId/{{storeId}}"
 },
 "cms_block": {
   "max_count": 500
