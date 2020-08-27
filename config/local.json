@@ -75,7 +75,7 @@
   "seo": {
     "useUrlDispatcher": true,
     "disableUrlRoutesPersistentCache": true,
-    "defaultTitle": "Vue Storefront"
+    "defaultTitle": "Vastrami Fashions"
   },
   "console": {
     "showErrorOnProduction": false,
@@ -720,7 +720,7 @@
     "contactAddress": "contributors@vuestorefront.io",
     "sendConfirmation": true
   },
-  "theme": "@vue-storefront/theme-capybara",
+  "theme": "default",
   "analytics": {
     "id": false
   },
