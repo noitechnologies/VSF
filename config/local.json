@@ -720,7 +720,7 @@
     "contactAddress": "contributors@vuestorefront.io",
     "sendConfirmation": true
   },
-  "theme": "default",
+  "theme": "@vue-storefront/theme-default",
   "analytics": {
     "id": false
   },
