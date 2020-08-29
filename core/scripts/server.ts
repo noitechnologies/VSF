@@ -1,7 +1,9 @@
 import { serverHooksExecutors } from '@vue-storefront/core/server/hooks'
+
 let config = require('config')
 const path = require('path')
 const glob = require('glob')
+const fs = require('fs')
 const rootPath = require('app-root-path').path
 const resolve = file => path.resolve(rootPath, file)
 const serverExtensions = glob.sync('src/modules/*/server.{ts,js}')
@@ -18,6 +20,7 @@ serverHooksExecutors.afterProcessStarted(config.server)
 const express = require('express')
 const ms = require('ms')
 const request = require('request');
+const helmet = require('helmet')
 
 const cache = require('./utils/cache-instance')
 const apiStatus = require('./utils/api-status')
@@ -91,13 +94,13 @@ function invalidateCache (req, res) {
         }
       })
 
-      serverHooksExecutors.afterCacheInvalidated()
-
       Promise.all(subPromises).then(r => {
         apiStatus(res, `Tags invalidated successfully [${req.query.tag}]`, 200)
       }).catch(error => {
         apiStatus(res, error, 500)
         console.error(error)
+      }).finally(() => {
+        serverHooksExecutors.afterCacheInvalidated({ tags, req })
       })
 
       if (config.server.invalidateCacheForwarding) { // forward invalidate request to the next server in the chain
@@ -129,11 +132,15 @@ const serve = (path, cache, options?) => express.static(resolve(path), Object.as
     if (config.expireHeaders.hasOwnProperty(mimeType)) {
       maxAge = config.expireHeaders.get(mimeType);
     }
-    res.setHeader('Cache-Control', 'public, max-age=' + ms(maxAge));
+    res.setHeader('Cache-Control', 'public, max-age=' + ms(maxAge) / 1000);
   } : null
 }, options))
 
 const themeRoot = require('../build/theme-path')
+
+if (config.server.helmet && config.server.helmet.enabled && isProd) {
+  app.use(helmet(config.server.helmet.config))
+}
 
 app.use('/dist', serve('dist', true))
 app.use('/assets', serve(themeRoot + '/assets', true))
@@ -145,6 +152,12 @@ app.use('/service-worker.js', serve('dist/service-worker.js', false, {
 
 app.post('/invalidate', invalidateCache)
 app.get('/invalidate', invalidateCache)
+
+function cacheVersion (req, res) {
+  res.send(fs.readFileSync(resolve('core/build/cache-version.json')))
+}
+
+app.get('/cache-version.json', cacheVersion)
 
 app.get('*', (req, res, next) => {
   if (NOT_ALLOWED_SSR_EXTENSIONS_REGEX.test(req.url)) {
@@ -165,9 +178,13 @@ app.get('*', (req, res, next) => {
     } else {
       console.error(`Error during render : ${req.url}`)
       console.error(err)
+      serverHooksExecutors.ssrException({ err, req, isProd })
       return res.redirect('/error')
     }
   }
+
+  const site = req.headers['x-vs-store-code'] || 'main'
+  const cacheKey = `page:${site}:${req.url}`
 
   const dynamicRequestHandler = renderer => {
     if (!renderer) {
@@ -205,7 +222,7 @@ app.get('*', (req, res, next) => {
       output = ssr.applyAdvancedOutputProcessing(context, output, templatesCache, isProd);
       if (config.server.useOutputCache && cache) {
         cache.set(
-          'page:' + req.url,
+          cacheKey,
           { headers: res.getHeaders(), body: output, httpCode: res.statusCode },
           tagsArray
         ).catch(errorHandler)
@@ -238,7 +255,7 @@ app.get('*', (req, res, next) => {
   const dynamicCacheHandler = () => {
     if (config.server.useOutputCache && cache) {
       cache.get(
-        'page:' + req.url
+        cacheKey
       ).then(output => {
         if (output !== null) {
           if (output.headers) {
@@ -309,20 +326,21 @@ app.get('*', (req, res, next) => {
 let port = process.env.PORT || config.server.port
 const host = process.env.HOST || config.server.host
 const start = () => {
-  app.listen(port, host)
-    .on('listening', () => {
-      console.log(`\n\n----------------------------------------------------------`)
-      console.log('|                                                        |')
-      console.log(`| Vue Storefront Server started at http://${host}:${port} |`)
-      console.log('|                                                        |')
-      console.log(`----------------------------------------------------------\n\n`)
-    })
-    .on('error', (e) => {
-      if (e.code === 'EADDRINUSE') {
-        port = parseInt(port) + 1
-        console.log(`The port is already in use, trying ${port}`)
-        start()
-      }
-    })
+  const server = app.listen(port, host)
+  server.on('listening', () => {
+    console.log(`\n\n----------------------------------------------------------`)
+    console.log('|                                                        |')
+    console.log(`| Vue Storefront Server started at http://${host}:${port} |`)
+    console.log('|                                                        |')
+    console.log(`----------------------------------------------------------\n\n`)
+
+    serverHooksExecutors.httpServerIsReady({ server, config: config.server, isProd })
+  }).on('error', (e) => {
+    if (e.code === 'EADDRINUSE') {
+      port = parseInt(port) + 1
+      console.log(`The port is already in use, trying ${port}`)
+      start()
+    }
+  })
 }
 start()

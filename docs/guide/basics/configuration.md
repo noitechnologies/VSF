@@ -6,6 +6,10 @@ The Vue Storefront application uses the [node-config](https://github.com/lorenwe
 
 - `local.json` is the second configuration file which is .gitignore'd from the repository. This is the place where you should store all instance-specific configuration variables.
 
+:::tip NOTE
+Please not that the `config` is bundled into JavaScript files that are returned to the user's browser. Please **NEVER PUT ANY SENSITIVE INFORMATION** into the config file of `vue-storefront`. If your application requires some authorization / tokens /etc - please store them and access via dedicated [`vue-storefront-api`](https://github.com/DivanteLtd/vue-storefront-api) or [`storefront-api`](https://github.com/DivanteLtd/storefront-api) extension that will prevent these sensitive information from being returned to the users.
+:::
+
 The structure of these files is exactly the same! Vue Storefront does kind of  `Object.assign(default, local)` (but with the deep-merge). This means that the `local.json` overrides the `default.json` properties.
 
 :::tip NOTE
@@ -13,7 +17,7 @@ Please take a look at the `node-config` docs as the library is open for some oth
 :::
 
 :::tip NOTE
-Currently, the configuration files are being processed by the webpack during the build process. This means that whenever you apply some configuration changes, you shall rebuild the app, even when using the `yarn dev` mode. This limitation can be solved with the VS 1.4 special config variable. Now the config can be reloaded on the fly with each server request if `config.server.dynamicConfigReload`is set to true. However, in that case, the config is added to `window.**INITIAL_STATE**` with the responses.
+Currently, the configuration files are being processed by the webpack during the build process. This means that whenever you apply some configuration changes, you shall rebuild the app, even when using the `yarn dev` mode. This limitation can be solved with the VS 1.4 special config variable. Now the config can be reloaded on the fly with each server request if `config.server.dynamicConfigReload`is set to true. However, in that case, the config is added to `window.INITIAL_STATE` with the responses.
 
 When you using the `config.server.dynamicConfigReload` plase remember about `config.server.dynamicConfigExclude` and `config.server.dynamicConfigInclude`.
 :::
@@ -25,7 +29,7 @@ Please find the configuration properties reference below.
 ```json
 "server": {
   "host": "localhost",
-  "port": 3010,
+  "port": 3000,
   "useHtmlMinifier": false,
   "htmlMinifierOptions": {
     "minifyJS": true,
@@ -56,8 +60,8 @@ When `config.seo.useUrlDispatcher` set to true the `product.url_path` and `categ
 
 For example, when the `category.url_path` is set to `women/frauen-20` the product will be available under the following URL addresses:
 
-`http://localhost:3010/women/frauen-20`
-`http://localhost:3010/de/women/frauen-20`
+`http://localhost:3000/women/frauen-20`
+`http://localhost:3000/de/women/frauen-20`
 
 For, `config.seo.disableUrlRoutesPersistentCache` - to not store the url mappings; they're stored in in-memory cache anyway so no additional requests will be made to the backend for url mapping; however it might cause some issues with url routing in the offline mode (when the offline mode PWA installed on homescreen got reloaded, the in-memory cache will be cleared so there won't potentially be the url mappings; however the same like with `product/list` the ServiceWorker cache SHOULD populate url mappings anyway)
 
@@ -80,7 +84,7 @@ This is the Redis configuration for the output cache. See additional information
 ```json
 "graphql":{
   "host": "localhost",
-  "port": 8090
+  "port": 8080
 },
 ```
 
@@ -91,7 +95,7 @@ This is an optional GraphQL endpoint. We're now supporting graphQL for the [cata
 ```json
 "elasticsearch": {
   "httpAuth": "",
-  "host": "localhost:8090/api/catalog",
+  "host": "localhost:8080/api/catalog",
   "index": "vue_storefront_catalog",
   "min_score": 0.02,
   "csrTimeout": 5000,
@@ -102,12 +106,12 @@ This is an optional GraphQL endpoint. We're now supporting graphQL for the [cata
 
 Vue Storefront uses the Elasticsearch Query Language to query for data. However, here you're putting the Vue Storefront API `/api/catalog`  endpoint, which is a kind of Elasticsearch Proxy (dealing with the taxes, security etc.).
 
-If your `vue-storefront-api` instance is running on the `localhost`, port `8090` then the correct elasticsearch endpoint is as presented here.
+If your `vue-storefront-api` instance is running on the `localhost`, port `8080` then the correct elasticsearch endpoint is as presented here.
 
 Starting from Vue Storefront v1.6, user may set `config.elasticsearch.queryMethod` either *POST* (default) or *GET*. When *GET* is set, the Elasticsearch Query object is passed to vue-storefront-api as a request parameter named *request*. By doing so, Service Worker will now be able to cache the results from Elasticsearch. Service Workers cannot cache any POST requests currently.
 
 :::tip Notice
-Service Worker is not caching the /api requests on development envs. (localhost) as the vue-storefront-api by default runs on a different port (8090).
+Service Worker is not caching the /api requests on development envs. (localhost) as the vue-storefront-api by default runs on a different port (8080).
 
 :::
 
@@ -209,7 +213,7 @@ This attribute is not inherited through the "extend" mechanism.
 
 ```json
     "elasticsearch": {
-      "host": "localhost:8090/api/catalog",
+      "host": "localhost:8080/api/catalog",
       "index": "vue_storefront_catalog_de"
     },
 ```
@@ -387,17 +391,17 @@ If this option is set to `true`, Vue Storefront will add price item with a disco
 If this option is set to `items`, Vue Storefront will calculate the cart count based on items instead of item quantities.
 
 ```json
-  "create_endpoint": "http://localhost:8090/api/cart/create?token={{token}}",
-  "updateitem_endpoint": "http://localhost:8090/api/cart/update?token={{token}}&cartId={{cartId}}",
-  "deleteitem_endpoint": "http://localhost:8090/api/cart/delete?token={{token}}&cartId={{cartId}}",
-  "pull_endpoint": "http://localhost:8090/api/cart/pull?token={{token}}&cartId={{cartId}}",
-  "totals_endpoint": "http://localhost:8090/api/cart/totals?token={{token}}&cartId={{cartId}}",
-  "paymentmethods_endpoint": "http://localhost:8090/api/cart/payment-methods?token={{token}}&cartId={{cartId}}",
-  "shippingmethods_endpoint": "http://localhost:8090/api/cart/shipping-methods?token={{token}}&cartId={{cartId}}",
-  "shippinginfo_endpoint": "http://localhost:8090/api/cart/shipping-information?token={{token}}&cartId={{cartId}}",
-  "collecttotals_endpoint": "http://localhost:8090/api/cart/collect-totals?token={{token}}&cartId={{cartId}}",
-  "deletecoupon_endpoint": "http://localhost:8090/api/cart/delete-coupon?token={{token}}&cartId={{cartId}}",
-  "applycoupon_endpoint": "http://localhost:8090/api/cart/apply-coupon?token={{token}}&cartId={{cartId}}&coupon={{coupon}}"
+  "create_endpoint": "http://localhost:8080/api/cart/create?token={{token}}",
+  "updateitem_endpoint": "http://localhost:8080/api/cart/update?token={{token}}&cartId={{cartId}}",
+  "deleteitem_endpoint": "http://localhost:8080/api/cart/delete?token={{token}}&cartId={{cartId}}",
+  "pull_endpoint": "http://localhost:8080/api/cart/pull?token={{token}}&cartId={{cartId}}",
+  "totals_endpoint": "http://localhost:8080/api/cart/totals?token={{token}}&cartId={{cartId}}",
+  "paymentmethods_endpoint": "http://localhost:8080/api/cart/payment-methods?token={{token}}&cartId={{cartId}}",
+  "shippingmethods_endpoint": "http://localhost:8080/api/cart/shipping-methods?token={{token}}&cartId={{cartId}}",
+  "shippinginfo_endpoint": "http://localhost:8080/api/cart/shipping-information?token={{token}}&cartId={{cartId}}",
+  "collecttotals_endpoint": "http://localhost:8080/api/cart/collect-totals?token={{token}}&cartId={{cartId}}",
+  "deletecoupon_endpoint": "http://localhost:8080/api/cart/delete-coupon?token={{token}}&cartId={{cartId}}",
+  "applycoupon_endpoint": "http://localhost:8080/api/cart/apply-coupon?token={{token}}&cartId={{cartId}}&coupon={{coupon}}"
 ```
 
 These endpoints should point to the `vue-storefront-api` instance and typically, you're changing just the domain-name/base-url without touching the specific endpoint URLs, as it's related to the `vue-storefront-api` specifics.
@@ -467,9 +471,15 @@ This is related to `alwaysSyncPlatformPricesOver` and when it's set to true, the
 
 This is related to `alwaysSyncPlatformPricesOver`. When true, Vue Storefront will wait for dynamic prices before rendering the page. Otherwise, the product and category pages will be rendered using the default (Elasticsearch-based) prices and then asynchronously override them with current ones.
 
+```json
+  "alwaysSyncPricesClientSide": false,
+```
+
+This is related to `alwaysSyncPlatformPricesOver`. When true, Vue Storefront will force a refresh of the prices on the client side, including the token from the current logged in user, so customer specific pricing can be applied. 
+
 
 ```json
-  "endpoint": "http://localhost:8090/api/product",
+  "endpoint": "http://localhost:8080/api/product",
 ```
 
 This is the `vue-storefront-api` endpoint for rendering product lists.
@@ -528,7 +538,7 @@ The dimensions of the images in the gallery.
 
 ```json
 "orders": {
-  "endpoint": "http://localhost:8090/api/order",
+  "endpoint": "http://localhost:8080/api/order",
 ```
 
 This property sets the URL of the order endpoint. Orders will be placed to this specific URL as soon as the internet connection is available.
@@ -587,14 +597,14 @@ We're using [localForage](https://github.com/localForage/localForage) library to
 ```json
 "users": {
   "autoRefreshTokens": true,
-  "endpoint": "http://localhost:8090/api/user",
-  "history_endpoint": "http://localhost:8090/api/user/order-history?token={{token}}",
-  "resetPassword_endpoint": "http://localhost:8090/api/user/reset-password",
-  "changePassword_endpoint": "http://localhost:8090/api/user/change-password?token={{token}}",
-  "login_endpoint": "http://localhost:8090/api/user/login",
-  "create_endpoint": "http://localhost:8090/api/user/create",
-  "me_endpoint": "http://localhost:8090/api/user/me?token={{token}}",
-  "refresh_endpoint": "http://localhost:8090/api/user/refresh"
+  "endpoint": "http://localhost:8080/api/user",
+  "history_endpoint": "http://localhost:8080/api/user/order-history?token={{token}}",
+  "resetPassword_endpoint": "http://localhost:8080/api/user/reset-password",
+  "changePassword_endpoint": "http://localhost:8080/api/user/change-password?token={{token}}",
+  "login_endpoint": "http://localhost:8080/api/user/login",
+  "create_endpoint": "http://localhost:8080/api/user/create",
+  "me_endpoint": "http://localhost:8080/api/user/me?token={{token}}",
+  "refresh_endpoint": "http://localhost:8080/api/user/refresh"
 },
 ```
 
@@ -608,7 +618,7 @@ When the `autoRefreshTokens` property is set to `true` (default) Vue Storefront 
 "stock": {
   "synchronize": true,
   "allowOutOfStockInCart": true,
-  "endpoint": "http://localhost:8090/api/stock"
+  "endpoint": "http://localhost:8080/api/stock"
 },
 ```
 
@@ -716,7 +726,7 @@ Internationalization settings are used by the translation engine (`defautlLocale
 
 ```json
 "mailchimp": {
-  "endpoint": "http://localhost:8090/api/ext/mailchimp-subscribe/subscribe"
+  "endpoint": "http://localhost:8080/api/ext/mailchimp-subscribe/subscribe"
 },
 ```
 
@@ -756,7 +766,7 @@ You can put your Hotjar Site ID in here as to be used by the hotjar extension.
 
 ```json
 "cms": {
-  "endpoint": "http://localhost:8090/api/ext/cms-data/cms{{type}}/{{cmsId}}"
+  "endpoint": "http://localhost:8080/api/ext/cms-data/cms{{type}}/{{cmsId}}"
 }
 ```
 

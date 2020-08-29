@@ -21,7 +21,7 @@ To register such an entity type, you should use the `searchAdapter.registerEntit
 const factory = new SearchAdapterFactory();
 let searchAdapter = factory.getSearchAdapter('graphql');
 searchAdapter.registerEntityTypeByQuery('testentity', {
-  url: 'http://localhost:8090/graphql/',
+  url: 'http://localhost:8080/graphql/',
   query: require('./queries/testentity.gql'),
   queryProcessor: query => {
     // function that can modify the query each time before it's being executed
@@ -38,7 +38,7 @@ searchAdapter.registerEntityTypeByQuery('testentity', {
         throw new Error(JSON.stringify(resp.error));
       } else {
         throw new Error(
-          "Unknown error with graphQl result in resultPorcessor for entity type 'category'",
+          "Unknown error with graphQl result in resultProcessor for entity type 'category'",
         );
       }
     }

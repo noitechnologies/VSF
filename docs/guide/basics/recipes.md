@@ -135,7 +135,7 @@ However, there is an option to get the prices dynamically. To do so you must cha
     "alwaysSyncPlatformPricesOver": false,
     "clearPricesBeforePlatformSync": false,
     "waitForPlatformSync": false,
-    "endpoint": "http://localhost:8090/api/product"
+    "endpoint": "http://localhost:8080/api/product"
   },
 ```
 
@@ -147,7 +147,7 @@ to:
     "alwaysSyncPlatformPricesOver": true,
     "clearPricesBeforePlatformSync": true,
     "waitForPlatformSync": false,
-    "endpoint": "http://localhost:8090/api/product"
+    "endpoint": "http://localhost:8080/api/product"
   },
 ```
 
@@ -171,11 +171,11 @@ To display the proper prices and totals after Magento calculates all the discoun
   "cart": {
     "synchronize": true,
     "synchronize_totals": true,
-    "create_endpoint": "http://localhost:8090/api/cart/create?token={{token}}",
-    "updateitem_endpoint": "http://localhost:8090/api/cart/update?token={{token}}&cartId={{cartId}}",
-    "deleteitem_endpoint": "http://localhost:8090/api/cart/delete?token={{token}}&cartId={{cartId}}",
-    "pull_endpoint": "http://localhost:8090/api/cart/pull?token={{token}}&cartId={{cartId}}",
-    "totals_endpoint": "http://localhost:8090/api/cart/totals?token={{token}}&cartId={{cartId}}"
+    "create_endpoint": "http://localhost:8080/api/cart/create?token={{token}}",
+    "updateitem_endpoint": "http://localhost:8080/api/cart/update?token={{token}}&cartId={{cartId}}",
+    "deleteitem_endpoint": "http://localhost:8080/api/cart/delete?token={{token}}&cartId={{cartId}}",
+    "pull_endpoint": "http://localhost:8080/api/cart/pull?token={{token}}&cartId={{cartId}}",
+    "totals_endpoint": "http://localhost:8080/api/cart/totals?token={{token}}&cartId={{cartId}}"
   },
 ```
 

@@ -41,7 +41,21 @@ In this case you don't need to run Docker and you will be asked one additional q
 ? Please provide path for images endpoint (https://demo.vuestorefront.io/img/)
 ```
 
-You can simply proceed and as a result you will have a `vue-storefront` folder inside your project root and Storefront application running on `http://localhost:3010`. All images will be also hosted at `https://demo.vuestorefront.io/img/`.
+You can simply proceed and as a result you will have a `vue-storefront` folder inside your project root and Storefront application running on `http://localhost:3000`. All images will be also hosted at `https://demo.vuestorefront.io/img/`.
+
+### Theme
+
+You will get question about official theme installation and its version.
+```
+? Select theme for Vue Storefront (Use arrow keys)
+❯ Capybara - based on Storefront UI 
+  Default
+```
+```
+? Select theme version (Use arrow keys)
+❯ Stable version (recommended for production) 
+  In development branch (could be unstable!) 
+```
 
 ### Installing the vue-storefront-api locally
 
@@ -51,7 +65,7 @@ If you answer `No` on the previous question, please be sure the Docker is runnin
 ? Would you like to use https://demo.vuestorefront.io as the backend? No
 ? Please provide Git path (if it's not globally installed) git
 ? Please provide path for installing backend locally ../vue-storefront-api
-? Choose path for images endpoint http://localhost:8090/img/
+? Choose path for images endpoint http://localhost:8080/img/
 ```
 
 As for images endpoint: you can choose between `https://demo.vuestorefront.io/img/` again or host your images on localhost.
@@ -65,8 +79,8 @@ After you answered all the questions, the installation process will start (it mi
 │ You've just successfully installed vue-storefront.             │
 │ All required servers are running in background                 │
 │                                                                │
-│ Storefront: http://localhost:3010                              │
-│ Backend: http://localhost:8090                                 │
+│ Storefront: http://localhost:3000                              │
+│ Backend: http://localhost:8080                                 │
 │                                                                │
 │ Logs: /Users/natalia/Desktop/work/test/vue-storefront/var/log/ │
 │                                                                │
@@ -74,7 +88,7 @@ After you answered all the questions, the installation process will start (it mi
 └────────────────────────────────────────────────────────────────┘
 ```
 
-Your project should contain 2 folders at this moment: `vue-storefront` and `vue-storefront-api`. Vue Storefront should be running on `http://localhost:3010`:
+Your project should contain 2 folders at this moment: `vue-storefront` and `vue-storefront-api`. Vue Storefront should be running on `http://localhost:3000`:
 
 ![Storefront screenshot](../images/storefront.png)
 
@@ -163,7 +177,7 @@ After all these steps you should be able to use the API application!
 You can check if everything works just fine by executing the following command:
 
 ```bash
-curl -i http://localhost:8090/api/catalog/vue_storefront_catalog/product/_search?q=bag&size=50&from=0
+curl -i http://localhost:8080/api/catalog/vue_storefront_catalog/product/_search?q=bag&size=50&from=0
 ```
 
 Now, it's the time to install the frontend itself.
@@ -186,6 +200,8 @@ nano config/local.json
 
 The default config file should work perfectly fine for default purposes.
 
+Next [install theme](theme.md)
+
 Finally, you have to choose between two modes of running the application (similarly as in the case of vue-storefront-api).
 
 :::warning
@@ -204,4 +220,4 @@ If you choose the **legacy** mode, be sure to run `yarn install` first!
    docker-compose up
    ```
 
-That's all - your frontend application is now up and running! You can check it on `localhost:3010`
+That's all - your frontend application is now up and running! You can check it on `localhost:3000`

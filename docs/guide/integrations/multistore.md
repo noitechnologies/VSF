@@ -70,7 +70,7 @@ After this sequence of command, you may add the available ES index to your `vue-
 {
     "server": {
       "host": "localhost",
-      "port": 8090
+      "port": 8080
     },
 	"esHost": "localhost:9200",
 	"esIndexes": [
@@ -96,7 +96,7 @@ The last thing is to change the `vue-storefront/config/local.json` to configure 
         "name": "German Store",
         "url": "/de",
         "elasticsearch": {
-          "host": "localhost:8090/api/catalog",
+          "host": "localhost:8080/api/catalog",
           "index": "vue_storefront_catalog_de"
         },
         "tax": {
@@ -121,7 +121,7 @@ The last thing is to change the `vue-storefront/config/local.json` to configure 
         "name": "Italian Store",
         "url": "/it",
         "elasticsearch": {
-          "host": "localhost:8090/api/catalog",
+          "host": "localhost:8080/api/catalog",
           "index": "vue_storefront_catalog_it"
         },
         "tax": {
@@ -147,12 +147,12 @@ After these changes, you'll have a `LanguageSwitcher` component visible on the b
 
 By default, the language / store is switched by the URL prefix:
 
-- `http://localhost:3010` is for the default store
-- `http://localhost:3010/it` will switch the store to the Italian one
-- `http://localhost:3010/de` will switch the store to the German one one
+- `http://localhost:3000` is for the default store
+- `http://localhost:3000/it` will switch the store to the Italian one
+- `http://localhost:3000/de` will switch the store to the German one one
 
 General URL format is:
-`http://localhost:3010/{storeCode}`
+`http://localhost:3000/{storeCode}`
 
 The storeCode may be switched by ENV variable set before running `yarn dev` / `yarn start`:
 

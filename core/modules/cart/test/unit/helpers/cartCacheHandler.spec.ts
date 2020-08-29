@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import * as types from '../../../store/mutation-types'
+import { Logger } from '@vue-storefront/core/lib/logger'
 
 const StorageManager = {
   cart: {
@@ -9,6 +10,11 @@ const StorageManager = {
   },
   get (key) {
     return this[key]
+  },
+  clear () {
+    return new Promise((resolve, reject) => {
+      resolve()
+    })
   }
 };
 const cartCacheHandlerFactory = require('../../../helpers/cartCacheHandler').cartCacheHandlerFactory
@@ -19,6 +25,12 @@ jest.mock('@vue-storefront/core/helpers', () => ({
 }));
 jest.mock('@vue-storefront/core/app', () => ({ createApp: jest.fn() }))
 jest.mock('@vue-storefront/i18n', () => ({ loadLanguageAsync: jest.fn() }))
+
+jest.mock('@vue-storefront/core/lib/logger', () => ({
+  Logger: {
+    error: () => () => {}
+  }
+}))
 
 Vue.use(Vuex);
 
@@ -55,7 +67,7 @@ describe('Cart afterRegistration', () => {
       }
     };
 
-    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementationOnce(() => {});
+    const consoleErrorSpy = jest.spyOn(Logger, 'error');
 
     StorageManager.get('cart').setItem.mockImplementationOnce(() => Promise.reject('foo'));
 
@@ -86,7 +98,7 @@ describe('Cart afterRegistration', () => {
       }
     };
 
-    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementationOnce(() => {});
+    const consoleErrorSpy = jest.spyOn(Logger, 'error');
 
     StorageManager.get('cart').setItem.mockImplementationOnce(() => Promise.reject('foo'));
 
@@ -102,7 +114,7 @@ describe('Cart afterRegistration', () => {
       }
     };
 
-    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementationOnce(() => {});
+    const consoleErrorSpy = jest.spyOn(Logger, 'error');
 
     StorageManager.get('cart').setItem.mockImplementationOnce(() => Promise.reject('foo'));
 

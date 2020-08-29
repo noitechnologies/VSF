@@ -11,7 +11,7 @@ The output cache is set by the following `config/local.json` variables:
 ```json
     "server": {
       "host": "localhost",
-      "port": 3010,
+      "port": 3000,
       "protocol": "http",
       "api": "api",
       "useOutputCacheTagging": true,
@@ -19,7 +19,7 @@ The output cache is set by the following `config/local.json` variables:
       "outputCacheDefaultTtl": 86400,
       "invalidateCacheKey": "aeSu7aip",
       "invalidateCacheForwarding": false,
-      "invalidateCacheForwardUrl": "http://localhost:8090/invalidate?key=aeSu7aip&tag=",      
+      "invalidateCacheForwardUrl": "http://localhost:8080/invalidate?key=aeSu7aip&tag=",      
     },
     "redis": {
       "host": "localhost",
@@ -51,13 +51,13 @@ If both `useOutputCache` and `useOutputCacheTagging` options are set to `true`, 
 An example call to clear all pages containing specific product and category:
 
 ```bash
-curl http://localhost:3010/invalidate?tag=P1852,C20
+curl http://localhost:3000/invalidate?tag=P1852,C20
 ```
 
 An example call to clear all product, category, and homepages:
 
 ```bash
-curl http://localhost:3010/invalidate?tag=product,category,home
+curl http://localhost:3000/invalidate?tag=product,category,home
 ```
 
 :::warning Caution !
@@ -83,7 +83,7 @@ Available tag keys are set in the `config.server.availableCacheTags` (by default
 **Dynamic cache invalidation:** Recent version of [mage2vuestorefront](https://github.com/DivanteLtd/mage2vuestorefront) supports output cache invalidation. Output cache is tagged with the product and categories ID (products and categories used on a specific page). Mage2vuestorefront can invalidate the cache of a product and category pages if you set the following ENV variables:
 
 ```bash
-export VS_INVALIDATE_CACHE_URL=http://localhost:3010/invalidate?key=SECRETKEY&tag=
+export VS_INVALIDATE_CACHE_URL=http://localhost:3000/invalidate?key=SECRETKEY&tag=
 export VS_INVALIDATE_CACHE=1
 ```
 

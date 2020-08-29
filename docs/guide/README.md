@@ -68,7 +68,7 @@ When you want to play with Vue Storefront, there are three options:
 - You can set up frontend with your own `vue-storefront-api` and database dumped from the demo.
 - You can set up frontend with `vue-storefront-api` connected to your eCommerce backend.
 
-To do any of this, simply type `yarn installer` in the root of the project and answer the questions in the console. Once the installation is done, type `yarn dev` to run your project (by default, on port `3010`). No matter what option you choose, you can change the settings in the config file later.
+To do any of this, simply type `yarn installer` in the root of the project and answer the questions in the console. Once the installation is done, type `yarn dev` to run your project (by default, on port `3000`). No matter what option you choose, you can change the settings in the config file later.
 
 ## Vue Storefront config file
 
@@ -87,7 +87,7 @@ The mechanism of injecting core business logic into themes is ridiculously simpl
 
 So assume we have a core Microcart component with business logic as above (left side), we can easily inject it into any of our theme components (right side) just by importing it and adding as a mixin `mixins: [Microcart]`. This is all you need to make use of core business logic inside your theme. With this approach, we can easily ship updates to all core components without breaking your shop.
 
-The easiest way to create your own theme is to create a copy of the default one, change its name in its `package.json` file, change the active theme in `config/local.json` and run `yarn` to make [Lerna](https://github.com/lerna/lerna) linking (which we use for monorepos).
+[Check how to create theme based on our official themes](https://docs.vuestorefront.io/guide/installation/theme.html).
 
 ## Offline mode and cache
 Vue Storefront still works even while the user is offline.

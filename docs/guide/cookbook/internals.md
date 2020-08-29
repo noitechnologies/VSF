@@ -25,7 +25,7 @@ Ever wonder what happens when you enter into **Vue Storefront** shop? From gatew
 yarn dev
 ```
 
-2. Open your browser and go to your development **Vue Storefront** store, for example, [_http://localhost:3000_](http://localhost:3010) if you run it by default.
+2. Open your browser and go to your development **Vue Storefront** store, for example, [_http://localhost:3000_](http://localhost:3000) if you run it by default.
 
 ### 3. Peep into the kitchen (what happens internally)
 ### 4. Chef's secret (protip)

@@ -18,18 +18,18 @@ server {
         text/json;
 
     location / {
-        proxy_pass http://localhost:3010/;
+        proxy_pass http://localhost:3000/;
     }
 
     location /assets/ {
-        proxy_pass http://localhost:3010/assets/;
+        proxy_pass http://localhost:3000/assets/;
     }
 
     location /api/ {
-        proxy_pass http://localhost:8090/api/;
+        proxy_pass http://localhost:8080/api/;
     }
 
     location /img/ {
-        proxy_pass http://localhost:8090/img/;
+        proxy_pass http://localhost:8080/img/;
     }
 }
