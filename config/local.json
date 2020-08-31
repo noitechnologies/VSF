@@ -95,7 +95,7 @@
   },
   "elasticsearch": {
     "httpAuth": "",
-    "host": "https://store.vastrami.com/api/catalog",
+    "host": "http://localhost:9200/api/catalog",
     "index": "vue_storefront_catalog",
     "min_score": 0.02,
     "csrTimeout": 5000,
@@ -173,7 +173,7 @@
       "url": "/de",
       "appendStoreCode": true,
       "elasticsearch": {
-        "host": "https://store.vastrami.com/api/catalog",
+        "host": "http://localhost:9200/api/catalog",
         "index": "vue_storefront_catalog_de"
       },
       "tax": {
@@ -204,7 +204,7 @@
       "url": "/it",
       "appendStoreCode": true,
       "elasticsearch": {
-        "host": "https://store.vastrami.com/api/catalog",
+        "host": "http://localhost:9200/api/catalog",
         "index": "vue_storefront_catalog_it"
       },
       "tax": {
@@ -503,17 +503,17 @@
     "displayItemDiscounts": true,
     "productsAreReconfigurable": true,
     "minicartCountType": "quantities",
-    "create_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/create?token={{token}}",
-    "updateitem_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/update?token={{token}}&cartId={{cartId}}",
-    "deleteitem_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/delete?token={{token}}&cartId={{cartId}}",
-    "pull_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/pull?token={{token}}&cartId={{cartId}}",
-    "totals_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/totals?token={{token}}&cartId={{cartId}}",
-    "paymentmethods_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/payment-methods?token={{token}}&cartId={{cartId}}",
-    "shippingmethods_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/shipping-methods?token={{token}}&cartId={{cartId}}",
-    "shippinginfo_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/shipping-information?token={{token}}&cartId={{cartId}}",
-    "collecttotals_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/collect-totals?token={{token}}&cartId={{cartId}}",
-    "deletecoupon_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/delete-coupon?token={{token}}&cartId={{cartId}}",
-    "applycoupon_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/cart/apply-coupon?token={{token}}&cartId={{cartId}}&coupon={{coupon}}"
+    "create_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/create?token={{token}}",
+    "updateitem_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/update?token={{token}}&cartId={{cartId}}",
+    "deleteitem_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/delete?token={{token}}&cartId={{cartId}}",
+    "pull_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/pull?token={{token}}&cartId={{cartId}}",
+    "totals_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/totals?token={{token}}&cartId={{cartId}}",
+    "paymentmethods_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/payment-methods?token={{token}}&cartId={{cartId}}",
+    "shippingmethods_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/shipping-methods?token={{token}}&cartId={{cartId}}",
+    "shippinginfo_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/shipping-information?token={{token}}&cartId={{cartId}}",
+    "collecttotals_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/collect-totals?token={{token}}&cartId={{cartId}}",
+    "deletecoupon_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/delete-coupon?token={{token}}&cartId={{cartId}}",
+    "applycoupon_endpoint": "http://localhost:8080/rest/s1/vsf/api/cart/apply-coupon?token={{token}}&cartId={{cartId}}&coupon={{coupon}}"
   },
   "attributes": {
     "disablePersistentAttributesCache": false
@@ -601,7 +601,7 @@
   },
   "orders": {
     "directBackendSync": true,
-    "endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/order?token={{token}}",
+    "endpoint": "http://localhost:8080/rest/s1/vsf/api/order?token={{token}}",
     "payment_methods_mapping": {},
     "offline_orders": {
       "automatic_transmission_enabled": false,
@@ -631,23 +631,23 @@
     }
   },
   "reviews": {
-    "create_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/review/create"
+    "create_endpoint": "http://localhost:8080/rest/s1/vsf/api/review/create"
   },
   "users": {
     "autoRefreshTokens": true,
-    "endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/user",
-    "history_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/user/order-history?token={{token}}&pageSize={{pageSize}}&currentPage={{currentPage}}",
-    "resetPassword_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/user/reset-password",
-    "changePassword_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/user/change-password?token={{token}}",
-    "login_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/user/login",
-    "create_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/user/create",
-    "me_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/user/me?token={{token}}",
-    "refresh_endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/user/refresh"
+    "endpoint": "http://localhost:8080/rest/s1/vsf/api/user",
+    "history_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/order-history?token={{token}}&pageSize={{pageSize}}&currentPage={{currentPage}}",
+    "resetPassword_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/reset-password",
+    "changePassword_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/change-password?token={{token}}",
+    "login_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/login",
+    "create_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/create",
+    "me_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/me?token={{token}}",
+    "refresh_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/refresh"
   },
   "stock": {
     "synchronize": true,
     "allowOutOfStockInCart": true,
-    "endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/stock"
+    "endpoint": "http://localhost:8080/rest/s1/vsf/api/stock"
   },
   "images": {
     "useExactUrlsNoProxy": false,
@@ -710,12 +710,12 @@
     "image/png": "7d"
   },
   "newsletter": {
-    "endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/ext/mailchimp-subscribe/subscribe"
+    "endpoint": "http://localhost:8080/rest/s1/vsf/api/ext/mailchimp-subscribe/subscribe"
   },
   "mailer": {
     "endpoint": {
-      "send": "https://backoffice.vastrami.com/rest/s1/vsf/api/ext/mail-service/send-email",
-      "token": "https://backoffice.vastrami.com/rest/s1/vsf/api/ext/mail-service/get-token"
+      "send": "http://localhost:8080/rest/s1/vsf/api/ext/mail-service/send-email",
+      "token": "http://localhost:8080/rest/s1/vsf/api/ext/mail-service/get-token"
     },
     "contactAddress": "contributors@vuestorefront.io",
     "sendConfirmation": true
@@ -743,8 +743,8 @@
     "id": false
   },
   "cms": {
-    "endpoint": "https://backoffice.vastrami.com/rest/s1/vsf/api/ext/cms-data/cms{{type}}/{{cmsId}}",
-    "endpointIdentifier": "https://backoffice.vastrami.com/rest/s1/vsf/api/ext/cms-data/cms{{type}}Identifier/{{cmsIdentifier}}/storeId/{{storeId}}"
+    "endpoint": "http://localhost:8080/rest/s1/vsf/api/ext/cms-data/cms{{type}}/{{cmsId}}",
+    "endpointIdentifier": "http://localhost:8080/rest/s1/vsf/api/ext/cms-data/cms{{type}}Identifier/{{cmsIdentifier}}/storeId/{{storeId}}"
   },
   "cms_block": {
     "max_count": 500
