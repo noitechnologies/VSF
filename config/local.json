@@ -788,5 +788,18 @@
   },
   "quicklink": {
     "enabled": false
+  },
+  "razorpay" : {
+    "method_code": "razorpay",
+    "title": "Razorpay",
+    "endpoint": "http://localhost:8090/api/ext/payment-razorpay",
+    "api_url": "https://checkout.razorpay.com/v1/checkout.js",
+    "key": "rzp_test_5bKWiDyl81rFiN",
+    "keySecret": "FF66YSEUQzwXqViULq17uPk9",
+    "merchant": "Saldist",
+    "theme": "#F37254",
+    "notes": {
+      "Title": "Saldist Razor Pay"
+    }
   }
 }

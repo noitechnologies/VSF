@@ -14,6 +14,7 @@ import { CmsModule } from '@vue-storefront/core/modules/cms'
 // import { AmpRendererModule } from './amp-renderer';
 import { PaymentBackendMethodsModule } from './payment-backend-methods'
 import { PaymentCashOnDeliveryModule } from './payment-cash-on-delivery'
+import { Razorpay } from './payment-razorpay'
 import { NewsletterModule } from '@vue-storefront/core/modules/newsletter'
 import { InitialResourcesModule } from '@vue-storefront/core/modules/initial-resources'
 
@@ -45,4 +46,5 @@ export function registerClientModules () {
 // Deprecated API, will be removed in 2.0
 export const registerModules: VueStorefrontModule[] = [
   // Example
+  Razorpay
 ]
