@@ -15,6 +15,7 @@ import { CmsModule } from '@vue-storefront/core/modules/cms'
 import { PaymentBackendMethodsModule } from './payment-backend-methods'
 import { PaymentCashOnDeliveryModule } from './payment-cash-on-delivery'
 import { Razorpay } from './payment-razorpay'
+import { PaymentPaypalModule } from './paypal';
 import { NewsletterModule } from '@vue-storefront/core/modules/newsletter'
 import { InitialResourcesModule } from '@vue-storefront/core/modules/initial-resources'
 
@@ -40,6 +41,7 @@ export function registerClientModules () {
   registerModule(CmsModule)
   registerModule(NewsletterModule)
   registerModule(InitialResourcesModule)
+  registerModule(PaymentPaypalModule)
   // registerModule(DeviceModule)
 }
 

@@ -801,5 +801,12 @@
     "notes": {
       "Title": "Saldist Razor Pay"
     }
+  },
+  "paypal": {
+    "clientId": "AW894VFGZ9E4oV29ztE6GTDK7PU_UJEDenzzsPmjkUAuVLyfc1ekRk4p8LbqZ-Wpl_9ROqAsSwet_NrX",
+    "endpoint": {
+      "complete": "http://localhost:8090/api/ext/paypal/complete",
+      "setExpressCheckout": "http://localhost:8090/api/ext/paypal/setExpressCheckout"
+    }
   }
 }
