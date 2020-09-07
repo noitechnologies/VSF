@@ -12,8 +12,8 @@ import { ReviewsService } from '@vue-storefront/core/data-resolver'
 const actions: ActionTree<ReviewState, RootState> = {
   async list (context, { productId, approved = true, start = 0, size = 50, entityType = 'review', sort = '', excludeFields = null, includeFields = null }) {
     const query = createLoadReviewsQuery({ productId, approved })
-
     const reviewResponse = await quickSearchByQuery({ query, start, size, entityType, sort, excludeFields, includeFields })
+    reviewResponse.items = reviewResponse.items.filter(review => review.product_id === productId);
     context.commit(types.REVIEW_UPD_REVIEWS, reviewResponse)
   },
   async add (context, review: Review) {
