@@ -8,7 +8,7 @@ export const PaypalButton = {
       required: false,
       default: () => ({
         layout: 'vertical',
-        color: 'blue',
+        color: 'black',
         shape: 'rect',
         label: 'paypal'
       })
