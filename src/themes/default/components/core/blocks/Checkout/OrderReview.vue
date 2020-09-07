@@ -67,7 +67,7 @@
              <div v-if="payment.paymentMethod === 'paypal_express'">
                 <paypal-button v-if="!$v.orderReview.$invalid"/>
               </div>
-              <div v-if="!payment.paymentMethod === 'paypal_express'">  
+              <div v-if="payment.paymentMethod !== 'paypal_express'">  
                 <button-full
                   @click.native="placeOrder"
                   data-testid="orderReviewSubmit"
