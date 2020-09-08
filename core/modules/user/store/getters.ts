@@ -13,6 +13,9 @@ const getters: GetterTree<UserState, RootState> = {
   getOrdersHistory (state) {
     return state.orders_history ? state.orders_history.items : []
   },
+  getProductReviews (state) {
+    return state.product_reviews ? state.product_reviews : []
+  },
   getToken (state) {
     return state.token
   },

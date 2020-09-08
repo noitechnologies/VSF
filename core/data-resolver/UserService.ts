@@ -88,6 +88,18 @@ const getOrdersHistory = async (pageSize = 20, currentPage = 1): Promise<Task> =
     }
   })
 
+const getProductReviews = async (pageSize = 20, currentPage = 1): Promise<Task> =>
+  TaskQueue.execute({
+    url: processLocalizedURLAddress(
+      getApiEndpointUrl(config.users, 'productReviews_endpoint')
+    ),
+    payload: {
+      method: 'GET',
+      mode: 'cors',
+      headers
+    }
+  })
+
 const changePassword = async (passwordData: DataResolver.PasswordData): Promise<Task> =>
   TaskQueue.execute({
     url: processLocalizedURLAddress(getApiEndpointUrl(config.users, 'changePassword_endpoint')),
@@ -116,6 +128,7 @@ export const UserService: DataResolver.UserService = {
   updateProfile,
   getProfile,
   getOrdersHistory,
+  getProductReviews,
   changePassword,
   refreshToken
 }

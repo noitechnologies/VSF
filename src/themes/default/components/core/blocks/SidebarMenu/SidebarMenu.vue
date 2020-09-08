@@ -182,7 +182,7 @@ export default {
         {
           id: 6,
           name: i18n.t('My product reviews'),
-          url: '#'
+          url: '/my-account/product-reviews'
         }
       ],
       componentLoaded: false

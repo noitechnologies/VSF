@@ -271,6 +271,33 @@ const actions: ActionTree<UserState, RootState> = {
 
     return resp
   },
+
+  async loadProductReviewsFromCache ({ commit }) {
+    const productReviewsCollection = StorageManager.get('user')
+    const productReviews = await productReviewsCollection.getItem('product-reviews')
+
+    if (productReviews) {
+      commit(types.USER_PRODUCT_REVIEWS_LOADED, productReviews)
+      EventBus.$emit('user-after-loaded-product-reviews', productReviews)
+
+      return productReviews
+    }
+  },
+  async refreshProductReviews ({ commit }, { resolvedFromCache }) {
+    console.log("========inside refreshProductReviews=======")
+    const resp = await UserService.getProductReviews()
+    console.log("========resp inside refreshProductReviews======="+JSON.stringify(resp))
+    if (resp.code === 200) {
+      commit(types.USER_PRODUCT_REVIEWS_LOADED, resp.result) // this also stores the current user to localForage
+      EventBus.$emit('user-after-loaded-product-reviews', resp.result)
+    }
+
+    if (!resolvedFromCache) {
+      Promise.resolve(resp.code === 200 ? resp : null)
+    }
+
+    return resp
+  },
   /**
    * Load user's orders history
    */
@@ -298,10 +325,39 @@ const actions: ActionTree<UserState, RootState> = {
       }
     }
   },
+  /**
+   * Load user's orders history
+   */
+  async getProductReviews ({ dispatch, getters }, { refresh = true, useCache = false, pageSize = 20, currentPage = 1 }) {
+    console.log("========inside actions.ts getProductReviews==========")
+    if (!getters.getToken) {
+      Logger.debug('No User token, user unauthorized', 'user')()
+      return Promise.resolve(null)
+    }
+    let resolvedFromCache = false
+
+    if (useCache) {
+      const productReviews = await dispatch('loadProductReviewsFromCache')
+
+      if (productReviews) {
+        resolvedFromCache = true
+        Logger.log('Current user product reviews served from cache', 'user')()
+      }
+    }
+
+    if (refresh) {
+      return dispatch('refreshProductReviews', { resolvedFromCache, pageSize, currentPage })
+    } else {
+      if (!resolvedFromCache) {
+        Promise.resolve(null)
+      }
+    }
+  },
   async sessionAfterAuthorized ({ dispatch }, { refresh = onlineHelper.isOnline, useCache = true }) {
     Logger.info('User session authorised ', 'user')()
     await dispatch('me', { refresh, useCache })
     await dispatch('getOrdersHistory', { refresh, useCache })
+    await dispatch('getProductReviews', { refresh, useCache })
   }
 }
 

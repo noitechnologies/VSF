@@ -95,6 +95,7 @@ declare namespace DataResolver {
     updateProfile: (userProfile: UserProfile, actionName: string) => Promise<Task>,
     getProfile: () => Promise<Task>,
     getOrdersHistory: (pageSize?: number, currentPage?: number) => Promise<Task>,
+    getProductReviews: () => Promise<Task>,
     changePassword: (passwordData: PasswordData) => Promise<Task>,
     refreshToken: (refreshToken: string) => Promise<string>
   }

@@ -637,6 +637,7 @@
     "autoRefreshTokens": true,
     "endpoint": "http://localhost:8080/rest/s1/vsf/api/user",
     "history_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/order-history?token={{token}}&pageSize={{pageSize}}&currentPage={{currentPage}}",
+    "productReviews_endpoint": "/rest/s1/vsf/api/user/product-reviews?token={{token}}",
     "resetPassword_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/reset-password",
     "changePassword_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/change-password?token={{token}}",
     "login_endpoint": "http://localhost:8080/rest/s1/vsf/api/user/login",

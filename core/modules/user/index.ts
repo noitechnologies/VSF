@@ -50,6 +50,14 @@ export const UserModule: StorefrontModule = async function ({ store }) {
     }
 
     if (
+      type.endsWith(types.USER_PRODUCT_REVIEWS_LOADED)
+    ) {
+      StorageManager.get('user').setItem('product-reviews', state.user.product_reviews).catch((reason) => {
+        Logger.error(reason)() // it doesn't work on SSR
+      }) // populate cache
+    }
+
+    if (
       type.endsWith(types.USER_TOKEN_CHANGED)
     ) {
       StorageManager.get('user').setItem('current-token', state.user.token).catch((reason) => {

@@ -9,5 +9,6 @@ export default interface UserState {
   current_storecode: string,
   session_started: Date,
   orders_history: any,
+  product_reviews: any,
   local_data_loaded: boolean
 }

@@ -26,6 +26,9 @@ const mutations: MutationTree<UserState> = {
   [types.USER_ORDERS_HISTORY_LOADED] (state, ordersHistory) {
     state.orders_history = ordersHistory
   },
+  [types.USER_PRODUCT_REVIEWS_LOADED] (state, productReviews) {
+    state.product_reviews = productReviews
+  },
   [types.USER_END_SESSION] (state) {
     state.token = ''
     state.current = null
