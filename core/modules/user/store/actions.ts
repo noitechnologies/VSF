@@ -302,7 +302,7 @@ const actions: ActionTree<UserState, RootState> = {
     const wishlist = await wishlistCollection.getItem('my-wishlist')
 
     if (wishlist) {
-      commit(types.USER_MY_WISHLIST_LOADED, wishlist)
+      commit(types.USER_WISHLIST_LOADED, wishlist)
       EventBus.$emit('user-after-loaded-my-wishlist', wishlist)
       return wishlist
     }
@@ -312,7 +312,7 @@ const actions: ActionTree<UserState, RootState> = {
     const resp = await UserService.getMyWishlist()
     console.log("========resp inside refreshMyWishlist======="+JSON.stringify(resp))
     if (resp.code === 200) {
-      commit(types.USER_MY_WISHLIST_LOADED, resp.result) // this also stores the current user to localForage
+      commit(types.USER_WISHLIST_LOADED, resp.result) // this also stores the current user to localForage
       EventBus.$emit('user-after-loaded-my-wishlist', resp.result)
     }
 
@@ -353,7 +353,6 @@ const actions: ActionTree<UserState, RootState> = {
    * Load user's orders history
    */
   async getProductReviews ({ dispatch, getters }, { refresh = true, useCache = false, pageSize = 20, currentPage = 1 }) {
-    console.log("========inside actions.ts getProductReviews==========")
     if (!getters.getToken) {
       Logger.debug('No User token, user unauthorized', 'user')()
       return Promise.resolve(null)
@@ -379,7 +378,6 @@ const actions: ActionTree<UserState, RootState> = {
   },
 
   async getMyWishlist ({ dispatch, getters }, { refresh = true, useCache = false, pageSize = 20, currentPage = 1 }) {
-    console.log("========inside actions.ts getMyWishlist==========")
     if (!getters.getToken) {
       Logger.debug('No User token, user unauthorized', 'user')()
       return Promise.resolve(null)

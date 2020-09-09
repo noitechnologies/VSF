@@ -32,7 +32,6 @@ export const UserModule: StorefrontModule = async function ({ store }) {
 
   store.subscribe((mutation, state) => {
     const type = mutation.type
-
     if (
       type.endsWith(types.USER_INFO_LOADED)
     ) {
@@ -58,7 +57,7 @@ export const UserModule: StorefrontModule = async function ({ store }) {
     }
 
     if (
-      type.endsWith(types.USER_MY_WISHLIST_LOADED)
+      type.endsWith(types.USER_WISHLIST_LOADED)
     ) {
       StorageManager.get('user').setItem('my-wishlist', state.user.my_wishlist).catch((reason) => {
         Logger.error(reason)() // it doesn't work on SSR
