@@ -29,6 +29,10 @@ const mutations: MutationTree<UserState> = {
   [types.USER_PRODUCT_REVIEWS_LOADED] (state, productReviews) {
     state.product_reviews = productReviews
   },
+  [types.USER_MY_WISHLIST_LOADED] (state, myWishlist) {
+    console.log("============inside USER_MY_WISHLIST_LOADED======"+JSON.stringify(myWishlist))
+    state.my_wishlist = myWishlist
+  },
   [types.USER_END_SESSION] (state) {
     state.token = ''
     state.current = null

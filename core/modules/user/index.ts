@@ -58,6 +58,14 @@ export const UserModule: StorefrontModule = async function ({ store }) {
     }
 
     if (
+      type.endsWith(types.USER_MY_WISHLIST_LOADED)
+    ) {
+      StorageManager.get('user').setItem('my-wishlist', state.user.my_wishlist).catch((reason) => {
+        Logger.error(reason)() // it doesn't work on SSR
+      }) // populate cache
+    }
+
+    if (
       type.endsWith(types.USER_TOKEN_CHANGED)
     ) {
       StorageManager.get('user').setItem('current-token', state.user.token).catch((reason) => {

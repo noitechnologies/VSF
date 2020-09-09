@@ -10,5 +10,6 @@ export default interface UserState {
   session_started: Date,
   orders_history: any,
   product_reviews: any,
+  my_wishlist: any,
   local_data_loaded: boolean
 }
