@@ -1,13 +1,13 @@
 <template>
   <div class="product align-center w-100 pb20" v-observe-visibility="visibilityChanged">
     <div class="product__icons">
-      <AddToWishlist v-if="currentUser" :product="product">
+      <AddToWishlist v-show="currentUser" :product="product">
         <div
           class="product__icon"
           :class="{'product__icon--active': isOnWishlist }"
           :title="isOnWishlist ? $t('Remove') : $t('Add to favorite') "
         >
-          <i class="material-icons">{{ favoriteIcons }}</i>
+          <i class="material-icons">{{ favoriteIcon }}</i>
         </div>
       </AddToWishlist>
       <AddToCompare :product="product">

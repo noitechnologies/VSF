@@ -126,7 +126,7 @@
               />
             </div>
             <div class="row py40 add-to-buttons">
-              <div v-if="currentUser" class="col-xs-6 col-sm-3 col-md-6">
+              <div v-show="currentUser" class="col-xs-6 col-sm-3 col-md-6">
                 <AddToWishlist :product="getCurrentProduct" />
               </div>
               <div class="col-xs-6 col-sm-3 col-md-6">

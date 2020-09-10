@@ -25,7 +25,7 @@
           <div class="col-md-4 col-xs-2 end-xs">
             <div class="inline-flex right-icons">
               <search-icon class="p15 icon hidden-xs pointer" />
-              <wishlist-icon v-if="currentUser" class="p15 icon hidden-xs pointer" />
+              <wishlist-icon v-show="currentUser" class="p15 icon hidden-xs pointer" />
               <compare-icon class="p15 icon hidden-xs pointer" />
               <microcart-icon class="p15 icon pointer" />
               <account-icon class="p15 icon hidden-xs pointer" />
