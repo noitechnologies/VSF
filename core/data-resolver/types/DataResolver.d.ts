@@ -96,7 +96,7 @@ declare namespace DataResolver {
     getProfile: () => Promise<Task>,
     getOrdersHistory: (pageSize?: number, currentPage?: number) => Promise<Task>,
     getProductReviews: () => Promise<Task>,
-    getMyWishlist: () => Promise<Task>,
+    getUserWishlist: () => Promise<Task>,
     removeItemFromWishlist: (id: String) => Promise<Task>,
     clearWishlist: () => Promise<Task>,
     addItemToWishlist: (id: String) => Promise<Task>,

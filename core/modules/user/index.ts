@@ -59,7 +59,7 @@ export const UserModule: StorefrontModule = async function ({ store }) {
     if (
       type.endsWith(types.USER_WISHLIST_LOADED)
     ) {
-      StorageManager.get('user').setItem('my-wishlist', state.user.my_wishlist).catch((reason) => {
+      StorageManager.get('user').setItem('user-wishlist', state.user.user_wishlist).catch((reason) => {
         Logger.error(reason)() // it doesn't work on SSR
       }) // populate cache
     }

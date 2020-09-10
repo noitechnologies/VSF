@@ -8,12 +8,12 @@ export const Wishlist = {
     registerModule(WishlistModule)
   },
   computed: {
-    ...mapGetters('user', ['getMyWishlist']),
+    ...mapGetters('user', ['getUserWishlist']),
     isWishlistOpen () {
       return this.$store.state.ui.wishlist
     },
     productsInWishlist () {
-      return this.getMyWishlist
+      return this.getUserWishlist
     }
   },
   methods: {

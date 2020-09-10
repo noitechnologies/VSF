@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12" v-show="!isMyWishlistEmpty">
+      <div class="col-xs-12" v-show="!isUserWishlistEmpty">
         <table class="brdr-1 brdr-cl-bg-secondary">
           <thead>
             <tr>
@@ -21,7 +21,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="brdr-top-1 brdr-cl-bg-secondary" v-for="product in myWishlist" :key="product.productName">
+            <tr class="brdr-top-1 brdr-cl-bg-secondary" v-for="product in userWishlist" :key="product.productName">
               <td class="fs-medium lh25">
                 {{ product.productName }}
               </td>
@@ -32,7 +32,7 @@
           </tbody>
         </table>
       </div>
-      <div class="col-xs-12 h4" v-show="isMyWishlistEmpty">
+      <div class="col-xs-12 h4" v-show="isUserWishlistEmpty">
         <p>{{ $t('No products in wishlist yet') }}</p>
       </div>
     </div>

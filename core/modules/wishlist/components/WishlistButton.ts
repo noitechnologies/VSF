@@ -2,9 +2,9 @@ import { mapGetters } from 'vuex'
 
 export const WishlistButton = {
   computed: {
-    ...mapGetters('user', ['getMyWishlist']),
+    ...mapGetters('user', ['getUserWishlist']),
     getWishlistItemsCount () {
-      return this.getMyWishlist.length
+      return this.getUserWishlist.length
     }
   },
   methods: {

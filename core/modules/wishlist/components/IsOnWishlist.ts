@@ -14,9 +14,9 @@ export const IsOnWishlist = {
     registerModule(WishlistModule)
   },
   computed: {
-    ...mapGetters('user', ['getMyWishlist']),
+    ...mapGetters('user', ['getUserWishlist']),
     isOnWishlist () {
-      if (this.getMyWishlist.some(p => p.sku === this.product.sku)) {
+      if (this.getUserWishlist.some(p => p.sku === this.product.sku)) {
         return true
       }
       return false

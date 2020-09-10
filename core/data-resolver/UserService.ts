@@ -100,7 +100,7 @@ const getProductReviews = async (pageSize = 20, currentPage = 1): Promise<Task> 
     }
   })
 
-const getMyWishlist = async (pageSize = 20, currentPage = 1): Promise<Task> =>
+const getUserWishlist = async (pageSize = 20, currentPage = 1): Promise<Task> =>
   TaskQueue.execute({
     url: processLocalizedURLAddress(
       getApiEndpointUrl(config.users, 'wishlist_endpoint')
@@ -177,7 +177,7 @@ export const UserService: DataResolver.UserService = {
   getProfile,
   getOrdersHistory,
   getProductReviews,
-  getMyWishlist,
+  getUserWishlist,
   removeItemFromWishlist,
   clearWishlist,
   addItemToWishlist,

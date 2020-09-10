@@ -3,13 +3,13 @@ import { mapGetters } from 'vuex';
 export const UserWishlist = {
   name: 'UserWishlist',
   computed: {
-    ...mapGetters('user', ['getMyWishlist']),
-    myWishlist () {
-      console.log("=======this.getMyWishlistss========"+JSON.stringify(this.getMyWishlist))
-      return this.getMyWishlist
+    ...mapGetters('user', ['getUserWishlist']),
+    userWishlist () {
+      console.log("=======this.getUserWishlistss========"+JSON.stringify(this.getUserWishlist))
+      return this.getUserWishlist
     },
-    isMyWishlistEmpty () {
-      return this.getMyWishlist.length < 1
+    isUserWishlistEmpty () {
+      return this.getUserWishlist.length < 1
     }
   }
 }

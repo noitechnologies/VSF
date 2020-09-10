@@ -29,23 +29,23 @@ const mutations: MutationTree<UserState> = {
   [types.USER_PRODUCT_REVIEWS_LOADED] (state, productReviews) {
     state.product_reviews = productReviews
   },
-  [types.USER_WISHLIST_LOADED] (state, myWishlist) {
-    state.my_wishlist = myWishlist
+  [types.USER_WISHLIST_LOADED] (state, userWishlist) {
+    state.user_wishlist = userWishlist
   },
   [types.USER_WISHLIST_ITEM_ADDED] (state, product) {
-    const record = state.my_wishlist.find(p => p.id === product.id)
+    const record = state.user_wishlist.find(p => p.id === product.id)
     if (!record) {
-      state.my_wishlist.push({
+      state.user_wishlist.push({
         ...product,
         qty: 1
       })
     }
   },
   [types.USER_WISHLIST_ITEM_REMOVED] (state, id) {
-    state.my_wishlist = state.my_wishlist.filter(item => item.id !== id)
+    state.user_wishlist = state.user_wishlist.filter(item => item.id !== id)
   },
   [types.USER_WISHLIST_CLEARED] (state) {
-    state.my_wishlist = []
+    state.user_wishlist = []
   },
   [types.USER_END_SESSION] (state) {
     state.token = ''

@@ -297,23 +297,23 @@ const actions: ActionTree<UserState, RootState> = {
     return resp
   },
 
-  async loadMyWishlistFromCache ({ commit }) {
+  async loadUserWishlistFromCache ({ commit }) {
     const wishlistCollection = StorageManager.get('user')
-    const wishlist = await wishlistCollection.getItem('my-wishlist')
+    const wishlist = await wishlistCollection.getItem('user-wishlist')
 
     if (wishlist) {
       commit(types.USER_WISHLIST_LOADED, wishlist)
-      EventBus.$emit('user-after-loaded-my-wishlist', wishlist)
+      EventBus.$emit('user-after-loaded-user-wishlist', wishlist)
       return wishlist
     }
   },
-  async refreshMyWishlist ({ commit }, { resolvedFromCache }) {
-    console.log("========inside refreshMyWishlist=======")
-    const resp = await UserService.getMyWishlist()
-    console.log("========resp inside refreshMyWishlist======="+JSON.stringify(resp))
+  async refreshUserWishlist ({ commit }, { resolvedFromCache }) {
+    console.log("========inside refreshUserWishlist=======")
+    const resp = await UserService.getUserWishlist()
+    console.log("========resp inside refreshUserWishlist======="+JSON.stringify(resp))
     if (resp.code === 200) {
       commit(types.USER_WISHLIST_LOADED, resp.result) // this also stores the current user to localForage
-      EventBus.$emit('user-after-loaded-my-wishlist', resp.result)
+      EventBus.$emit('user-after-loaded-user-wishlist', resp.result)
     }
 
     if (!resolvedFromCache) {
@@ -377,7 +377,7 @@ const actions: ActionTree<UserState, RootState> = {
     }
   },
 
-  async getMyWishlist ({ dispatch, getters }, { refresh = true, useCache = false, pageSize = 20, currentPage = 1 }) {
+  async getUserWishlist ({ dispatch, getters }, { refresh = true, useCache = false, pageSize = 20, currentPage = 1 }) {
     if (!getters.getToken) {
       Logger.debug('No User token, user unauthorized', 'user')()
       return Promise.resolve(null)
@@ -385,7 +385,7 @@ const actions: ActionTree<UserState, RootState> = {
     let resolvedFromCache = false
 
     if (useCache) {
-      const wishlist = await dispatch('loadMyWishlistFromCache')
+      const wishlist = await dispatch('loadUserWishlistFromCache')
 
       if (wishlist) {
         resolvedFromCache = true
@@ -394,7 +394,7 @@ const actions: ActionTree<UserState, RootState> = {
     }
 
     if (refresh) {
-      return dispatch('refreshMyWishlist', { resolvedFromCache, pageSize, currentPage })
+      return dispatch('refreshUserWishlist', { resolvedFromCache, pageSize, currentPage })
     } else {
       if (!resolvedFromCache) {
         Promise.resolve(null)
@@ -430,7 +430,7 @@ const actions: ActionTree<UserState, RootState> = {
     await dispatch('me', { refresh, useCache })
     await dispatch('getOrdersHistory', { refresh, useCache })
     await dispatch('getProductReviews', { refresh, useCache })
-    await dispatch('getMyWishlist', { refresh, useCache })
+    await dispatch('getUserWishlist', { refresh, useCache })
   }
 }
 

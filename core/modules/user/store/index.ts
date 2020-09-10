@@ -17,7 +17,7 @@ export const userStore: Module<UserState, RootState> = {
     session_started: new Date(),
     orders_history: null,
     product_reviews: null,
-    my_wishlist: null,
+    user_wishlist: null,
     local_data_loaded: false
   },
   getters,
