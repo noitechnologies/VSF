@@ -7,7 +7,7 @@
           :class="{'product__icon--active': isOnWishlist }"
           :title="isOnWishlist ? $t('Remove') : $t('Add to favorite') "
         >
-          <i class="material-icons">{{ favoriteIconsss }}</i>
+          <i class="material-icons">{{ favoriteIcons }}</i>
         </div>
       </AddToWishlist>
       <AddToCompare :product="product">
