@@ -126,7 +126,7 @@
               />
             </div>
             <div class="row py40 add-to-buttons">
-              <div class="col-xs-6 col-sm-3 col-md-6">
+              <div v-if="currentUser" class="col-xs-6 col-sm-3 col-md-6">
                 <AddToWishlist :product="getCurrentProduct" />
               </div>
               <div class="col-xs-6 col-sm-3 col-md-6">
@@ -326,6 +326,9 @@ export default {
     },
     getJsonLd () {
       return productJsonLd(this.getCurrentProduct, this.getCurrentProductConfiguration.color && this.getCurrentProductConfiguration.color.label, this.$store.state.storeView.i18n.currencyCode, this.getCustomAttributes)
+    },
+    currentUser () {
+      return this.$store.state.user.current
     }
   },
   async mounted () {

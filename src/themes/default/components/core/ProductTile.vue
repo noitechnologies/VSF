@@ -1,13 +1,13 @@
 <template>
   <div class="product align-center w-100 pb20" v-observe-visibility="visibilityChanged">
     <div class="product__icons">
-      <AddToWishlist :product="product">
+      <AddToWishlist v-if="currentUser" :product="product">
         <div
           class="product__icon"
           :class="{'product__icon--active': isOnWishlist }"
           :title="isOnWishlist ? $t('Remove') : $t('Add to favorite') "
         >
-          <i class="material-icons">{{ favoriteIcon }}</i>
+          <i class="material-icons">{{ favoriteIconsss }}</i>
         </div>
       </AddToWishlist>
       <AddToCompare :product="product">
@@ -100,6 +100,9 @@ export default {
     },
     storeView () {
       return currentStoreView()
+    },
+    currentUser () {
+      return this.$store.state.user.current
     }
   },
   methods: {
