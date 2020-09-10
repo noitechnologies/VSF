@@ -45,19 +45,6 @@ export default {
     ClearWishlistButton
   },
   methods: {
-    clearWishlist () {
-      this.$store.dispatch('notification/spawnNotification', {
-        type: 'warning',
-        message: this.$t('Are you sure you would like to remove all the items from the wishlist?'),
-        action1: { label: this.$t('OK'),
-          action: () => {
-            this.$store.dispatch('wishlist/clear')
-          }
-        },
-        action2: { label: this.$t('Cancel'), action: 'close' },
-        hasNoTimeout: true
-      })
-    }
   },
   mixins: [Wishlist]
 }
