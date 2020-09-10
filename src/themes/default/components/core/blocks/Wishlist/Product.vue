@@ -17,6 +17,7 @@
           <add-to-cart
             v-if="product.type_id === 'simple'"
             :product="product"
+            :disabled="!product.stock.is_in_stock"
             class="wishlist-add-to-cart col-xs-12 col-sm-4 col-md-6"
           />
           <router-link
