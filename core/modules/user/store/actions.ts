@@ -401,6 +401,30 @@ const actions: ActionTree<UserState, RootState> = {
       }
     }
   },
+
+  async removeItemFromWishlist ({ commit }, id) {
+      const resp = await UserService.removeItemFromWishlist(id)
+      if (resp.code === 200) {
+        commit(types.USER_WISHLIST_ITEM_REMOVED, id)
+      }
+  },
+
+  async clearWishlist ({ commit }) {
+    const resp = await UserService.clearWishlist()
+    if (resp.code === 200) {
+      commit(types.USER_WISHLIST_CLEARED)
+    }
+  },
+
+  async addItemToWishlist ({ commit }, id) {
+    console.log("===================inside addItemToWishlist============="+JSON.stringify(id))
+    const resp = await UserService.addItemToWishlist(id)
+    if (resp.code === 200) {
+      commit(types.USER_WISHLIST_ITEM_ADDED, resp.result)
+      console.log("===================item added to wishlist============="+JSON.stringify(id))
+    }
+ },
+  
   async sessionAfterAuthorized ({ dispatch }, { refresh = onlineHelper.isOnline, useCache = true }) {
     Logger.info('User session authorised ', 'user')()
     await dispatch('me', { refresh, useCache })

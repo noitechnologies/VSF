@@ -112,6 +112,42 @@ const getMyWishlist = async (pageSize = 20, currentPage = 1): Promise<Task> =>
     }
   })
 
+const removeItemFromWishlist = async (id : String): Promise<Task> =>
+  TaskQueue.execute({
+    url: processLocalizedURLAddress(
+      getApiEndpointUrl(config.users, 'wishlist_remove_item_endpoint').replace('{{id}}', id + '')
+    ),
+    payload: {
+      method: 'POST',
+      mode: 'cors',
+      headers
+    }
+  })
+
+const clearWishlist = async (): Promise<Task> =>
+  TaskQueue.execute({
+    url: processLocalizedURLAddress(
+      getApiEndpointUrl(config.users, 'wishlist_clear_endpoint')
+    ),
+    payload: {
+      method: 'POST',
+      mode: 'cors',
+      headers
+    }
+  })
+
+const addItemToWishlist = async (id: String): Promise<Task> =>
+  TaskQueue.execute({
+    url: processLocalizedURLAddress(
+      getApiEndpointUrl(config.users, 'wishlist_add_item_endpoint').replace('{{id}}', id + '')
+    ),
+    payload: {
+      method: 'POST',
+      mode: 'cors',
+      headers
+    }
+  })
+
 const changePassword = async (passwordData: DataResolver.PasswordData): Promise<Task> =>
   TaskQueue.execute({
     url: processLocalizedURLAddress(getApiEndpointUrl(config.users, 'changePassword_endpoint')),
@@ -142,6 +178,9 @@ export const UserService: DataResolver.UserService = {
   getOrdersHistory,
   getProductReviews,
   getMyWishlist,
+  removeItemFromWishlist,
+  clearWishlist,
+  addItemToWishlist,
   changePassword,
   refreshToken
 }

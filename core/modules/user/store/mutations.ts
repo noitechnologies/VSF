@@ -32,6 +32,21 @@ const mutations: MutationTree<UserState> = {
   [types.USER_WISHLIST_LOADED] (state, myWishlist) {
     state.my_wishlist = myWishlist
   },
+  [types.USER_WISHLIST_ITEM_ADDED] (state, product) {
+    const record = state.my_wishlist.find(p => p.id === product.id)
+    if (!record) {
+      state.my_wishlist.push({
+        ...product,
+        qty: 1
+      })
+    }
+  },
+  [types.USER_WISHLIST_ITEM_REMOVED] (state, id) {
+    state.my_wishlist = state.my_wishlist.filter(item => item.id !== id)
+  },
+  [types.USER_WISHLIST_CLEARED] (state) {
+    state.my_wishlist = []
+  },
   [types.USER_END_SESSION] (state) {
     state.token = ''
     state.current = null

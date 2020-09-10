@@ -1,11 +1,9 @@
 import Product from '@vue-storefront/core/modules/catalog/types/Product'
 import { WishlistModule } from '../'
-import wishlistMountedMixin from '@vue-storefront/core/modules/wishlist/mixins/wishlistMountedMixin'
 import { registerModule } from '@vue-storefront/core/lib/modules';
 
 export const AddToWishlist = {
   name: 'AddToWishlist',
-  mixins: [wishlistMountedMixin],
   props: {
     product: {
       required: true,
@@ -17,7 +15,7 @@ export const AddToWishlist = {
   },
   methods: {
     addToWishlist (product: Product) {
-      return this.$store.state['wishlist'] ? this.$store.dispatch('wishlist/addItem', product) : false
+      return this.$store.state['user'] ? this.$store.dispatch('user/addItemToWishlist', product.id) : false
     }
   }
 }

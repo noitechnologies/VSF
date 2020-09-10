@@ -1,10 +1,9 @@
 import { WishlistModule } from '../'
-import wishlistMountedMixin from '@vue-storefront/core/modules/wishlist/mixins/wishlistMountedMixin'
 import { registerModule } from '@vue-storefront/core/lib/modules';
+import { mapGetters } from 'vuex';
 
 export const IsOnWishlist = {
   name: 'isOnWishlist',
-  mixins: [wishlistMountedMixin],
   props: {
     product: {
       required: true,
@@ -15,8 +14,12 @@ export const IsOnWishlist = {
     registerModule(WishlistModule)
   },
   computed: {
+    ...mapGetters('user', ['getMyWishlist']),
     isOnWishlist () {
-      return this.$store.getters['wishlist/isOnWishlist'](this.product)
+      if (this.getMyWishlist.some(p => p.sku === this.product.sku)) {
+        return true
+      }
+      return false
     }
   }
 }
