@@ -126,20 +126,6 @@
               />
             </div>
             <div class="row py40 add-to-buttons">
-
-             <div class="col-xs-6 col-sm-3 col-md-6">
-                 <share-network
-                    network="facebook"
-                    :url="productFullLink"
-                    :title="getCurrentProduct.name"
-                    :description="getCurrentProduct.description"
-                    :quote="getCurrentProduct.name"
-                    hashtags="Vastrami, Saldist, NOI Technologies"
-                  >
-                    Share on Facebook
-                </share-network>
-              </div>
-              
               <div v-show="currentUser" class="col-xs-6 col-sm-3 col-md-6">
                 <AddToWishlist :product="getCurrentProduct" />
               </div>
@@ -147,6 +133,32 @@
                 <AddToCompare :product="getCurrentProduct" />
               </div>
             </div>
+            <div class="row py40 add-to-buttons">
+              <div class="col-xs-3 col-sm-3 col-md-3">
+                Share
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-3">
+                  <share-network
+                      network="facebook"
+                      :url="productFullLink"
+                      :title="getCurrentProduct.name"
+                      :description="getCurrentProduct.description"
+                      :quote="getCurrentProduct.name"
+                      hashtags="Vastrami, Saldist, NOI Technologies"
+                    >
+                    <i class="pr5 material-icons">facebook</i>
+                  </share-network>
+                </div>
+                <div class="col-xs-3 col-sm-3 col-md-3">
+                  <share-network
+                      network="whatsapp"
+                      url="www.google.com"
+                      title="getCurrentProduct.name"
+                    >
+                    <i class="pr5 material-icons">share</i>
+                  </share-network>
+                </div>
+              </div>  
           </div>
         </section>
       </div>
@@ -622,5 +634,11 @@ $bg-secondary: color(secondary, $colors-background);
 
 .web-share {
   float: right;
+}
+.share-network-facebook {
+  cursor: pointer;
+}
+.share-network-whatsapp {
+  cursor: pointer;
 }
 </style>
