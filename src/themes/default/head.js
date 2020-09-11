@@ -14,8 +14,8 @@ export default {
     { name: 'apple-mobile-web-app-status-bar-style', content: '#ffffff' }
   ],
   link: [
-    { rel: 'icon', type: 'image/png', href: '/assets/favicon-32x32.png', sizes: '32x32' },
-    { rel: 'icon', type: 'image/png', href: '/assets/favicon-16x16.png', sizes: '16x16' },
+    { rel: 'icon', type: 'image/png', href: '/assets/favicon-32x32.ico', sizes: '32x32' },
+    { rel: 'icon', type: 'image/png', href: '/assets/favicon-16x16.ico', sizes: '16x16' },
     { rel: 'apple-touch-icon', href: '/assets/apple-touch-icon.png' },
     { rel: 'apple-touch-startup-image', href: '/assets/apple_splash_2048.png', sizes: '2048x2732' },
     { rel: 'apple-touch-startup-image', href: '/assets/apple_splash_1668.png', sizes: '1668x2224' },
