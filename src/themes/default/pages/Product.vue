@@ -152,8 +152,8 @@
                 <div class="col-xs-3 col-sm-3 col-md-3">
                   <share-network
                       network="whatsapp"
-                      url="www.google.com"
-                      title="getCurrentProduct.name"
+                      :url="productFullLink"
+                      :title="getCurrentProduct.name"
                     >
                     <i class="pr5 material-icons">share</i>
                   </share-network>
