@@ -1,6 +1,20 @@
 <template>
   <div class="product align-center w-100 pb20" v-observe-visibility="visibilityChanged">
     <div class="product__icons">
+
+ <share-network
+    network="facebook"
+    url="https://news.vuejs.org/issues/180"
+    title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+    description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+    quote="The hot reload is so fast it\'s near instant. - Evan You"
+    hashtags="vuejs,vite"
+  >
+            <i class="material-icons">{{ favoriteIcon }}</i>
+
+    Share on Facebook
+ </share-network>
+
       <AddToWishlist v-show="currentUser" :product="product">
         <div
           class="product__icon"
@@ -70,13 +84,15 @@ import AddToCompare from 'theme/components/core/blocks/Compare/AddToCompare'
 import { IsOnWishlist } from '@vue-storefront/core/modules/wishlist/components/IsOnWishlist'
 import { IsOnCompare } from '@vue-storefront/core/modules/compare/components/IsOnCompare'
 import { currentStoreView } from '@vue-storefront/core/lib/multistore'
+import {ShareNetwork} from 'vue-social-sharing'
 
 export default {
   mixins: [ProductTile, IsOnWishlist, IsOnCompare],
   components: {
     ProductImage,
     AddToWishlist,
-    AddToCompare
+    AddToCompare,
+    ShareNetwork
   },
   props: {
     labelsActive: {
