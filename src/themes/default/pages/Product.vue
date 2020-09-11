@@ -130,11 +130,11 @@
              <div class="col-xs-6 col-sm-3 col-md-6">
                  <share-network
                     network="facebook"
-                    url="https://news.vuejs.org/issues/180"
-                    title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
-                    description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
-                    quote="The hot reload is so fast it\'s near instant. - Evan You"
-                    hashtags="vuejs,vite"
+                    :url="productFullLink"
+                    :title="getCurrentProduct.name"
+                    :description="getCurrentProduct.description"
+                    :quote="getCurrentProduct.name"
+                    hashtags="Vastrami, Saldist, NOI Technologies"
                   >
                     Share on Facebook
                 </share-network>
@@ -238,6 +238,7 @@ import ProductPrice from 'theme/components/core/ProductPrice.vue'
 import { doPlatformPricesSync } from '@vue-storefront/core/modules/catalog/helpers'
 import { filterChangedProduct } from '@vue-storefront/core/modules/catalog/events'
 import {ShareNetwork} from 'vue-social-sharing'
+import { formatProductLink } from '@vue-storefront/core/modules/url/helpers'
 
 export default {
   components: {
@@ -276,7 +277,8 @@ export default {
       quantityError: false,
       isStockInfoLoading: false,
       hasAttributesLoaded: false,
-      manageQuantity: true
+      manageQuantity: true,
+      productFullLink: "URL"
     }
   },
   computed: {
@@ -346,6 +348,11 @@ export default {
     currentUser () {
       return this.$store.state.user.current
     }
+  },
+  beforeMount () {
+    console.log("=======inside beforMountHook============");
+    this.productFullLink = window.location.origin+formatProductLink(this.getCurrentProduct, currentStoreView().storeCode)
+    console.log("=======inside beforMountHook this.productFullLink============"+this.productFullLink);
   },
   async mounted () {
     await this.$store.dispatch('recently-viewed/addItem', this.getCurrentProduct)
