@@ -24,7 +24,6 @@ let routes = [
   { name: 'my-orders', path: '/my-account/orders', component: MyAccount, props: { activeBlock: 'MyOrders' } },
   { name: 'my-order', path: '/my-account/orders/:orderId', component: MyAccount, props: { activeBlock: 'MyOrder' } },
   { name: 'my-product-reviews', path: '/my-account/product-reviews', component: MyAccount, props: { activeBlock: 'MyProductReviews' } },
-  { name: 'user-wishlist', path: '/my-account/wishlist', component: MyAccount, props: { activeBlock: 'UserWishlist' } },
   { name: 'my-recently-viewed', path: '/my-account/recently-viewed', component: MyAccount, props: { activeBlock: 'MyRecentlyViewed' } },
   { name: 'about-us', path: '/about-us', component: Static, props: { page: 'lorem', title: 'About us' } },
   { name: 'customer-service', path: '/customer-service', component: Static, props: { page: 'lorem', title: 'Customer service' } },

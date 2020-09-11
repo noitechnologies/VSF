@@ -45,7 +45,6 @@ import MyNewsletter from '../components/core/blocks/MyAccount/MyNewsletter'
 import MyOrders from '../components/core/blocks/MyAccount/MyOrders'
 import MyOrder from '../components/core/blocks/MyAccount/MyOrder'
 import MyProductReviews from '../components/core/blocks/MyAccount/MyProductReviews'
-import MyWishlist from '../components/core/blocks/MyAccount/MyWishlist'
 import MyRecentlyViewed from '../components/core/blocks/MyAccount/MyRecentlyViewed'
 import NoSSR from 'vue-no-ssr'
 import { RecentlyViewedModule } from '@vue-storefront/core/modules/recently-viewed'
@@ -61,7 +60,6 @@ export default {
         { title: this.$t('My orders'), link: '/my-account/orders' },
         /*{ title: this.$t('My loyalty card'), link: '#' },*/
         { title: this.$t('My product reviews'), link: '/my-account/product-reviews' },
-        { title: this.$t('My wishlist'), link: '/my-account/wishlist' },
         { title: this.$t('My Recently viewed products'), link: '/my-account/recently-viewed' }
       ]
     }
@@ -74,7 +72,6 @@ export default {
     MyOrders,
     MyOrder,
     MyProductReviews,
-    MyWishlist,
     MyRecentlyViewed,
     'no-ssr': NoSSR
   },
