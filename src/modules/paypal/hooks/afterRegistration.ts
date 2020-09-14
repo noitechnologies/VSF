@@ -11,7 +11,6 @@ export function afterRegistration(config, store) {
       // Vue.prototype.$bus.$emit('checkout-do-placeOrder', {})
     }
   }
-  console.log("========isServer in afterRegistration.ts========"+isServer);
   if (!isServer) {
     Vue.prototype.$bus.$on('set-unique-payment-methods', methods => {
       store.commit(`${types.SET_BACKEND_PAYMENT_PAYPAL_EXPRESS}`, methods)

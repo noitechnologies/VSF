@@ -308,9 +308,7 @@ const actions: ActionTree<UserState, RootState> = {
     }
   },
   async refreshUserWishlist ({ commit }, { resolvedFromCache }) {
-    console.log("========inside refreshUserWishlist=======")
     const resp = await UserService.getUserWishlist()
-    console.log("========resp inside refreshUserWishlist======="+JSON.stringify(resp))
     if (resp.code === 200) {
       commit(types.USER_WISHLIST_LOADED, resp.result) // this also stores the current user to localForage
       EventBus.$emit('user-after-loaded-user-wishlist', resp.result)

@@ -362,9 +362,7 @@ export default {
     }
   },
   beforeMount () {
-    console.log("=======inside beforMountHook============");
     this.productFullLink = window.location.origin+formatProductLink(this.getCurrentProduct, currentStoreView().storeCode)
-    console.log("=======inside beforMountHook this.productFullLink============"+this.productFullLink);
   },
   async mounted () {
     await this.$store.dispatch('recently-viewed/addItem', this.getCurrentProduct)
