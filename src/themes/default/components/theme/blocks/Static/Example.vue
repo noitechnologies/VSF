@@ -1,22 +1,22 @@
 <template>
   <div>
     <p>
-      This website ("website") is operated by Vastrami Fashions Inc., which includes Vastrami Fashions stores, and Vastrami Fashions Private Sales. This privacy policy only covers information collected at this website, and does not cover any information collected offline by Vastrami Fashions. All Vastrami Fashions websites are covered by this privacy policy.
+      Nullam pharetra maximus felis, vel vestibulum justo pellentesque convallis. Aenean a auctor ipsum. Nulla rutrum leo ac tempus pharetra. Maecenas eu erat egestas, semper ipsum et, finibus nunc. Aliquam tempus non magna hendrerit luctus. Curabitur sit amet bibendum lorem. Proin efficitur tristique metus nec luctus
     </p>
     <h2>
       Vastrami Fashions Security
     </h2>
     <p>
-      Personal information provided on the website and online credit card transactions are transmitted through a secure server. We are committed to handling your personal information with high standards of information security. We take appropriate physical, electronic, and administrative steps to maintain the security and accuracy of personally identifiable information we collect, including limiting the number of people who have physical access to our database servers, as well as employing electronic security systems and password protections that guard against unauthorized access.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl neque, ultricies a pharetra at, auctor non risus. Maecenas facilisis laoreet elit vitae sodales. Suspendisse potenti. Integer pulvinar pharetra viverra. Morbi gravida porta ligula, vitae mattis risus consequat ac. Suspendisse dictum leo vel accumsan commodo. Ut volutpat lacinia purus quis tempor. Sed non mauris sed ligula maximus rhoncus. Quisque vel mi lacinia felis dictum sollicitudin vel at eros. Nam sit amet enim arcu.
     </p>
     <h2>
       Vastrami Fashions Privacy Policy
     </h2>
     <p>
-      To help us achieve our goal of providing the highest quality products and services, we use information from our interactions with you and other customers, as well as from other parties. Because we respect your privacy, we have implemented procedures to ensure that your personal information is handled in a safe, secure, and responsible manner. We have posted this privacy policy in order to explain our information collection practices and the choices you have about the way information is collected and used.
+      Aliquam ac consequat neque, in ultrices libero. Cras nec lacus mi. Morbi in elit risus. Sed semper dui metus, tincidunt imperdiet diam lacinia sed. Suspendisse non aliquet nulla, at rhoncus massa. Nulla vulputate convallis tortor porta ornare. Duis dictum ex eget nulla pellentesque sagittis. Etiam ac erat in quam varius eleifend. Cras lacinia ante nibh, eu scelerisque diam placerat et. Suspendisse eget facilisis ligula.
     </p>
     <p>
-      As we continue to develop the Vastrami Fashions website and take advantage of advances in technology to improve the services we offer, this privacy policy likely will change. We therefore encourage you to refer to this policy on an ongoing basis so that you understand our current privacy policy.
+      Morbi elementum ipsum et mi aliquam, ultrices scelerisque turpis tincidunt. Ut rutrum tellus ut mauris ornare, non lacinia mauris consectetur. Aenean id tellus eros. Fusce fringilla sapien id enim consequat, ac elementum velit mollis. Integer auctor imperdiet orci, a rhoncus nulla hendrerit et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris bibendum metus vitae dui semper, vitae dignissim elit commodo.
     </p>
   </div>
 </template>

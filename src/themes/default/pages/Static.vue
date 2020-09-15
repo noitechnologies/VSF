@@ -61,14 +61,14 @@ export default {
   computed: {
     activeComponent () {
       const matchedNav = this.navigation.find(nav => nav.link.includes(this.$route.path))
-      return matchedNav ? matchedNav.component : null
+      return matchedNav ? matchedNav.component : StaticExample
     }
   },
   data () {
     return {
       navigation: [
-        { title: i18n.t('About us'), link: getPathForStaticPage('/about-us'), component: StaticExample },
-        { title: i18n.t('Customer service'), link: getPathForStaticPage('/customer-service'), component: StaticShortExample },
+        { title: i18n.t('About us'), link:('/about-us'), component: StaticExample },
+        { title: i18n.t('Customer service'), link:('/customer-service'), component: StaticShortExample },
         { title: i18n.t('Store locator'), link: localizedRoute('/store-locator'), component: StaticExample },
         { title: i18n.t('Delivery'), link: '/delivery', component: StaticShortExample },
         { title: i18n.t('Return policy'), link: '/returns', component: StaticExample },
