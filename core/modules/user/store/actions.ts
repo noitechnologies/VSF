@@ -415,11 +415,9 @@ const actions: ActionTree<UserState, RootState> = {
   },
 
   async addItemToWishlist ({ commit }, id) {
-    console.log("===================inside addItemToWishlist============="+JSON.stringify(id))
     const resp = await UserService.addItemToWishlist(id)
     if (resp.code === 200) {
       commit(types.USER_WISHLIST_ITEM_ADDED, resp.result)
-      console.log("===================item added to wishlist============="+JSON.stringify(id))
     }
  },
   
