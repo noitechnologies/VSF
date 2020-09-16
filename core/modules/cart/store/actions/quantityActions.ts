@@ -23,10 +23,10 @@ const quantityActions = {
   },
   async updateQuantity ({ commit, dispatch, getters }, { product, qty, forceServerSilence = false }) {
     commit(types.CART_UPD_ITEM, { product, qty })
-    if (getters.isCartSyncEnabled && product.server_item_id && !forceServerSilence) {
-      return dispatch('sync', { forceClientState: true })
+    //TODO: Revisit it later to check why server_item_id is not coming in product
+    if (getters.isCartSyncEnabled && product.id && !forceServerSilence) {
+      return dispatch('sync', { forceClientState: false })
     }
-
     return createDiffLog()
       .pushClientParty({ status: 'wrong-qty', sku: product.sku, 'client-qty': qty })
   }
