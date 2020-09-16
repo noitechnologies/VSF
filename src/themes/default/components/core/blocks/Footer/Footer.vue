@@ -59,12 +59,12 @@
               </h3>
               <div class="mt15">
                 <router-link class="cl-secondary" :to="localizedRoute('/about-us')" exact>
-                  {{ $t('About us (Magento CMS)') }}
+                  {{ $t('About us') }}
                 </router-link>
               </div>
               <div class="mt15">
                 <router-link class="cl-secondary" :to="localizedRoute('/customer-service')" exact>
-                  {{ $t('Customer service (Magento CMS)') }}
+                  {{ $t('Customer service') }}
                 </router-link>
               </div>
               <div class="mt15">
