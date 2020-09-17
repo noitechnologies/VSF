@@ -419,8 +419,12 @@ const actions: ActionTree<UserState, RootState> = {
     if (resp.code === 200) {
       commit(types.USER_WISHLIST_ITEM_ADDED, resp.result)
     }
- },
-  
+  },
+
+  async sendFeedback ({ commit }, {feedback, email}) {
+    const resp = await UserService.sendFeedback(feedback, email)
+  },
+
   async sessionAfterAuthorized ({ dispatch }, { refresh = onlineHelper.isOnline, useCache = true }) {
     Logger.info('User session authorised ', 'user')()
     await dispatch('me', { refresh, useCache })
