@@ -174,11 +174,11 @@ export default {
           name: i18n.t('My orders'),
           url: '/my-account/orders'
         },
-        {
+/*         {
           id: 5,
           name: i18n.t('My loyalty card'),
           url: '#'
-        },
+        }, */
         {
           id: 6,
           name: i18n.t('My product reviews'),
