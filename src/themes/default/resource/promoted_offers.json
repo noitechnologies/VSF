@@ -3,7 +3,7 @@
     {
       "title": "Office casual",
       "subtitle": "Collection",
-      "image": "/assets/ban1.jpg",
+      "image": "/assets/static_images/banner/ban1.jpg",
       "link": "/apparel/women-1000"
     }
   ],
@@ -11,13 +11,13 @@
     {
       "title": "Shine on",
       "subtitle": "Accessories",
-      "image": "/assets/ban2.jpg",
+      "image": "/assets/static_images/banner/ban2.jpg",
       "link": "/apparel/men-2000"
     },
     {
       "title": "Spring is coming",
       "subtitle": "Hats",
-      "image": "/assets/ban3.jpg",
+      "image": "/assets/static_images/banner/ban3.jpg",
       "link": "/accessories/gear-3000"
     }
   ],
