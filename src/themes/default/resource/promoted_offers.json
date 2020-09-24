@@ -1,21 +1,21 @@
 {
   "mainBanners": [
     {
-      "title": "Office casual",
-      "subtitle": "Collection",
+      "title": "One thing is eternal.",
+      "subtitle": "Fashion",
       "image": "/assets/static_images/banner/ban1.jpg",
       "link": "/apparel/women-1000"
     }
   ],
   "smallBanners": [
     {
-      "title": "Shine on",
+      "title": "Shop your style",
       "subtitle": "Accessories",
       "image": "/assets/static_images/banner/ban2.jpg",
       "link": "/apparel/men-2000"
     },
     {
-      "title": "Spring is coming",
+      "title": "Fashion spring",
       "subtitle": "Hats",
       "image": "/assets/static_images/banner/ban3.jpg",
       "link": "/accessories/gear-3000"
@@ -23,7 +23,7 @@
   ],
   "productBanners": [
     {
-      "title": "Spring is coming",
+      "title": "Fashion spring",
       "subtitle": "Hats",
       "image": "/assets/ban3.jpg",
       "link": "/accessories/gear-3000"
