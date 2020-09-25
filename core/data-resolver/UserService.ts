@@ -148,6 +148,19 @@ const addItemToWishlist = async (id: String): Promise<Task> =>
     }
   })
 
+const sendFeedback = async (feedback: String, email: String): Promise<Task> =>
+  TaskQueue.execute({
+    url: processLocalizedURLAddress(
+      getApiEndpointUrl(config.users, 'sendFeedback_endpoint')
+    ),
+    payload: {
+      method: 'POST',
+      mode: 'cors',
+      headers,
+      body: JSON.stringify({ feedback, email })
+    }
+  })
+
 const changePassword = async (passwordData: DataResolver.PasswordData): Promise<Task> =>
   TaskQueue.execute({
     url: processLocalizedURLAddress(getApiEndpointUrl(config.users, 'changePassword_endpoint')),
@@ -181,6 +194,7 @@ export const UserService: DataResolver.UserService = {
   removeItemFromWishlist,
   clearWishlist,
   addItemToWishlist,
+  sendFeedback,
   changePassword,
   refreshToken
 }

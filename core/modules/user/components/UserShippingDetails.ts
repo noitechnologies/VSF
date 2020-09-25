@@ -176,8 +176,18 @@ export const UserShippingDetails = {
         if (this.currentUser && this.currentUser.hasOwnProperty('default_shipping')) {
           shippingDetails = this.readShippingDetailsFromCurrentUser(shippingDetails);
         } else {
-          shippingDetails.firstName = this.currentUser.firstname
-          shippingDetails.lastName = this.currentUser.lastname
+          for (let address of this.currentUser.addresses) {
+              shippingDetails.firstName=address.firstname,
+              shippingDetails.lastName=address.lastname,
+              shippingDetails. street= address.street[0],
+              shippingDetails. house=address.street[1],
+              shippingDetails.city=address.city,
+              shippingDetails.postcode= address.postcode,
+              shippingDetails.region=address.region.region,
+              shippingDetails.country= address.country_id,
+              shippingDetails.phone= address.telephone
+          }
+
         }
       }
       return shippingDetails;

@@ -174,20 +174,15 @@ export default {
           name: i18n.t('My orders'),
           url: '/my-account/orders'
         },
-        {
+/*         {
           id: 5,
           name: i18n.t('My loyalty card'),
           url: '#'
-        },
+        }, */
         {
           id: 6,
           name: i18n.t('My product reviews'),
           url: '/my-account/product-reviews'
-        },
-        {
-          id: 6,
-          name: i18n.t('My wishlist'),
-          url: '/my-account/wishlist'
         }
       ],
       componentLoaded: false

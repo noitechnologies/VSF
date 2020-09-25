@@ -76,31 +76,31 @@
               <td colspan="5" class="align-right">
                 {{ $t('Subtotal') }}
               </td>
-              <td>{{ order.subtotal | price(storeView) }}</td>
+              <td class="align-right">{{ order.subtotal | price(storeView) }}</td>
             </tr>
             <tr>
               <td colspan="5" class="align-right">
                 {{ $t('Shipping') }}
               </td>
-              <td>{{ order.shipping_amount | price(storeView) }}</td>
+              <td class="align-right">{{ order.shipping_amount | price(storeView) }}</td>
             </tr>
             <tr>
               <td colspan="5" class="align-right">
                 {{ $t('Tax') }}
               </td>
-              <td>{{ order.tax_amount + order.discount_tax_compensation_amount | price(storeView) }}</td>
+              <td class="align-right">{{ order.tax_amount + order.discount_tax_compensation_amount | price(storeView) }}</td>
             </tr>
             <tr v-if="order.discount_amount">
               <td colspan="5" class="align-right">
                 {{ $t('Discount') }}
               </td>
-              <td>{{ order.discount_amount | price(storeView) }}</td>
+              <td class="align-right">{{ order.discount_amount | price(storeView) }}</td>
             </tr>
             <tr>
               <td colspan="5" class="align-right">
                 {{ $t('Grand total') }}
               </td>
-              <td>{{ order.grand_total | price(storeView) }}</td>
+              <td class="align-right">{{ order.grand_total | price(storeView) }}</td>
             </tr>
           </tfoot>
         </table>

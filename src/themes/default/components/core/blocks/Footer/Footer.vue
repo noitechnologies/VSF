@@ -58,13 +58,13 @@
                 {{ $t('About us') }}
               </h3>
               <div class="mt15">
-                <router-link class="cl-secondary" :to="getLinkFor('/about-us')" exact>
-                  {{ $t('About us (Magento CMS)') }}
+                <router-link class="cl-secondary" :to="localizedRoute('/about-us')" exact>
+                  {{ $t('About us') }}
                 </router-link>
               </div>
               <div class="mt15">
-                <router-link class="cl-secondary" :to="getLinkFor('/customer-service')" exact>
-                  {{ $t('Customer service (Magento CMS)') }}
+                <router-link class="cl-secondary" :to="localizedRoute('/customer-service')" exact>
+                  {{ $t('Customer service') }}
                 </router-link>
               </div>
               <div class="mt15">
@@ -77,7 +77,7 @@
           <div class="row social mt30">
             <a
               class="social-icon mx10 brdr-circle no-underline"
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/NOITechnologies/"
               :aria-label="$t('Go to Facebook')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="facebook icon" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD">
@@ -86,7 +86,7 @@
             </a>
             <a
               class="social-icon mx10 brdr-circle no-underline"
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/vastrami/?hl=en"
               :aria-label="$t('Go to Instagram')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="instagram icon" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD">
@@ -97,7 +97,7 @@
             </a>
             <a
               class="social-icon mx10 brdr-circle no-underline"
-              href="https://www.pinterest.com"
+              href="https://in.pinterest.com/noitechnologies/"
               :aria-label="$t('Go to Pinterest')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="pinterest icon" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD">
@@ -106,7 +106,7 @@
             </a>
             <a
               class="social-icon mx10 brdr-circle no-underline"
-              href="https://www.youtube.com"
+              href="https://www.youtube.com/channel/UCd1h7VC-TMkj5Oacy93RuKQ"
               :aria-label="$t('Go to Youtube')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="youtube icon" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD">
