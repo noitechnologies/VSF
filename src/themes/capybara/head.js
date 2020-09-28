@@ -1,6 +1,6 @@
 export default {
   title: 'VSF Capybara',
-  titleTemplate: '%s - Vue Storefront',
+  titleTemplate: '%s - AyushVati',
   htmlAttrs: {
     lang: 'en'
   },
@@ -10,7 +10,7 @@ export default {
       vmid: 'description',
       name: 'description',
       content:
-        'Vue Storefront is a standalone PWA storefront for your eCommerce, possible to connect with any eCommerce backend (eg. Magento, Prestashop or Shopware) through the API.'
+        'Ayushvati is a standalone PWA storefront for Saldist connected through the API.'
     },
     {
       name: 'viewport',
