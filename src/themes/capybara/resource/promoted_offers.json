@@ -1,68 +1,68 @@
 {
   "mainBanners": [
     {
-      "title": "COCKTAIL PARTY",
-      "subtitle": "Dresses",
-      "description": "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.",
+      "title": "NATURAL FOOD",
+      "subtitle": "Products",
+      "description": "A healthy outside starts from the healthy inside.",
       "buttonText": "SHOP NOW",
       "image": {
         "webp": "/assets/banner/webp/static_images/banner1.webp",
         "fallback": "/assets/banner/png/static_images/banner1.png"
       },
-      "link": "/women.html",
+      "link": "/health-care/health-and-wellness-1003",
       "slot": "banner-A"
     },
     {
-      "title": "LINEN DRESSES",
-      "subtitle": "Dresses",
-      "description": "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.",
+      "title": "AYURVEDIC MEDICINE",
+      "subtitle": "Medicines",
+      "description": "Ayurveda is the mysterious box of the medical science.",
       "buttonText": "SHOP NOW",
       "image": {
         "webp": "/assets/banner/webp/static_images/banner2.webp",
         "fallback": "/assets/banner/png/static_images/banner2.png"
       },
-      "link": "/men.html",
+      "link": "/medicines/vati-3001",
       "slot": "banner-B"
     },
     {
-      "title": "THE OFFICE LIFE",
-      "subtitle": "T-Shirts",
+      "title": "NATURAL HEALTH CARE",
+      "subtitle": "Products",
       "image": {
         "webp": "/assets/banner/webp/static_images/banner3.webp",
         "fallback": "/assets/banner/png/static_images/banner3.png"
       },
-      "link": "/gear.html",
+      "link": "/health-care/digestive-1001",
       "slot": "banner-C"
     },
     {
-      "title": "ECO SANDALS",
-      "subtitle": "Summer shoes",
+      "title": "HERBAL PERSONAL CARE",
+      "subtitle": "Products",
       "image": {
         "webp": "/assets/banner/webp/static_images/banner4.webp",
         "fallback": "/assets/banner/png/static_images/banner4.png"
       },
-      "link": "/gear.html",
+      "link": "/personal-care/eye-care-2001",
       "slot": "banner-D"
     }
   ],
   "productBanners": [
     {
-      "title": "ECO SANDALS",
-      "subtitle": "Summer shoes",
+      "title": "NATURAL HEALTH CARE",
+      "subtitle": "Products",
       "image": {
-        "webp": "/assets/banner/webp/bannerK.webp",
-        "fallback": "/assets/banner/png/bannerK.png"
+        "webp": "/assets/banner/webp/static_images/banner3.webp",
+        "fallback": "/assets/banner/png/static_images/banner3.png"
       },
-      "link": "/gear/gear-3"
+      "link": "/health-care/digestive-1001"
     },
     {
-      "title": "THE OFFICE LIFE",
-      "subtitle": "T-Shirts",
+      "title": "HERBAL PERSONAL CARE",
+      "subtitle": "Products",
       "image": {
-        "webp": "/assets/banner/webp/bannerC.webp",
-        "fallback": "/assets/banner/png/bannerC.png"
+        "webp": "/assets/banner/webp/static_images/banner4.webp",
+        "fallback": "/assets/banner/png/static_images/banner4.png"
       },
-      "link": "/men/tops-men/tees-men/tees-16"
+      "link": "/personal-care/eye-care-2001"
     }
   ],
   "menuAsideBanners": [
