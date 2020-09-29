@@ -32,6 +32,13 @@ import {
 import { getPathForStaticPage } from 'theme/helpers';
 import CmsPage from '@vue-storefront/core/pages/CmsPage';
 import AStatic from 'theme/components/atoms/a-static';
+import StaticAbout from 'theme/components/atoms/static_pages/CustomerService'
+import StaticLegal from 'theme/components/atoms/static_pages/Legal'
+import StaticReturnPolicy from 'theme/components/atoms/static_pages/ReturnPolicy'
+import StaticContact from 'theme/components/atoms/static_pages/Contact'
+import StaticPrivacy from 'theme/components/atoms/static_pages/Privacy'
+import StaticCustomerService from 'theme/components/atoms/static_pages/CustomerService';
+import StaticExample from 'theme/components/atoms/static_pages/Static/Example'
 
 export default {
   name: 'Static',
@@ -44,16 +51,16 @@ export default {
   data () {
     return {
       navigation: [
-        { title: i18n.t('About us (Magento CMS)'), link: getPathForStaticPage('/about-us'), isCms: true },
-        { title: i18n.t('Customer service (Magento CMS)'), link: getPathForStaticPage('/customer-service'), isCms: true },
-        { title: i18n.t('Customer service'), link: '/customer-service' },
-        { title: i18n.t('Legal notice'), link: '/legal' },
-        { title: i18n.t('Store locator'), link: '/store-locator' },
-        { title: i18n.t('Delivery'), link: '/delivery' },
-        { title: i18n.t('Return policy'), link: '/returns' },
-        { title: i18n.t('Privacy policy'), link: '/privacy' },
-        { title: i18n.t('Size guide'), link: '/size-guide' },
-        { title: i18n.t('Contact us'), link: '/contact' }
+        { title: i18n.t('About us (Magento CMS)'), link: '/about-us',component: StaticCustomerService },
+        { title: i18n.t('Customer service (Magento CMS)'), link: '/customer-service',component: StaticCustomerService  },
+        { title: i18n.t('Customer service'), link: '/customer-service', component: StaticCustomerService },
+        { title: i18n.t('Legal notice'), link: '/legal',component: StaticLegal },
+        { title: i18n.t('Store locator'), link: '/store-locator',component: StaticExample },
+        { title: i18n.t('Delivery'), link: '/delivery',component: StaticExample },
+        { title: i18n.t('Return policy'), link: '/returns',component: StaticReturnPolicy },
+        { title: i18n.t('Privacy policy'), link: '/privacy',component: StaticPrivacy },
+        { title: i18n.t('Size guide'), link: '/size-guide',component: StaticExample },
+        { title: i18n.t('Contact us'), link: '/contact',component: StaticContact }
       ]
     };
   },

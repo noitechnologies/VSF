@@ -1,8 +1,8 @@
 {
   "images": [
     {
-      "title": "Natural Health Care",
-      "subtitle": "Products",
+      "title": "",
+      "subtitle": "",
       "background": "#F0F5F3",
       "image": {
         "webp": "/assets/banner/webp/static_images/full_width_banner1.webp",
@@ -10,8 +10,8 @@
       }
     },
     {
-      "title": "Ayurvedic Medicine",
-      "subtitle": "Medicines",
+      "title": "",
+      "subtitle": "",
       "background": "#F0F5F3",
       "className": "sf-hero-item--position-bg-top-left sf-hero-item--align-right",
       "image": {
@@ -20,8 +20,8 @@
       }
     },
     {
-      "title": "Herbal Products",
-      "subtitle": "Immunity Booster",
+      "title": "",
+      "subtitle": "",
       "background": "#F0F5F3",
       "className": "sf-hero-item--position-bg-top-left sf-hero-item--align-right",
       "image": {
