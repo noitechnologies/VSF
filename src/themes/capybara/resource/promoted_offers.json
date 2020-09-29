@@ -86,16 +86,16 @@
       "title": "",
       "type": "mobile",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner5.webp",
-        "fallback": "/assets/banner/webp/static_images/banner5.png"
+        "webp": "/assets/banner/webp/static_images/banner6.webp",
+        "fallback": "/assets/banner/webp/static_images/banner6.png"
       }
     },
     {
       "title": "",
       "type": "desktop",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner5.webp",
-        "fallback": "/assets/banner/webp/static_images/banner5.png"
+        "webp": "/assets/banner/webp/static_images/banner6.webp",
+        "fallback": "/assets/banner/webp/static_images/banner6.png"
       }
     }
   ]
