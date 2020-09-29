@@ -38,7 +38,7 @@ import StaticReturnPolicy from 'theme/components/atoms/static_pages/ReturnPolicy
 import StaticContact from 'theme/components/atoms/static_pages/Contact'
 import StaticPrivacy from 'theme/components/atoms/static_pages/Privacy'
 import StaticCustomerService from 'theme/components/atoms/static_pages/CustomerService';
-import StaticExample from 'theme/components/atoms/static_pages/Static/Example'
+import StaticExample from 'theme/components/atoms/static_pages/Example'
 
 export default {
   name: 'Static',
