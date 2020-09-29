@@ -67,35 +67,35 @@
   ],
   "menuAsideBanners": [
     {
-      "title": "Last pairs left",
+      "title": "",
       "type": "mobile",
       "image": {
-        "webp": "/assets/banner/webp/bannerSandals-full.webp",
-        "fallback": "/assets/banner/png/bannerSandals-full.png"
+        "webp": "/assets/banner/webp/static_images/banner5.webp",
+        "fallback": "/assets/banner/webp/static_images/banner5.png"
       }
     },
     {
-      "title": "Last pairs left",
+      "title": "",
       "type": "desktop",
       "image": {
-        "webp": "/assets/banner/webp/bannerSandals.webp",
-        "fallback": "/assets/banner/png/bannerSandals.png"
+        "webp": "/assets/banner/webp/static_images/banner5.webp",
+        "fallback": "/assets/banner/webp/static_images/banner5.png"
       }
     },
     {
-      "title": "Beach bags 2=1",
+      "title": "",
       "type": "mobile",
       "image": {
-        "webp": "/assets/banner/webp/bannerBeachBag-full.webp",
-        "fallback": "/assets/banner/png/bannerBeachBag-full.png"
+        "webp": "/assets/banner/webp/static_images/banner5.webp",
+        "fallback": "/assets/banner/webp/static_images/banner5.png"
       }
     },
     {
-      "title": "Beach bags 2=1",
+      "title": "",
       "type": "desktop",
       "image": {
-        "webp": "/assets/banner/webp/bannerBeachBag.webp",
-        "fallback": "/assets/banner/png/bannerBeachBag.png"
+        "webp": "/assets/banner/webp/static_images/banner5.webp",
+        "fallback": "/assets/banner/webp/static_images/banner5.png"
       }
     }
   ]
