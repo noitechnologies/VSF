@@ -165,7 +165,7 @@ export default {
 }
 .sf-hero-item {
   --hero-item-height: 14rem;
-  height: 500;
+  height: 500px;
 }
 .banner-grid {
   margin: var(--spacer-base) 0;
