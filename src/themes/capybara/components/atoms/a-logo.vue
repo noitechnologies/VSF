@@ -33,7 +33,6 @@ export default {
 .a-logo {
   display: inline-flex;
   ::v-deep .sf-header__logo {
-    --header-logo-width: 41px;
     --header-logo-height: 41px;
   }
 }
