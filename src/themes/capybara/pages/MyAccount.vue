@@ -20,9 +20,11 @@
         <SfContentPage :title="$t('Shipping details')">
           <OMyAccountShippingDetails />
         </SfContentPage>
+        <!--
         <SfContentPage :title="$t('Loyalty Card')">
           <OMyAccountPlaceholder :title="$t('Loyalty Card')" />
         </SfContentPage>
+        -->
         <SfContentPage :title="$t('My newsletter')">
           <OMyAccountPlaceholder :title="$t('My newsletter')" />
         </SfContentPage>
@@ -46,6 +48,7 @@ import MyAccount from '@vue-storefront/core/pages/MyAccount';
 import OMyAccountProfile from 'theme/components/organisms/o-my-account-profile';
 import OMyAccountShippingDetails from 'theme/components/organisms/o-my-account-shipping-details'
 import OMyAccountOrdersHistory from 'theme/components/organisms/o-my-account-orders-history';
+import OMyAccountProductReviews from 'theme/components/organisms/o-my-account-product-reviews';
 import OMyAccountPlaceholder from 'theme/components/organisms/o-my-account-placeholder';
 import { localizedRoute } from '@vue-storefront/core/lib/multistore';
 import { SfBreadcrumbs, SfContentPages } from '@storefront-ui/vue';
