@@ -10,7 +10,7 @@
         :label="$t('I want to receive a newsletter, and agree to its terms')"
         class="form__element form__checkbox"
       />
-      <SfButton class="sf-button--full-width" @click.native="updateNewsletter">>
+      <SfButton class="sf-button--full-width" @click.native="updateNewsletter">
         {{ $t("Update my preferences") }}
       </SfButton>
     </SfTab>
