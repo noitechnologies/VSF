@@ -20,9 +20,11 @@
         <SfContentPage :title="$t('Shipping details')">
           <OMyAccountShippingDetails />
         </SfContentPage>
+        <!--
         <SfContentPage :title="$t('Loyalty Card')">
           <OMyAccountPlaceholder :title="$t('Loyalty Card')" />
         </SfContentPage>
+        -->
         <SfContentPage :title="$t('My newsletter')">
           <OMyAccountPlaceholder :title="$t('My newsletter')" />
         </SfContentPage>
