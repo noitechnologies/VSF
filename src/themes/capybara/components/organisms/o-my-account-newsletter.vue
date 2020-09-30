@@ -20,6 +20,7 @@
 <script>
 import { SfTabs, SfButton, SfCheckbox} from '@storefront-ui/vue';
 import { Newsletter } from '@vue-storefront/core/modules/newsletter/components/Newsletter'
+import i18n from '@vue-storefront/i18n'
 
 export default {
   name: 'OMyAccountNewsletter',
