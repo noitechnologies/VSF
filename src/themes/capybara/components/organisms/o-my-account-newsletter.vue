@@ -23,7 +23,7 @@ import { Newsletter } from '@vue-storefront/core/modules/newsletter/components/N
 
 export default {
   name: 'OMyAccountNewsletter',
-  components: { SfTabs },
+  components: { SfTabs, SfButton, SfCheckbox },
   props: {
     title: {
       type: String,
