@@ -35,7 +35,7 @@
           <OMyAccountOrdersHistory />
         </SfContentPage>
         <SfContentPage :title="$t('My reviews')">
-          <OMyAccountPlaceholder :title="$t('My reviews')" />
+          <OMyAccountProductReviews :title="$t('My reviews')" />
         </SfContentPage>
       </SfContentCategory>
     </SfContentPages>
@@ -60,6 +60,7 @@ export default {
     OMyAccountProfile,
     OMyAccountShippingDetails,
     OMyAccountOrdersHistory,
+    OMyAccountProductReviews,
     OMyAccountPlaceholder
   },
   mixins: [MyAccount],
