@@ -6,7 +6,7 @@
           <p class="message">
             {{ $t('Check the details and status of your product reviews in the online store.') }}
           </p>
-          <div v-if="product_reviews.length === 0" class="no-reviews">
+          <div v-if="reviews.length === 0" class="no-reviews">
             <p class="no-reviews__title">
               {{ $t('You currently have no product reviews') }}
             </p>
@@ -20,7 +20,7 @@
                 {{ $t(tableHeader) }}
               </SfTableHeader>
             </SfTableHeading>
-            <SfTableRow v-for="review in review" :key="review.product">
+            <SfTableRow v-for="review in reviews" :key="review.product">
               <SfTableData v-for="(data, key) in review" :key="key">
                 <template v-if="key === 'status'">
                   <span
@@ -74,7 +74,7 @@ export default {
   computed: {
     reviews () {
       let reviews = []
-      this.product_reviews.forEach(item => {
+      this.productReviews.forEach(item => {
         reviews.push({
           'product': item.product,
           'created_at': this.$options.filters.date(item.created_at),
