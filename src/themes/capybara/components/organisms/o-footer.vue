@@ -52,12 +52,18 @@
       </SfFooterColumn>
       <SfFooterColumn :title="$t('Social')" class="social-column">
         <div class="social-icon">
-          <img
-            v-for="item in social"
-            :key="item"
-            :src="'/assets/icons/' + item + '.svg'"
-            class="social-icon__img"
-          >
+           <a href="https://www.facebook.com/NOITechnologies/" :aria-label="$t('Go to Facebook')">
+           <img class="social-icon__img" src="/assets/icons/facebook.svg"
+           </a>
+            <a href="https://in.pinterest.com/noitechnologies/" :aria-label="$t('Go to Pinterest')">
+           <img class="social-icon__img" src="/assets/icons/pinterest.svg"/>
+           </a>
+           <a href="https://www.instagram.com/vastrami/?hl=en" :aria-label="$t('Go to Twitter')">
+           <img class="social-icon__img" src="/assets/icons/twitter.svg"/>
+           </a>
+            <a href="https://www.youtube.com/channel/UCd1h7VC-TMkj5Oacy93RuKQ" :aria-label="$t('Go to youtube')">
+           <img class="social-icon__img" src="/assets/icons/youtube.svg"/>
+           </a>
         </div>
       </SfFooterColumn>
     </SfFooter>
