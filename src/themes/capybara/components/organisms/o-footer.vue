@@ -53,7 +53,7 @@
       <SfFooterColumn :title="$t('Social')" class="social-column">
         <div class="social-icon">
            <a href="https://www.facebook.com/NOITechnologies/" :aria-label="$t('Go to Facebook')">
-           <img class="social-icon__img" src="/assets/icons/facebook.svg"
+           <img class="social-icon__img" src="/assets/icons/facebook.svg"/>
            </a>
             <a href="https://in.pinterest.com/noitechnologies/" :aria-label="$t('Go to Pinterest')">
            <img class="social-icon__img" src="/assets/icons/pinterest.svg"/>
