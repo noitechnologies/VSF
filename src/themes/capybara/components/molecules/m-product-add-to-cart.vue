@@ -86,7 +86,7 @@ export default {
       if (!this.isAvailable) {
         return {
           type: 'danger',
-          message: this.$t('Selected variant is out of stock')
+          message: this.$t('Selected product is out of stock')
         }
       }
       return false
