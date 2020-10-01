@@ -137,39 +137,24 @@ export default {
       }
     },
     sendFeedback () {
-      this.sendEmail(
-        {
-          sourceAddress: this.checkoutPersonalEmailAddress,
-          targetAddress: this.mailerElements,
-          subject: this.$t('What we can improve?'),
-          emailText: this.feedback
-        },
-        this.onSuccess,
-        this.onFailure
-      );
+        this.$store.dispatch('user/sendFeedback', {feedback:this.feedback, email:this.checkoutPersonalEmailAddress}).then(
+          this.onSuccess,
+          this.onFailure
+        )
     },
-    onSuccess (message) {
+    onSuccess () {
       this.$store.dispatch('notification/spawnNotification', {
         type: 'success',
-        message,
+        message: 'Success',
         action1: { label: this.$t('OK') }
-      });
-      if (this.mailerElements.sendConfirmation) {
-        this.sendEmail({
-          sourceAddress: this.mailerElements,
-          targetAddress: this.checkoutPersonalEmailAddress,
-          subject: this.$t('Confirmation of receival'),
-          emailText: this.$t(`Dear customer,\n\nWe have received your letter.\nThank you for your feedback!`),
-          confirmation: true
-        });
-      }
+      })
     },
-    onFailure (message) {
+    onFailure () {
       this.$store.dispatch('notification/spawnNotification', {
         type: 'error',
-        message,
+        message: 'Error',
         action1: { label: this.$t('OK') }
-      });
+      })
     }
   }
 };
