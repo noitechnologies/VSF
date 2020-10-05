@@ -258,10 +258,10 @@
     </div>
     <div class="actions">
       {{paymentMethod}}
-      <div v-if="paymentMethod === 'paypal_express'">
+      <div v-if="paymentMethod === 'Paypal Express'">
         <paypal-button v-if="!$v.orderReview.$invalid || !productsInCart.length"/>
       </div>
-      <div v-if="paymentMethod !== 'paypal_express'">
+      <div v-if="paymentMethod !== 'Paypal Express'">
         <SfButton
           class="sf-button--full-width actions__button"
           :disabled="$v.orderReview.$invalid || !productsInCart.length"
