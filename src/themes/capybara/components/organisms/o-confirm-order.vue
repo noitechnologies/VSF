@@ -257,13 +257,19 @@
       <MPriceSummary class="totals__element" />
     </div>
     <div class="actions">
-      <SfButton
-        class="sf-button--full-width actions__button"
-        :disabled="$v.orderReview.$invalid || !productsInCart.length"
-        @click="placeOrder"
-      >
-        {{ $t("Place the order") }}
-      </SfButton>
+      {{paymentMethod}}
+      <div v-if="paymentMethod === 'paypal_express'">
+        <paypal-button v-if="!$v.orderReview.$invalid || !productsInCart.length"/>
+      </div>
+      <div v-if="paymentMethod !== 'paypal_express'">
+        <SfButton
+          class="sf-button--full-width actions__button"
+          :disabled="$v.orderReview.$invalid || !productsInCart.length"
+          @click="placeOrder"
+        >
+          {{ $t("Place the order") }}
+        </SfButton>
+      </div>  
       <SfButton
         class="sf-button--full-width sf-button--text color-secondary actions__button actions__button--secondary"
         @click="$bus.$emit('checkout-before-edit', 'payment')"
@@ -280,6 +286,7 @@ import { getThumbnailForProduct } from '@vue-storefront/core/modules/cart/helper
 import { registerModule } from '@vue-storefront/core/lib/modules';
 import { OrderModule } from '@vue-storefront/core/modules/order';
 import { OrderReview } from '@vue-storefront/core/modules/checkout/components/OrderReview';
+import PaypalButton from '@develodesign/vsf-payment-paypal/components/Button'
 import {
   SfIcon,
   SfImage,
