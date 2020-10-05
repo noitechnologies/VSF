@@ -257,7 +257,6 @@
       <MPriceSummary class="totals__element" />
     </div>
     <div class="actions">
-      {{paymentMethod}}
       <div v-if="paymentMethod === 'Paypal Express'">
         <paypal-button v-if="!$v.orderReview.$invalid || !productsInCart.length"/>
       </div>
@@ -318,7 +317,8 @@ export default {
     SfCharacteristic,
     SfCollectedProduct,
     APromoCode,
-    MPriceSummary
+    MPriceSummary,
+    PaypalButton
   },
   mixins: [OrderReview],
   data () {
