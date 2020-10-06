@@ -51,7 +51,7 @@ export default {
   data () {
     return {
       navigation: [
-        { title: i18n.t('About us (Magento CMS)'), link: '/about-us',component: StaticCustomerService },
+        { title: i18n.t('About us (Magento CMS)'), link: '/about-us',component: StaticAbout },
         { title: i18n.t('Customer service (Magento CMS)'), link: '/customer-service',component: StaticCustomerService  },
         { title: i18n.t('Customer service'), link: '/customer-service', component: StaticCustomerService },
         { title: i18n.t('Legal notice'), link: '/legal',component: StaticLegal },
