@@ -89,13 +89,13 @@
                 </router-link>
               </div>
               <div class="mt15">
-                <!-- Link to custom Magento Cms Page -->
+                <!-- Link to custom Page -->
                 <router-link class="cl-secondary" :to="localizedRoute('/custom-cms-page')" exact>
                   {{ $t('Custom Cms Page') }}
                 </router-link>
               </div>
               <div class="mt15">
-                <!-- Link to synced Magento Cms Page -->
+                <!-- Link to synced Page -->
                 <router-link class="cl-secondary" :to="localizedRoute('/cms-page-sync')" exact>
                   {{ $t('Cms Page Sync') }}
                 </router-link>
