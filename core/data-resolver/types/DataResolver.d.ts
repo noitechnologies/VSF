@@ -99,6 +99,7 @@ declare namespace DataResolver {
     getUserWishlist: () => Promise<Task>,
     removeItemFromWishlist: (id: String) => Promise<Task>,
     sendFeedback: (feedback: String, email: String) => Promise<Task>,
+    cancelOrder: (increment_id: String) => Promise<Task>,
     clearWishlist: () => Promise<Task>,
     addItemToWishlist: (id: String) => Promise<Task>,
     changePassword: (passwordData: PasswordData) => Promise<Task>,

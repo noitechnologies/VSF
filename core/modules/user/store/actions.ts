@@ -425,6 +425,13 @@ const actions: ActionTree<UserState, RootState> = {
     const resp = await UserService.sendFeedback(feedback, email)
   },
 
+  async cancelOrder ({commit, dispatch} , increment_id: String) {
+    const resp = await UserService.cancelOrder(increment_id)
+    if (resp.code === 200) {
+      await dispatch('getOrdersHistory', { refresh: true, useCache: false })
+    }
+  },
+
   async sessionAfterAuthorized ({ dispatch }, { refresh = onlineHelper.isOnline, useCache = true }) {
     Logger.info('User session authorised ', 'user')()
     await dispatch('me', { refresh, useCache })

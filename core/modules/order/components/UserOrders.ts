@@ -32,6 +32,21 @@ export const UserOrders = {
       return items.filter((item) => {
         return !item.parent_item_id
       })
+    },
+    async cancelOrder (increment_id) {
+      this.$store.dispatch('notification/spawnNotification', {
+        type: 'warning',
+        message: this.$t('Are you sure you would like to cancel this order?'),
+        action1: { label: this.$t('Cancel'), action: 'close' },
+        action2: { label: this.$t('OK'),
+          action: async () => {
+            this.$bus.$emit('notification-progress-start', this.$t('Please wait ...'))
+            await this.$store.dispatch('user/cancelOrder', increment_id);
+            this.$bus.$emit('notification-progress-stop', {})
+          }
+        },
+        hasNoTimeout: true
+      })
     }
   }
 }
