@@ -49,6 +49,11 @@
                   {{ $t('VIEW') }}
                 </SfButton>
               </SfTableData>
+              <SfTableData class="orders__view orders__element--right">
+                <SfButton class="sf-button--text color-secondary" @click.native="cancelOrder(order.order_id)">
+                  {{ $t('CANCEL') }}
+                </SfButton>
+              </SfTableData>
             </SfTableRow>
           </SfTable>
         </template>
@@ -115,6 +120,10 @@ export default {
     },
     setActiveOrder (order) {
       this.activeOrder = order ? this.ordersHistory.find(item => { return order.order_id.endsWith(item.increment_id) }) : null
+    },
+    async cancelOrder (order_id) {
+      console.log("========inside cancelOrder method capybara order_id====="+order_id);
+      await this.$store.dispatch('user/cancelOrder', order_id);
     }
   }
 }

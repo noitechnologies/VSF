@@ -19,6 +19,12 @@
           >
             {{ order.status | capitalize }}
           </SfBadge>
+          <SfButton
+            class="sf-button--text"
+             @click="cancelOrder(order.increment_id)"
+          >
+            Cancel
+          </SfButton>
         </h3>
       </template>
     </SfHeading>
@@ -203,6 +209,10 @@ export default {
     getThumbnailForProduct (product) {
       const thumbnail = productThumbnailPath(product)
       return getThumbnailPath(thumbnail, 100, 142)
+    },
+    async cancelOrder (order_id) {
+      console.log("========inside cancelOrder method capybara details order_id====="+order_id);
+      await this.$store.dispatch('user/cancelOrder', order_id);
     }
   },
   mounted () {
