@@ -13,13 +13,13 @@
             class="order-details__status"
             :class="{
               'color-success': order.status === 'complete',
-              'color-danger': order.status === 'canceled' || order.status === 'closed',
-              'color-warning': order.status !== 'canceled' && order.status !== 'closed' && order.status !== 'complete'
+              'color-danger': order.status === 'Cancelled' || order.status === 'closed',
+              'color-warning': order.status !== 'Cancelled' && order.status !== 'closed' && order.status !== 'complete'
             }"
           >
             {{ order.status | capitalize }}
           </SfBadge>
-          <SfButton v-if="order.status !== 'canceled'"
+          <SfButton v-if="order.status !== 'Cancelled'"
             class="sf-button--text action-button"
              @click="cancelOrder(order.increment_id)"
           >
