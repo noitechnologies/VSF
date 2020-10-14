@@ -19,7 +19,7 @@
           >
             {{ order.status | capitalize }}
           </SfBadge>
-          <SfButton
+          <SfButton v-if="order.status !== 'canceled'"
             class="sf-button--text action-button"
              @click="cancelOrder(order.increment_id)"
           >
