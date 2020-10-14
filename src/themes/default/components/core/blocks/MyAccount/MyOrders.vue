@@ -65,7 +65,7 @@
                       {{ $t('View order') }}
                     </router-link>
                     <a href="#" class="no-underline block py10 px15" @click.prevent="remakeOrder(skipGrouped(order.items))">{{ $t('Remake order') }}</a>
-                    <a href="#" class="no-underline block py10 px15" @click.prevent="cancelOrder(order.increment_id)">{{ $t('Cancel order') }}</a>
+                    <a href="#" class="no-underline block py10 px15" v-if="order.status != 'Cancelled'" @click.prevent="cancelOrder(order.increment_id)">{{ $t('Cancel order') }}</a>
                   </div>
                 </span>
               </td>

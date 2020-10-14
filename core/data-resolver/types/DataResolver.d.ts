@@ -99,7 +99,6 @@ declare namespace DataResolver {
     getUserWishlist: () => Promise<Task>,
     removeItemFromWishlist: (id: String) => Promise<Task>,
     sendFeedback: (feedback: String, email: String) => Promise<Task>,
-    cancelOrder: (increment_id: String) => Promise<Task>,
     clearWishlist: () => Promise<Task>,
     addItemToWishlist: (id: String) => Promise<Task>,
     changePassword: (passwordData: PasswordData) => Promise<Task>,
@@ -120,7 +119,9 @@ declare namespace DataResolver {
   }
 
   interface OrderService {
-    placeOrder: (order: Order) => Promise<Task>
+    placeOrder: (order: Order) => Promise<Task>,
+    cancelOrder: (increment_id: String) => Promise<Task>,
+    cancellationAllowed: (increment_id: String) => Promise<Task>,
   }
 
   interface StockService {

@@ -7,10 +7,11 @@ import { Logger } from '@vue-storefront/core/lib/logger'
 import { UserProfile } from '../types/UserProfile'
 import { onlineHelper } from '@vue-storefront/core/helpers'
 import { isServer } from '@vue-storefront/core/helpers'
-import { UserService } from '@vue-storefront/core/data-resolver'
+import { OrderService, UserService } from '@vue-storefront/core/data-resolver'
 import EventBus from '@vue-storefront/core/compatibility/plugins/event-bus'
 import { StorageManager } from '@vue-storefront/core/lib/storage-manager'
 import { userHooksExecutors, userHooks } from '../hooks'
+import rootStore from '@vue-storefront/core/store'
 
 const actions: ActionTree<UserState, RootState> = {
   async startSession ({ commit, dispatch, getters }) {
@@ -426,10 +427,37 @@ const actions: ActionTree<UserState, RootState> = {
   },
 
   async cancelOrder ({commit, dispatch} , increment_id: String) {
-    const resp = await UserService.cancelOrder(increment_id)
+    const resp = await dispatch('orderCancellationAllowed', increment_id)
     if (resp.code === 200) {
-      await dispatch('getOrdersHistory', { refresh: true, useCache: false })
+      if(resp.result.cancellationAllowed) {
+        rootStore.dispatch('notification/spawnNotification', {
+          type: 'warning',
+          message: i18n.t('Are you sure you would like to cancel this order?'),
+          action1: { label: i18n.t('Cancel'), action: 'close' },
+          action2: { label: i18n.t('OK'),
+            action: async () => {
+              EventBus.$emit('notification-progress-start', i18n.t('Please wait ...'))
+              const cancelOrderResp = await OrderService.cancelOrder(increment_id)
+              if (cancelOrderResp.code === 200) {
+                await dispatch('getOrdersHistory', { refresh: true, useCache: false })
+              }
+              EventBus.$emit('notification-progress-stop', {})
+            }
+          },
+          hasNoTimeout: true
+        })
+      } else {
+        rootStore.dispatch('notification/spawnNotification', {
+          type: 'error',
+          message: i18n.t(resp.result.reason),
+          action1: { label: i18n.t('OK') }
+        });
+      }
     }
+  },
+
+  async orderCancellationAllowed ({commit, dispatch} , increment_id: String) { 
+    return await OrderService.cancellationAllowed(increment_id)
   },
 
   async sessionAfterAuthorized ({ dispatch }, { refresh = onlineHelper.isOnline, useCache = true }) {

@@ -20,7 +20,7 @@
         <p>{{ order.created_at | date('LLL', storeView) }}</p>
         <p class="mt35">
           <a href="#" class="underline" @click.prevent="remakeOrder(singleOrderItems)">{{ $t('Remake order') }}</a>
-          <a href="#" class="underline" @click.prevent="cancelOrder(order.increment_id)">{{ $t('Cancel order') }}</a>
+          <a href="#" class="underline" v-if="order.status != 'Cancelled'" @click.prevent="cancelOrder(order.increment_id)">{{ $t('Cancel order') }}</a>
         </p>
       </div>
     </div>
@@ -170,7 +170,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      getProduct: 'product/single'
+      getProduct: 'product/single',
     })
   },
   mounted () {
