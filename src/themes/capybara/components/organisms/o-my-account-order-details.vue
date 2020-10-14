@@ -20,7 +20,7 @@
             {{ order.status | capitalize }}
           </SfBadge>
           <SfButton
-            class="sf-button--text"
+            class="sf-button--text action-button"
              @click="cancelOrder(order.increment_id)"
           >
             Cancel
@@ -152,7 +152,8 @@ import {
   SfBadge,
   SfTable,
   SfProperty,
-  SfImage
+  SfImage,
+  SfButton
 } from '@storefront-ui/vue';
 
 export default {
@@ -163,7 +164,8 @@ export default {
     SfBadge,
     SfTable,
     SfProperty,
-    SfImage
+    SfImage,
+    SfButton
   },
   props: {
     order: {

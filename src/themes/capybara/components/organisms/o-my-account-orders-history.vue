@@ -48,8 +48,8 @@
                 <SfButton class="sf-button--text color-secondary" @click.native="setActiveOrder(order)">
                   {{ $t('VIEW') }}
                 </SfButton>
-                <SfButton class="sf-button--text color-secondary" @click.native="cancelOrder(order.order_id)">
-                  {{ $t('CANCEL') }}
+                <SfButton v-if="key==='status' && data !== 'Canceled'" class="sf-button--text color-secondary" @click.native="cancelOrder(order.order_id)">
+                  {{ $t('CANCEL') }} {{key}} {{data}}
                 </SfButton>
               </SfTableData>
             </SfTableRow>
