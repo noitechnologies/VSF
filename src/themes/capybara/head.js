@@ -1,6 +1,6 @@
 export default {
-  title: 'VSF Capybara',
-  titleTemplate: '%s - AyushVati',
+  title: 'Vastrami Fashions',
+  titleTemplate: '%s - Vastrami Fashions',
   htmlAttrs: {
     lang: 'en'
   },
@@ -10,7 +10,7 @@ export default {
       vmid: 'description',
       name: 'description',
       content:
-        'Ayushvati is a standalone PWA storefront for Saldist connected through the API.'
+        'Vastrami is a standalone PWA storefront for Saldist connected through the API.'
     },
     {
       name: 'viewport',
