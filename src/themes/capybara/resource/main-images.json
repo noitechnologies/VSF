@@ -5,8 +5,8 @@
       "subtitle": "",
       "background": "#F0F5F3",
       "image": {
-        "webp": "/assets/banner/webp/static_images/full_width_banner1.webp",
-        "fallback": "/assets/banner/png/static_images/full_width_banner1.png"
+        "webp": "/assets/banner/webp/full_width_banner.webp",
+        "fallback": "/assets/banner/png/full_width_banner.png"
       }
     },
     {
@@ -15,19 +15,9 @@
       "background": "#F0F5F3",
       "className": "sf-hero-item--position-bg-top-left sf-hero-item--align-right",
       "image": {
-        "webp": "/assets/banner/webp/static_images/full_width_banner2.webp",
-        "fallback": "/assets/banner/png/static_images/full_width_banner2.png"
-      }
-    },
-    {
-      "title": "",
-      "subtitle": "",
-      "background": "#F0F5F3",
-      "className": "sf-hero-item--position-bg-top-left sf-hero-item--align-right",
-      "image": {
-        "webp": "/assets/banner/webp/static_images/full_width_banner3.webp",
-        "fallback": "/assets/banner/png/static_images/full_width_banner3.png"
+        "webp": "/assets/banner/webp/full_width_banner2.webp",
+        "fallback": "/assets/banner/png/full_width_banner2.png"
       }
     }
-  ]
+    ]
 }

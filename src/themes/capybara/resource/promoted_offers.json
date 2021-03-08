@@ -1,101 +1,101 @@
 {
   "mainBanners": [
     {
-      "title": "NATURAL FOOD",
-      "subtitle": "Products",
-      "description": "A healthy outside starts from the healthy inside.",
+      "title": "COCKTAIL PARTY",
+      "subtitle": "Dresses",
+      "description": "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.",
       "buttonText": "SHOP NOW",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner1.webp",
-        "fallback": "/assets/banner/png/static_images/banner1.png"
+        "webp": "/assets/banner/webp/bannerF.webp",
+        "fallback": "/assets/banner/png/bannerF.png"
       },
-      "link": "/health-care/health-and-wellness-1003",
+      "link": "/women.html",
       "slot": "banner-A"
     },
     {
-      "title": "AYURVEDIC MEDICINE",
-      "subtitle": "Medicines",
-      "description": "Ayurveda is the mysterious box of the medical science.",
+      "title": "LINEN DRESSES",
+      "subtitle": "Dresses",
+      "description": "Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.",
       "buttonText": "SHOP NOW",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner2.webp",
-        "fallback": "/assets/banner/png/static_images/banner2.png"
+        "webp": "/assets/banner/webp/bannerE.webp",
+        "fallback": "/assets/banner/png/bannerE.png"
       },
-      "link": "/medicines/vati-3001",
+      "link": "/men.html",
       "slot": "banner-B"
     },
     {
-      "title": "NATURAL HEALTH CARE",
-      "subtitle": "Products",
+      "title": "THE OFFICE LIFE",
+      "subtitle": "T-Shirts",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner3.webp",
-        "fallback": "/assets/banner/png/static_images/banner3.png"
+        "webp": "/assets/banner/webp/bannerC.webp",
+        "fallback": "/assets/banner/png/bannerC.png"
       },
-      "link": "/health-care/digestive-1001",
+      "link": "/gear.html",
       "slot": "banner-C"
     },
     {
-      "title": "HERBAL PERSONAL CARE",
-      "subtitle": "Products",
+      "title": "ECO SANDALS",
+      "subtitle": "Summer shoes",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner4.webp",
-        "fallback": "/assets/banner/png/static_images/banner4.png"
+        "webp": "/assets/banner/webp/bannerG.webp",
+        "fallback": "/assets/banner/png/bannerG.png"
       },
-      "link": "/personal-care/eye-care-2001",
+      "link": "/gear.html",
       "slot": "banner-D"
     }
   ],
   "productBanners": [
     {
-      "title": "NATURAL HEALTH CARE",
-      "subtitle": "Products",
+      "title": "ECO SANDALS",
+      "subtitle": "Summer shoes",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner3.webp",
-        "fallback": "/assets/banner/png/static_images/banner3.png"
+        "webp": "/assets/banner/webp/bannerK.webp",
+        "fallback": "/assets/banner/png/bannerK.png"
       },
-      "link": "/health-care/digestive-1001"
+      "link": "/gear/gear-3"
     },
     {
-      "title": "HERBAL PERSONAL CARE",
-      "subtitle": "Products",
+      "title": "THE OFFICE LIFE",
+      "subtitle": "T-Shirts",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner4.webp",
-        "fallback": "/assets/banner/png/static_images/banner4.png"
+        "webp": "/assets/banner/webp/bannerC.webp",
+        "fallback": "/assets/banner/png/bannerC.png"
       },
-      "link": "/personal-care/eye-care-2001"
+      "link": "/men/tops-men/tees-men/tees-16"
     }
   ],
   "menuAsideBanners": [
     {
-      "title": "",
+      "title": "Last pairs left",
       "type": "mobile",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner5.webp",
-        "fallback": "/assets/banner/webp/static_images/banner5.png"
+        "webp": "/assets/banner/webp/bannerSandals-full.webp",
+        "fallback": "/assets/banner/png/bannerSandals-full.png"
       }
     },
     {
-      "title": "",
+      "title": "Last pairs left",
       "type": "desktop",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner5.webp",
-        "fallback": "/assets/banner/webp/static_images/banner5.png"
+        "webp": "/assets/banner/webp/bannerSandals.webp",
+        "fallback": "/assets/banner/png/bannerSandals.png"
       }
     },
     {
-      "title": "",
+      "title": "Beach bags 2=1",
       "type": "mobile",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner6.webp",
-        "fallback": "/assets/banner/webp/static_images/banner6.png"
+        "webp": "/assets/banner/webp/bannerBeachBag-full.webp",
+        "fallback": "/assets/banner/png/bannerBeachBag-full.png"
       }
     },
     {
-      "title": "",
+      "title": "Beach bags 2=1",
       "type": "desktop",
       "image": {
-        "webp": "/assets/banner/webp/static_images/banner6.webp",
-        "fallback": "/assets/banner/webp/static_images/banner6.png"
+        "webp": "/assets/banner/webp/bannerBeachBag.webp",
+        "fallback": "/assets/banner/png/bannerBeachBag.png"
       }
     }
   ]
