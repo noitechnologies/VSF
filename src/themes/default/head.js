@@ -1,6 +1,6 @@
 export default {
   title: 'Default Theme',
-  titleTemplate: '%s - Vastrami Fashions',
+  titleTemplate: '%s - Sportires',
   htmlAttrs: {
     lang: 'en'
   },

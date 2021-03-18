@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>
-      Vastrami Fashions
+      Sportires
     </h2>
     <p>
       Aliquam ac consequat neque, in ultrices libero. Cras nec lacus mi. Morbi in elit risus. Sed semper dui metus, tincidunt imperdiet diam lacinia sed. Suspendisse non aliquet nulla, at rhoncus massa. Nulla vulputate convallis tortor porta ornare. Duis dictum ex eget nulla pellentesque sagittis. Etiam ac erat in quam varius eleifend. Cras lacinia ante nibh, eu scelerisque diam placerat et. Suspendisse eget facilisis ligula.

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>
-      Vastrami Fashions Customer Services
+      Sportires Customer Services
     </h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl neque, ultricies a pharetra at, auctor non risus. Maecenas facilisis laoreet elit vitae sodales. Suspendisse potenti. Integer pulvinar pharetra viverra. Morbi gravida porta ligula, vitae mattis risus consequat ac. Suspendisse dictum leo vel accumsan commodo. Ut volutpat lacinia purus quis tempor. Sed non mauris sed ligula maximus rhoncus. Quisque vel mi lacinia felis dictum sollicitudin vel at eros. Nam sit amet enim arcu.
