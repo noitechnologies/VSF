@@ -1,32 +1,32 @@
 {
   "mainBanners": [
     {
-      "title": "One thing is eternal.",
-      "subtitle": "Fashion",
+      "title": "",
+      "subtitle": "",
       "image": "/assets/static_images/banner/ban1.jpg",
-      "link": "/apparel/women-1000"
+      "link": "/michelin-1000"
     }
   ],
   "smallBanners": [
     {
-      "title": "Shop your style",
-      "subtitle": "Accessories",
+      "title": "",
+      "subtitle": "",
       "image": "/assets/static_images/banner/ban2.jpg",
-      "link": "/apparel/men-2000"
+      "link": "/bfgoodrich/pickup-suv-2001"
     },
     {
-      "title": "Fashion spring",
-      "subtitle": "Hats",
+      "title": "",
+      "subtitle": "",
       "image": "/assets/static_images/banner/ban3.jpg",
-      "link": "/accessories/gear-3000"
+      "link": "/michelin/daily-tourism-1002"
     }
   ],
   "productBanners": [
     {
-      "title": "Fashion spring",
-      "subtitle": "Hats",
+      "title": "",
+      "subtitle": "",
       "image": "/assets/ban3.jpg",
-      "link": "/accessories/gear-3000"
+      "link": "/michelin/pickup-suv-1001"
     }
   ]
 }
