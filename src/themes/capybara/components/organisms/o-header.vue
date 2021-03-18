@@ -62,6 +62,7 @@
       :categories-ids="categories"
       @close="$store.commit('ui/closeMenu')"
     />
+    <marquee style=" width: 100%;background-color: #777171;font-family:Cursive;font-size:20pt;color:#f23f00;height:29px;">This is a demo site and no orders will be fulfilled from this store.</marquee>
   </div>
 </template>
 
