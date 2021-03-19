@@ -214,8 +214,10 @@
     <div class="container mx-auto">
       <div class="row items-center justify-between py-6">
         <div class="col-12 md:col-4 flex mb-8 md:mb-0">
-          <span class="menu-link text-sm">© {{ currentYear }} Vuetique</span>
-
+          <div class="col-12 md:col-4 flex md:justify-end">
+            <a class="menu-link text-sm text-grey-dark" href="www.noitechnologies.com">NOI Technologies</a>
+          </div>
+          <span class="menu-link text-sm">© {{ currentYear }}</span>
           <router-link class="menu-link ml-8 text-sm text-grey-dark" :to="localizedRoute('/terms')" exact>
             {{ $t('Terms') }}
           </router-link>
@@ -244,10 +246,7 @@
           </div>
         </div>
 
-        <div class="col-12 md:col-4 flex md:justify-end">
-          <span class="text-sm mr-1">Created by</span>
-          <a class="menu-link text-sm text-grey-dark" href="https://www.absolutewebservices.com/">Absolute&nbsp;Web</a>
-        </div>
+        
       </div>
     </div>
 
