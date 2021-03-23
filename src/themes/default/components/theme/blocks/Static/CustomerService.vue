@@ -4,10 +4,7 @@
       Sportires Customer Services
     </h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nisl neque, ultricies a pharetra at, auctor non risus. Maecenas facilisis laoreet elit vitae sodales. Suspendisse potenti. Integer pulvinar pharetra viverra. Morbi gravida porta ligula, vitae mattis risus consequat ac. Suspendisse dictum leo vel accumsan commodo. Ut volutpat lacinia purus quis tempor. Sed non mauris sed ligula maximus rhoncus. Quisque vel mi lacinia felis dictum sollicitudin vel at eros. Nam sit amet enim arcu.
-    </p>
-    <p>
-      Aliquam ac consequat neque, in ultrices libero. Cras nec lacus mi. Morbi in elit risus. Sed semper dui metus, tincidunt imperdiet diam lacinia sed. Suspendisse non aliquet nulla, at rhoncus massa. Nulla vulputate convallis tortor porta ornare. Duis dictum ex eget nulla pellentesque sagittis. Etiam ac erat in quam varius eleifend. Cras lacinia ante nibh, eu scelerisque diam placerat et. Suspendisse eget facilisis ligula.
+      To help us achieve our goal of providing the highest quality products and services, we use information from our interactions with you and other customers, as well as from other parties. Because we respect your privacy, we have implemented procedures to ensure that your personal information is handled in a safe, secure, and responsible manner. We have posted this privacy policy in order to explain our information collection practices and the choices you have about the way information is collected and used.
     </p>
   </div>
 </template>
