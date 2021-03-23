@@ -1,6 +1,6 @@
 <template>
   <div id="my_account">
-    <div class="bg-cl-secondary py35 pl20">
+    <div class="bg-cl-secondary py35 pl20" style="margin-top: 15px">
       <div class="container">
         <breadcrumbs
           :with-homepage="true"
