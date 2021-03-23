@@ -1,6 +1,6 @@
 <template>
   <section class="head-image w-100 bg-cl-th-accent cl-white">
-    <div class="container w-100 h-100 cl-black" v-lazy:background-image="currentImage.image" v-if="currentImage">
+    <div class="container w-100 h-100 cl-black" v-lazy:background-image="currentImage.image" v-if="currentImage" style="margin-top: 40px">
       <div class="head-image-content">
         <h1 class="title" data-testid="mainSliderTitle">
           {{ currentImage.title }}

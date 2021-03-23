@@ -1,6 +1,6 @@
 <template>
   <div id="category">
-    <header class="bg-cl-secondary py35 pl20">
+    <header class="bg-cl-secondary py35 pl20" style="padding-top: 49px !important;">
       <div class="container">
         <breadcrumbs />
         <div class="row middle-sm">
