@@ -4,6 +4,7 @@
       class="fixed w-100 brdr-bottom-1 bg-cl-primary brdr-cl-secondary"
       :class="{ 'is-visible': navVisible }"
     >
+      <marquee style="width: 100%;background-color: #777171;font-family:Cursive;font-size:20pt;color:#f23f00;height:29px;">This is a demo site and no orders will be fulfilled from this store.</marquee>
       <div class="container px15">
         <div class="row between-xs middle-xs" v-if="!isCheckoutPage || isThankYouPage">
           <div class="col-md-4 col-xs-2 middle-xs">
@@ -61,7 +62,7 @@
       </div>
     </header>
     <div class="header-placeholder" />
-    <marquee style="width: 100%;background-color: #777171;font-family:Cursive;font-size:20pt;color:#f23f00;height:29px;">This is a demo site and no orders will be fulfilled from this store.</marquee>
+
   </div>
 </template>
 
@@ -150,8 +151,8 @@ export default {
 $color-icon-hover: color(secondary, $colors-background);
 
 header {
-  height: 54px;
-  top: -55px;
+  height: 92px;
+  top: -116px;
   z-index: 3;
   transition: top 0.2s ease-in-out;
   &.is-visible {

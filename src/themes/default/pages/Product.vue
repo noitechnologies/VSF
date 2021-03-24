@@ -1,6 +1,6 @@
 <template>
   <div id="product">
-    <section class="bg-cl-secondary px20 product-top-section">
+    <section class="bg-cl-secondary px20 product-top-section" style="margin-top: 35px">
       <div class="container">
         <section class="row m0 between-xs">
           <div class="col-xs-12 col-md-6 center-xs middle-xs image">
@@ -158,7 +158,7 @@
                     <i class="pr5 material-icons">share</i>
                   </share-network>
                 </div>
-              </div>  
+              </div>
           </div>
         </section>
       </div>
