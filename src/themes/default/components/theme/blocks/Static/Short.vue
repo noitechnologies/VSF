@@ -1,16 +1,19 @@
 <template>
   <div>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id tortor arcu. Cras ut est auctor, ornare magna sit amet, pellentesque justo. Proin dapibus risus in felis tempus vestibulum. Nulla vitae mi tortor. Vivamus nec cursus lorem. Sed bibendum convallis augue, non consectetur dui. Ut nec dolor at mauris aliquet fringilla et sit amet elit.
+      This website ("website") is operated by Luma Inc., which includes Luma stores, and Luma Private Sales. This privacy policy only covers information collected at this website, and does not cover any information collected offline by Luma. All Luma websites are covered by this privacy policy.
+    </p>
+    <h2>
+      Sportires Security
+    </h2>
+    <p>
+      Personal information provided on the website and online credit card transactions are transmitted through a secure server. We are committed to handling your personal information with high standards of information security. We take appropriate physical, electronic, and administrative steps to maintain the security and accuracy of personally identifiable information we collect, including limiting the number of people who have physical access to our database servers, as well as employing electronic security systems and password protections that guard against unauthorized access.
     </p>
     <h2>
       Sportires Privacy Policy
     </h2>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui magna, venenatis sed nibh eget, fermentum ullamcorper felis. Morbi dignissim purus est, ut lacinia ante lacinia eu. Vivamus leo nisi, tempus eget condimentum sit amet, egestas sed ligula. Quisque dapibus tortor ut cursus convallis. Suspendisse potenti. Etiam eu ligula erat. Nulla volutpat laoreet imperdiet. Vivamus tincidunt ex at lectus efficitur, in bibendum diam scelerisque. Pellentesque non dignissim ex, convallis viverra augue. Nullam posuere purus purus, ac laoreet erat feugiat ut. Duis malesuada venenatis faucibus. Sed nec est euismod, pulvinar nisl vel, accumsan augue. In dapibus non nibh pellentesque laoreet.
-    </p>
-    <p>
-      Vivamus eget aliquam quam. Sed vel sagittis lacus. Integer in laoreet libero, sit amet scelerisque tortor. Donec condimentum sit amet augue vitae gravida. Quisque cursus elit ac orci vulputate, a luctus turpis pharetra. Donec varius et nunc nec aliquet. Aenean commodo augue dolor. Quisque maximus, mi a consectetur gravida, ligula neque viverra lectus, quis rutrum neque neque id nunc. Nunc ac est lacinia, ultrices lectus id, venenatis leo. Nunc luctus nunc ac quam pulvinar cursus eget sit amet nunc. Mauris elementum mollis turpis, vitae dapibus risus feugiat id.
+      To help us achieve our goal of providing the highest quality products and services, we use information from our interactions with you and other customers, as well as from other parties. Because we respect your privacy, we have implemented procedures to ensure that your personal information is handled in a safe, secure, and responsible manner. We have posted this privacy policy in order to explain our information collection practices and the choices you have about the way information is collected and used.
     </p>
   </div>
 </template>
