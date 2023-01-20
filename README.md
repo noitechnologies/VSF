@@ -14,7 +14,7 @@ NPM version used: 6.14.6 <br>
 Docker version used: 20.10.7, build f0df350 <br>
 Docker-Compose version: 1.25.4, build 8d51620a <br>
 Java version: openjdk version "1.8.0_292" <br>
-OpenJDK Runtime Environment (build 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10)
+OpenJDK Runtime Environment (build 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10) <br>
 OpenJDK 64-Bit Server VM (build 25.292-b10, mixed mode)
 
 Yarn version: 1.22.10
