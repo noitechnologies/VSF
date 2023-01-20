@@ -9,6 +9,18 @@
 <a href="https://github.com/DivanteLtd/vue-storefront/tree/develop"><img src="https://img.shields.io/badge/dev%20branch-develop-blue.svg" alt="Branch Develop"></a>
 <a href="https://slack.vuestorefront.io">![Branch Develop](https://img.shields.io/badge/community%20chat-slack-FF1493.svg)</a>
 
+Node version used: v12.18.3
+NPM version used: 6.14.6
+Docker version used: 20.10.7, build f0df350
+Docker-Compose version: 1.25.4, build 8d51620a
+Jva Version: openjdk version "1.8.0_292"
+OpenJDK Runtime Environment (build 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10)
+OpenJDK 64-Bit Server VM (build 25.292-b10, mixed mode)
+
+Yarn version: 1.22.10
+JQ version: jq-1.5-1-a5b5cbe
+
+
 Vue Storefront is a standalone PWA storefront for your eCommerce, possible to connect with any eCommerce backends, for example:
 - <a href="https://www.vuestorefront.io/pwa-for-magento?utm_source=github.com&utm_medium=referral&utm_campaign=readme">Magento</a>  
 - <a href="https://www.vuestorefront.io/shopware?utm_source=github.com&utm_medium=referral&utm_campaign=readme">Shopware</a>
