@@ -9,11 +9,11 @@
 <a href="https://github.com/DivanteLtd/vue-storefront/tree/develop"><img src="https://img.shields.io/badge/dev%20branch-develop-blue.svg" alt="Branch Develop"></a>
 <a href="https://slack.vuestorefront.io">![Branch Develop](https://img.shields.io/badge/community%20chat-slack-FF1493.svg)</a>
 
-Node version used: v12.18.3
-NPM version used: 6.14.6
-Docker version used: 20.10.7, build f0df350
-Docker-Compose version: 1.25.4, build 8d51620a
-Jva Version: openjdk version "1.8.0_292"
+Node version used: v12.18.3 <br>
+NPM version used: 6.14.6 <br>
+Docker version used: 20.10.7, build f0df350 <br>
+Docker-Compose version: 1.25.4, build 8d51620a <br>
+Java version: openjdk version "1.8.0_292" <br>
 OpenJDK Runtime Environment (build 1.8.0_292-8u292-b10-0ubuntu1~20.04-b10)
 OpenJDK 64-Bit Server VM (build 25.292-b10, mixed mode)
 
