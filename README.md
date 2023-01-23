@@ -53,6 +53,13 @@ Which Vue Storefront should I choose for my next project?
   -  If you’re on **Shopware 6** go to  [`shopware-pwa`](https://github.com/DivanteLtd/shopware-pwa)   sub-project and use the Shopware PWA powered by Vue Storefront
 
 Check our Rodmap -> link do  [https://github.com/DivanteLtd/vue-storefront#roadmap](https://github.com/DivanteLtd/vue-storefront#roadmap)
+<br>
+To run the project: <br>
+Keep local.json inside config directory.
+Run command: <br>
+sudo yarn  add @babel/core @babel/preset-env -W
+<br>
+sudo docker-compose up
 
 ## About Vue Storefront Next
 
