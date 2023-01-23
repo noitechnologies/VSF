@@ -54,7 +54,7 @@ Which Vue Storefront should I choose for my next project?
 
 Check our Rodmap -> link do  [https://github.com/DivanteLtd/vue-storefront#roadmap](https://github.com/DivanteLtd/vue-storefront#roadmap)
 <br>
-To run the project: <br>
+**To run the project:** <br>
 Keep local.json inside config directory.
 Run command: <br>
 sudo yarn  add @babel/core @babel/preset-env -W
